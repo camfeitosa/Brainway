@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sistema de Pontos e Niveis</title>
+</head>
+<body>
+    <h1>Seus Pontos: <span id="points">0</span></h1>
+    <h2>Seu Nivel: <span id="level">1</span></h2>
+    <button id="btnEarnPoints">Ganhar Pontos</button>
+
+    <script>
+        document.getElementById("btnEarnPoints").addEventListener("click", () => {
+            fetch("earnPoints.php", { method: "POST" })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error("Erro na resposta do servidor");
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    if (data.points !== undefined && data.nivel !== undefined) {
+                        document.getElementById("points").innerText = data.points;
+                        document.getElementById("level").innerText = data.nivel;
+                    } else if (data.error) {
+                        console.error("Erro ao ganhar pontos:", data.error);
+                    } else {
+                        console.error("Resposta inválida do servidor.");
+                    }
+                })
+                .catch(error => console.error("Erro ao ganhar pontos:", error));
+        });
+    </script>
+</body>
+</html>
