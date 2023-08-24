@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+    <link rel="stylesheet" href="style.css">
+    <title>Tarefas</title>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Input para adicionar uma tarefa -->
+        <div class="topo">
+            <input type="text" id="novaTarefa" placeholder="Adicione uma tarefa">
+        <!-- <img src="bars-icon.svg" alt="icon"> -->
+            <button id="btnAddTarefa">
+                <i class="fa fa-plus"></i>
+            </button>
+        </div>
+
+
+        <!-- completo... -->
+        <div class="controls">
+            <div class="filters">
+              <span class="active" id="all">All</span>
+              <span id="pending">Pending</span>
+              <span id="completed">Completed</span>
+            </div>
+            <button class="clear-btn">Clear All</button>
+          </div>
+          <ul class="task-box"></ul>
+
+
+
+        <!-- Lista de tarefas -->
+        <ul id="listaTarefas">
+            <li>
+                <span class="textoTarefa">Tarefa 1</span>
+                <div>
+                    <button id="btnAcao">
+                       <i class="fa fa-pencil"></i>  <!-- editar -->
+                    </button>
+                    <button id="btnAcao">
+                       <i class="fa fa-trash"></i>  <!-- excluir -->
+                    </button>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    
+</body>
+</html>

@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body{
+    background:rgb(246, 248, 249) ;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    /* color: #fff; */
+}
+
+/* Topo do conteúdo*/
+.container{
+    margin: 0 auto;
+    width: 100%;
+    max-width: 450px;
+    margin-top: 50px;margin-bottom: 50px;
+    background: rgb(255, 255, 255);
+    padding: 55px;
+    box-shadow: rgba(169, 174, 183, 0.5) 0px 1px 2px 0px;
+    border-radius: 12px;
+}
+
+.topo{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 35px;
+}
+
+.topo input{
+    width: 350px;
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid #dce1e4 ;
+    outline: none;
+    font-size: 1.2rem;
+    background-color: rgb(246, 248, 249) ;
+}
+
+.topo button{
+    width: 45px;
+    border-radius: 12px;
+    border: 1px solid #dce1e4 ;
+    background-color: rgb(246, 248, 249) ;
+    color: #2b2b2b;
+    outline: none;
+}
+
+.topo button:hover{
+    background-color: #dce1e4;
+    cursor: pointer;
+}
+
+/* tarefas */
+
+#listaTarefas{
+    list-style-type: none; /*eliminar círculo do item*/
+    padding: 0;
+    margin: 0;
+}
+
+#listaTarefas li{
+    padding: 20px;
+    background-color: rgb(246, 248, 249);
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#btnAcao{
+    border-radius: 15px;
+    border: 1px solid #dce1e4 ;
+    width: 38px;
+    height: 38px;
+    /* margin-right: 8px; */
+    cursor: pointer;
+    background-color: rgb(246, 248, 249);
+}
+
+#btnAcao:hover{
+    background-color: #dce1e4;
+}
+
+/*
+.controls, li{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.controls{
+  padding: 18px 25px;
+  border-bottom: 1px solid #ccc;
+}
+.filters span{
+  margin: 0 8px;
+  font-size: 17px;
+  color: #444444;
+  cursor: pointer;
+}
+.filters span:first-child{
+  margin-left: 0;
+}
+.filters span.active{
+  color: #3C87FF;
+}
+.controls .clear-btn{
+  border: none;
+  opacity: 0.6;
+  outline: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 7px 13px;
+  border-radius: 4px;
+  letter-spacing: 0.3px;
+  pointer-events: none;
+  transition: transform 0.25s ease;
+  background: linear-gradient(135deg, #1798fb 0%, #2D5CFE 100%);
+}
+.clear-btn.active{
+  opacity: 0.9;
+  pointer-events: auto;
+}
+.clear-btn:active{
+  transform: scale(0.93);
+}
+*/
