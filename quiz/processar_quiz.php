@@ -1,12 +1,13 @@
 <?php
 include('conexao.php');
 
-// Recuperar respostas do formulário
 $resposta1 = $_POST['resposta1'];
 $resposta2 = $_POST['resposta2'];
 $resposta3 = $_POST['resposta3'];
 
 // Inserir respostas na tabela "quiz"
+// INSERIR AS PERGUNTAS DIRETO NO BANCO
+
 $sql = "INSERT INTO quiz (pergunta, alternativa1, alternativa2, alternativa3) VALUES
     ('Qual é teste?', '$resposta1', '$resposta2', '$resposta3'), ('Qual seu teste?', '$resposta1', '$resposta2', '$resposta3'), ('Qual é a teste?', '$resposta1', '$resposta2', '$resposta3') ";
 
