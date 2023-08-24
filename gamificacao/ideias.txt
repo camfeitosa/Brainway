@@ -1,0 +1,23 @@
+
+Moedas = +500 moedas ao passar de nível
+
+Loja = N personagens armazenados no bd 
+
+500 BrainCoins
+valor = personagens
+
+valor = 200 (nivel 1) (N perssonagens desbloqueados)
+    1 compra -200
+    2 compras -200
+    saldo final = 100
+
+saldo = 600 (N perssonagens desbloqueados)
+valor = 500 (nivel 2)
+    1 compra -500
+    saldo final = 100
+
+saldo = 600 (N perssonagens desbloqueados)
+valor = 500 (nivel 3)
+    1 compra -500
+    saldo final = 100
+
