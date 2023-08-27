@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro</title>
+</head>
+
+<body>
+<h1> Formulário de registro HTML </h1>
+
+<form method="POST" action="salvar.php">
+  <label for="usuario">Nome de usuário (@):</label>
+  <input type="text" placeholder="Nome de usuario" id="usuario" name="usuario" required>
+
+  <br>
+
+  <label for="nome">Nome:</label>
+  <input type="text" placeholder="Digite seu nome" id="nome" name="nome" required>
+
+  <br>
+
+  <label for="email">email:</label>
+  <input type="email" placeholder="Digite seu email" id="email" name="email" required>
+
+  <br>
+
+  <label for="senha">Senha:</label>
+  <input type="password" placeholder="Digite sua senha" id="senha" name="senha" required>
+  
+  <label for="confirmarSenha">Confirme a senha:</label>
+  <input type="password" placeholder="Digite sua senha" id="confirmarSenha" name="senha" required>
+
+  <br><br>
+
+  <button type="submit">Registrar</button>
+</form>
+
+<a href="../login/form.html">Faça Login</a>
+
+
+</body>
+</html>

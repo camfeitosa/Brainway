@@ -1,5 +1,5 @@
 <?php
-include('conexao.php');
+include('../conexao.php');
 
 $resposta1 = $_POST['resposta1'];
 $resposta2 = $_POST['resposta2'];

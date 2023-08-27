@@ -5,7 +5,7 @@ USE gamificacao;
 CREATE TABLE usuarios (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
-	 nivel INT DEFAULT 1,
+	nivel INT DEFAULT 1,
     pontos INT DEFAULT 0
 );
 

@@ -1,5 +1,5 @@
 <?php
-include('./quiz/conexao.php');
+include('../conexao.php');
 
 // Consulta para atualizar os pontos do usuário (supondo que o usuário com ID 1 está ganhando pontos)
 $userId = 1;
