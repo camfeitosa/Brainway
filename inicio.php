@@ -21,7 +21,7 @@ if (isset($_SESSION['id_user'])) {
    $foto_usuario = "config/foto_perfil/" . $caminho; 
    echo "<img src= '$foto_usuario' alt='Imagem' class='perfil'>";
    } else {
-      echo "<img src='loja/personagens/yoda.png'' alt='Imagem' class='perfil_d'>";
+      echo "<img src='loja/personagens/woody.png'' alt='Imagem' class='perfil_d'>";
    }
    
    echo "<br>";
