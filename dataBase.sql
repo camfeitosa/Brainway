@@ -13,7 +13,8 @@ senha VARCHAR (100),
 data_cad DATE,
 moedas INT,
 avatar VARCHAR (100),
-nivel INT DEFAULT 1
+nivel INT DEFAULT 1,
+pontos INT DEFAULT 0
 );
 
 CREATE TABLE quiz (
