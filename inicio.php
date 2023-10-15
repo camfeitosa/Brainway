@@ -1,7 +1,8 @@
 <?php
 ob_start();
 session_start();
-include('conexao.php');
+
+include('config/conexao.php');
 
 
 // Verifique se o usuário está logado
@@ -38,7 +39,11 @@ if (isset($_SESSION['id_user'])) {
 
 } else {
    // Se o usuário não estiver logado, redirecione-o para a página de login
-   echo "<a href='login/form.html'> Faça login </a>";
+   echo "<a href='auth/login/form.php'> Faça login </a>";
+   echo "<br ><a href='logout.php'>Fazer logout</a>";
+   echo "<pre>";
+   print_r($_SESSION['user']);
+   echo "</pre>"; 
    exit();
 }
 ?>

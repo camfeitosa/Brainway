@@ -1,0 +1,34 @@
+/
+|-- index.php
+|-- assets/
+|   |-- css/
+|   |-- js/
+|   |-- images/
+|-- includes/
+|   |-- header.php
+|   |-- footer.php
+|-- pages/
+|   |-- home.php
+|   |-- about.php
+|   |-- contact.php
+|-- admin/
+|   |-- index.php
+|   |-- manage_users.php
+|   |-- manage_products.php
+|-- config/
+|   |-- db.php
+|-- classes/
+|   |-- User.php
+|   |-- Product.php
+|-- templates/
+|   |-- user_profile.php
+|   |-- product_item.php
+|-- uploads/
+|-- .htaccess
+|-- README.md
+
+
+$ composer install
+$ composer require google/apiclient
+
+<p> Olá, <?=$info['name']?> </p>

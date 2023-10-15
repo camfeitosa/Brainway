@@ -83,8 +83,8 @@ tarefa VARCHAR (254),
 dia DATE,
 horario TIME,
 FOREIGN KEY (id_user) REFERENCES usuario (id_user)
-);
-
+); /*chave primaria de rotina*/
+ 
  
 
 CREATE TABLE pomodoro (

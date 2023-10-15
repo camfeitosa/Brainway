@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Questionário</title>
+</head>
+<body>
+  <h1>Questionário</h1>
+
+  <!-- Pergunta 1 -->
+  <p>Pergunta 1: Qual é a sua cor favorita?</p>
+  <input type="radio" name="pergunta1" value="vermelho"> Vermelho
+  <input type="radio" name="pergunta1" value="azul"> Azul
+  <input type="radio" name="pergunta1" value="verde"> Verde
+
+  <!-- Pergunta 2 -->
+  <p>Pergunta 2: Qual é o seu animal favorito?</p>
+  <input type="radio" name="pergunta2" value="cachorro"> Cachorro
+  <input type="radio" name="pergunta2" value="gato"> Gato
+  <input type="radio" name="pergunta2" value="passaro"> Pássaro
+
+  <!-- Pergunta 3 -->
+  <p>Pergunta 3: Qual é a sua bebida favorita?</p>
+  <input type="radio" name="pergunta3" value="cafe"> Café
+  <input type: "radio" name="pergunta3" value="cha"> Chá
+  <input type="radio" name="pergunta3" value="suco"> Suco
+
+  <!-- Botão de envio -->
+  <button onclick="calcularResultado()">Calcular Resultado</button>
+
+  <!-- Local para exibir o resultado -->
+  <div id="resultado"></div>
+
+  <script>
+    function calcularResultado() {
+      // Coleta as respostas do usuário
+      const respostas = {
+        pergunta1: document.querySelector('input[name="pergunta1"]:checked').value,
+        pergunta2: document.querySelector('input[name="pergunta2"]:checked').value,
+        pergunta3: document.querySelector('input[name="pergunta3"]:checked').value,
+      };
+
+      // Conta quantas vezes cada alternativa foi escolhida
+      const contagem = {};
+      for (const key in respostas) {
+        if (contagem[respostas[key]]) {
+          contagem[respostas[key]]++;
+        } else {
+          contagem[respostas[key]] = 1;
+        }
+      }
+
+      // Encontra a alternativa mais escolhida
+      let alternativaMaisEscolhida = null;
+      let maiorContagem = 0;
+
+      for (const alternativa in contagem) {
+        if (contagem[alternativa] > maiorContagem) {
+          alternativaMaisEscolhida = alternativa;
+          maiorContagem = contagem[alternativa];
+        }
+      }
+
+      // Lógica para determinar a ação com base na alternativa mais escolhida
+      let acao = '';
+      if (alternativaMaisEscolhida === 'vermelho') {
+        acao = 'A maioria escolheu a cor vermelha. Ação 1.';
+      } else if (alternativaMaisEscolhida === 'cachorro') {
+        acao = 'A maioria escolheu cachorros. Ação 2.';
+      } else if (alternativaMaisEscolhida === 'cafe') {
+        acao = 'A maioria escolheu café. Ação 3.';
+      } else {
+        acao = 'Nenhuma alternativa se destacou.';
+      }
+
+      // Exibir o resultado
+      document.getElementById('resultado').innerHTML = acao;
+    }
+  </script>
+</body>
+</html>

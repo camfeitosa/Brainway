@@ -6,6 +6,6 @@ session_start();
 session_destroy();
 
 // Redirecionar para página de login
-header("Location: login/form.html");
+header("Location: auth/login/form.php");
 exit();
 ?>
