@@ -45,6 +45,10 @@ body{
   border: none;
 }
 
+.task-input div:focus ~ .bars-icon.svg {
+  color: #4070f4;
+}
+
 /* .task-input input:focus,
 .task-input input.active{
   padding-left: 52px;
