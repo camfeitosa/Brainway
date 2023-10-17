@@ -15,11 +15,15 @@
       rel="stylesheet"
       href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
     />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.10.2/Sortable.min.js"></script>
   </head>
   <body>
 
     <div class="container">
-      
+      <div class="title">
+        <span>Nome</span>
+      </div>
       <div class="input-field">
         <textarea placeholder="Enter your new todo"></textarea>
         <i class="uil uil-notes note-icon"></i>
@@ -37,5 +41,11 @@
 
     <!-- JavaScript -->
     <script src="js/script.js"></script>
+    <script>
+      const dragArea = document.querySelector(".todoLists");
+      new Sortable(dragArea, {
+        animation: 350
+      });
+    </script>
   </body>
 </html>

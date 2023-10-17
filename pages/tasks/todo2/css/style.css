@@ -54,7 +54,8 @@ body {
   font-weight: 400;
   border-radius: 8px;
   padding: 18px 45px 18px 15px;
-  border: 1px solid #ccc;
+  /* border: 1px solid; */
+  border: none;
   resize: none;
 }
 .input-field textarea:focus {
@@ -90,12 +91,12 @@ textarea::-webkit-scrollbar {
   display: flex;
   align-items: center;
   list-style: none;
-  background-color: #fff; /*ou efefef*/
+  background-color: #efefef; /*ou efefef*/
   padding: 20px 15px;
   border-radius: 8px;
-  margin-top: 10px;
+  margin-top: 5px;
   position: relative;
-  cursor: pointer;
+  cursor: grab;
 }
 .todoLists .list input {
   height: 16px;
@@ -126,15 +127,24 @@ textarea::-webkit-scrollbar {
 .todoLists .list i:hover {
   opacity: 1;
 }
+
+.title{
+  color: #707070;
+  font-size: 3vh;
+  font-weight: 400;
+}
+
 .container .pending-tasks {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-top: 25px;
 }
+
 .pending-tasks span {
   color: #333;
 }
+
 .pending-tasks .clear-button {
   padding: 6px 12px;
   outline: none;

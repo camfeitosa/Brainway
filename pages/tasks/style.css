@@ -93,7 +93,9 @@ body{
   transition: transform 0.25s ease;
   background: rgb(246, 248, 249);
 }
-
+.task-box{
+  cursor:grab; /* mudar */
+}
 .clear-btn.active{
   opacity: 0.9;
   pointer-events: auto;
