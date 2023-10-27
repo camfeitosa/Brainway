@@ -40,7 +40,7 @@
             <div class="app__card">
 
                 <!-- Mudar a cor de acordo com os botões -->
-                <ul class="app__card-list">
+                <ul data-contexto="foco" class="app__card-list">
                     <li class="app__card-list-item" data-contexto="foco">
                         <button data-contexto="foco" class="app__card-button app__card-button--foco active">Foco</button>
                     </li>
@@ -57,18 +57,17 @@
                     <li class="app__card-list-item">
                         <label class="toggle">
                             <input class="toggle-checkbox" type="checkbox" id="alternar-musica">
-                            <div class="toggle-switch"></div>
+                            <!-- <div class="toggle-switch"></div> -->
                         </label>
                     </li>
-                    <li class="app__card-list-item">
+                    <!-- <li class="app__card-list-item">
                         <label class="app__card-list-label" for="alternar-musica">
                             Música
                         </label>
-                    </li>
+                    </li> -->
                 </ul>
                 <div class="app__card-primary-button-wrapper">
                     <button id="start-pause" class="app__card-primary-button">
-                        <img class="app__card-primary-butto-icon" src="/imagens/play_arrow.png" alt="">
                         <span>Começar</span>
                     </button>
                 </div>

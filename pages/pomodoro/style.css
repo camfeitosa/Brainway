@@ -128,6 +128,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .app__card-timer {
+    position: relative;
+    top: 10px;
     color: var(--color-secondary);
     text-align: center;
     font-family: Unbounded;
