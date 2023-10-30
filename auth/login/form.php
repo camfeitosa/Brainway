@@ -2,9 +2,9 @@
 session_start();
 include('..\..\config\conexao.php');
 
-    require 'C:\laragon\www\Brainway\vendor\autoload.php';
+    require '..\..\vendor\autoload.php';
 
-    require_once 'C:\laragon\www\Brainway\auth\App\Session\User.php';
+    // require_once 'C:\laragon\www\Brainway\auth\App\Session\User.php';
 
 
     // require __DIR__. '\laragon\www\Brainway\Brainway\vendor\autoload.php';
