@@ -33,9 +33,17 @@ FOREIGN KEY (id_avatar) REFERENCES avatar (id_avatar)
 );
  
  
-INSERT INTO avatar VALUES (1, 'yoda', 'personagens/yoda.png', 20);
+INSERT INTO avatar VALUES (6, 'yoda', 'pages/loja/personagens/yoda.png', 20);
+
+
 INSERT INTO avatar VALUES (2, 'aladin', 'personagens/aladin.png', 10);
 INSERT INTO avatar VALUES (3, 'masc1', 'personagens/masc1.png', 0);
+
+INSERT INTO avatar VALUES (7, 'ana', 'personagens/ana.png', 20);
+INSERT INTO avatar VALUES (8, 'woody', 'personagens/woody.png', 0);
+INSERT INTO avatar VALUES (9, 'ariel', 'personagens/ariel.png', 10);
+INSERT INTO avatar VALUES (11, 'america', 'personagens/america.png', 0);
+
  
 /*
 CREATE TABLE compra (

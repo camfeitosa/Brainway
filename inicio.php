@@ -26,7 +26,7 @@ function trocarImagem(isHover) {
     object-fit: cover; 
   }
   .btn-se{
-   background-color: #ffffffff;
+   background-color: #efefef;
    border: none;
    cursor: pointer;
    object-fit: cover; 
