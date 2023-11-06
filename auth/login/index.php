@@ -40,28 +40,17 @@
   </div>
 
   <!-- STYLE -->
-  <div class="g_id_signin"
+  <!-- <div class="g_id_signin"
        data-type="icon"
        data-shape="circle"
        data-theme="outline"
        data-text="signin_with"
        data-size="large"
        data-locale="pt-BR">
-  </div>
+  </div> -->
 </form>
 
 <a href="../cadastro/index.html">Cadastre-se</a>
-
-<?php 
-
-session_start();
-if(isset($_SESSION['user'])){
-header ('location: ../../inicio.php' );
-}else{
-  // header (' location: index.php');
-}
-
- ?>
 
 </body>
 </html>

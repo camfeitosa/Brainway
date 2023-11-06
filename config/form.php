@@ -1,6 +1,6 @@
 <?php
 
-include('..\conexao.php');
+include('..\config\conexao.php');
 session_start();
 
 //Recupera informações do usuário pelo ID 
