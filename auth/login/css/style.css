@@ -1,0 +1,62 @@
+body {
+    background: url(fundo.png) center/cover no-repeat;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row; /* Alterado para row para colocar elementos lado a lado */
+    gap: 40px;
+    width: 900px;
+    height: 650px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.30);
+}
+
+.img-form {
+    text-align: center;
+    height: 100%; /* Preencher a altura do container-login */
+    flex: 1; /* Ocupar espaço disponível igualmente com a form */
+}
+
+.form {
+    display: flex;
+    justify-content:center ;
+    flex-direction: column;
+    align-items: center;
+    background-color: #efefef;
+    height: 100%; /* Preencher a altura do container-login */
+    width: 450px;
+    gap: 50px;
+}
+
+.social {
+    /* background-color: ; */
+    text-align: center;
+}
+
+input {
+    display: block;
+    border: #efefef;
+    width: 350px;
+    height: 45px;
+
+    /* Adicione estilos para os inputs, se necessário */
+}
+
+a{
+    text-decoration: none;
+}
+
+span{
+    font-weight: bold;
+}
+
+
