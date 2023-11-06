@@ -60,3 +60,15 @@ span{
 }
 
 
+
+@media (max-width: 1920px) {
+    .container-login {
+        width: 700px;
+        height: 450px;
+    }
+
+    img{
+        width: 100%;
+
+    }
+}

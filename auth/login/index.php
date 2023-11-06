@@ -12,21 +12,23 @@
   <header>
     <!-- menu -->
   </header>
+
   <main>
     <div class="container-login">
       <div class="img-form">
         <h1>Alcançe seu máximo</h1>
-        
+        <img src="css/img.png" alt="" >
       </div>
+
       <div class="form">
         <form method="POST" action="validar.php">
           <div class="inpt1">
-            <label for="usuario">Nome de usuário ou email:</label>
+            <label for="usuario">E-mail ou nome do usuário</label>
             <input type="text" placeholder="Nome de usuario ou email" id="usuario" name="usuario" required>
           </div>
 
           <div class="inpt2">
-            <label for="senha">Senha:</label>
+            <label for="senha">Senha</label>
             <input type="password" placeholder="Digite seu senha" id="senha" name="senha" required>
           </div>
 
