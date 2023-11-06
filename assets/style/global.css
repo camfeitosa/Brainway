@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css");
+
+* {
+    padding: 0;
+    margin: 0;
+    border: none;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    outline: none;
+    font-family: "Poppins";
+}
+
+:root {
+    --azul-primario: #2D99DA;
+    --azul-secundario: #45AAF2;
+    --azul-terciario: #8FCCF7;
+    --azul-quaternario: #8FCCF7;
+    --azul-claro: #DFF1FC;
+
+    --verde-primario: #16A086;
+    --verde-secundario: #1BBC9B;
+    --verde-terciario: #74DEC8;
+    --verde-quaternario: #ADE7DB;
+    --verde-claro: #D6F3ED;
+
+    --verde-primario: #27AE61;
+    --verde-secundario: #52BE81;
+    --verde-terciario: #7DCEA0;
+    --verde-quaternario: #BFE7D0;
+    --verde-claro: #DFF3E8;
+
+    --roxo-primario: #7C1CDB;
+    --roxo-secundario: #8854D1;
+    --roxo-terciario: #B898E3;
+    --roxo-quaternario: #DCCCF2;
+    --roxo-claro: #EDE6F9;
+
+    --rosa-primario: #F50179;
+    --rosa-secundario: #FF3598;
+    --rosa-terciario: #FF86C1;
+    --rosa-quaternario: #FFC3E1;
+    --rosa-claro: #FFE2F0;
+
+    --rosa-primario: #E68B8B;
+    --rosa-secundario: #EB5262;
+    --rosa-terciario: #F0B9B9;
+    --rosa-quaternario: #F13C4E;
+    --rosa-claro: #F7DDDD;
+
+    --laranja-primario: #F4B86A;
+    --laranja-secundario: #F85D0C;
+    --laranja-terciario: #F8D4A6;
+    --laranja-quaternario: #FBEAD3;
+    --laranja-claro: #FC8A03;
+    
+    --amarelo-primario: #F5C400;
+    --amarelo-secundario: #F5EC99;
+    --amarelo-terciario: #F6E870;
+    --amarelo-quaternario: #FAF6CC;
+    --amarelo-claro: #FED230;
+}
