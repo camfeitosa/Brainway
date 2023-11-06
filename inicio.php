@@ -82,7 +82,7 @@ if (isset($_SESSION['id_user'])) {
    echo " <div class='container2'>  <div id='hover' onmouseover='trocarImagem(true)' onmouseout='trocarImagem(false)'><button type='button'class='btn-se' data-toggle='modal' data-target='#modalExemplo'> <img src= '$avatar' alt='Imagem' class='perfil'></a></button></div>";
    }
    else {
-     echo "<img src='loja/personagens/masc1.png' alt='Imagem' class='perfil'>";
+     echo "<div class='container2'>  <div id='hover' onmouseover='trocarImagem(true)' onmouseout='trocarImagem(false)'><button type='button'class='btn-se' data-toggle='modal' data-target='#modalExemplo'><img src='pages/loja/personagens/aladin.png' alt='Imagem' class='perfil'></a></button></div>";
    }
    
    echo "<br>";

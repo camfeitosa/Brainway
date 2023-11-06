@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('..\conexao.php');
+include('..\..\config\conexao.php');
 
 // processar o formulário de registro
 if($_SERVER["REQUEST_METHOD"] == "POST") {
