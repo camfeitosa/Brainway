@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500&family=Poppins&display=swap');
+
 body {
     background: url(fundo.png) center/cover no-repeat;
     width: 100vw;
@@ -6,69 +8,230 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: "Barlow";
 }
 
 .container-login {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: row; /* Alterado para row para colocar elementos lado a lado */
-    gap: 40px;
+    flex-direction: row;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+    gap: 30px;
     width: 900px;
     height: 650px;
     border-radius: 10px;
-    background: rgba(255, 255, 255, 0.30);
+    background: rgba(255, 255, 255, 0.3);
 }
 
 .img-form {
-    text-align: center;
-    height: 100%; /* Preencher a altura do container-login */
-    flex: 1; /* Ocupar espaço disponível igualmente com a form */
-}
-
-.form {
     display: flex;
-    justify-content:center ;
     flex-direction: column;
-    align-items: center;
-    background-color: #efefef;
-    height: 100%; /* Preencher a altura do container-login */
-    width: 450px;
-    gap: 50px;
+    justify-content: flex-end;
+    height: 100%;
+    flex: 1;
+    gap: 60px;
 }
 
-.social {
-    /* background-color: ; */
-    text-align: center;
+.img-form h1 {
+    color: #000;
+    font-size: 42px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    width: 310px;
+    overflow-wrap: break-word;
+}
+
+.titulo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.titulo {
+    display: flex;
+    width: 70%;
+
+}
+
+.foquete {
+    display: contents;
+}
+
+.foquete img {
+    width: 88%;
+    padding: 0%;
+}
+
+
+
+a {
+    text-decoration: none;
+}
+
+span {
+    font-weight: bold;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    /* background-color: #; */
+    height: 100%;
+    width: 450px;
+    gap: 10px;
+}
+
+.input-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100%;
+    height: 400px;
+    /* background-color: aquamarine; */
+}
+
+.campo1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    /* background-color: red; */
+    width: 360px;
+    height: 100px;
+    margin-top: 70px;
+
+}
+
+.campo2 {
+    flex-direction: column;
+    justify-content: center;
+    justify-content: space-around;
+    /* background-color: blue; */
+    width: 360px;
+    height: 100px;
+    display: flex;
+
 }
 
 input {
     display: block;
     border: #efefef;
-    width: 350px;
+    width: 100%;
     height: 45px;
-
-    /* Adicione estilos para os inputs, se necessário */
+    padding: 3px;
+    border-radius: 5px;
+    background: #FFF;
 }
 
-a{
-    text-decoration: none;
+input:focus {
+    outline: none;
 }
 
-span{
-    font-weight: bold;
+.btn-login {
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background: #2D99DA;
+    color: #ffffff;
+    padding: 3px 10px;
+    display: flex;
+    width: 220px;
+    padding: 10.5px 0px;
+    justify-content: center;
+    align-items: center;
 }
 
+label {
+    color: #000;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
 
+}
 
-@media (max-width: 1920px) {
+.input-form a {
+    text-align: end;
+    color: #F13C4E;
+    margin-bottom: 20px;
+}
+
+.input-form a:visited {
+    color: #EB5262;
+}
+
+.social-container {
+    display: flex;
+    align-items: center;
+    /* justify-content: ; */
+    flex-direction: column;
+    /* background-color: #000; */
+    text-align: center;
+    height: 400px;
+    width: 100%;
+
+}
+
+p {
+    color: #000;
+    opacity: 80%;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 275;
+    line-height: normal;
+}
+
+.social{
+    display: flex;
+    flex-direction: column;
+    /* background-color: red; */
+    width: 50%;
+    height: 90px;
+    align-items: center;
+    justify-content: start;
+    
+}
+
+.social-container a {
+    color: #000;
+}
+
+.social-container a:visited {
+    color: #000;
+}
+
+.g_id_signin{
+    height: 70px;
+}
+
+@media (max-width: 1919px) {
     .container-login {
         width: 700px;
         height: 450px;
     }
+    .img-form h1 {
+        font-size: 35px;
+    }
+.foquete{
+    width: 50%;
+}
+    .btn-login{
+        width: 110px;
+    }
 
-    img{
-        width: 100%;
+    .input-form{
+        height: 240px;
+    }
 
+    .campo1{
+        width: 300px;
+    }
+
+    .campo2{
+        width: 300px;
     }
 }

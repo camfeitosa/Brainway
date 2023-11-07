@@ -1,44 +1,88 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="">
-  <title>Cadastro</title>
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Cadastro</title>
+  </head>
 
-<body>
-<h1> Formulário de registro HTML </h1>
+  <body>
+    <header>
+      <!-- menu -->
+    </header>
 
-<form method="POST" action="salvar.php">
-  <label for="usuario">Nome de usuário (@):</label>
-  <input type="text" placeholder="Nome de usuario" id="usuario" name="usuario" required>
+    <main>
+      <div class="container-cad">
+        <div class="img-form">
+          <div class="titulo-container">
+            <div class="titulo">
+              <h1>Alcance seu Máximo</h1>
+            </div>
+          </div>
+          <div class="foquete">
+            <img src="../login/css/img.png" alt="" />
+          </div>
+        </div>
 
-  <br>
+        <div class="form-container">
+          <form method="POST" action="salvar.php">
+            <div class="input-form">
 
-  <label for="nome">Nome:</label>
-  <input type="text" placeholder="Digite seu nome" id="nome" name="nome" required>
+              <!-- campo1 div -->
+            <label for="usuario">Nome de usuário (@):</label>
+            <input
+              type="text"
+              placeholder="Nome de usuario"
+              id="usuario"
+              name="usuario"
+              required
+            />
 
-  <br>
+            <label for="nome">Nome:</label>
+            <input
+              type="text"
+              placeholder="Digite seu nome"
+              id="nome"
+              name="nome"
+              required
+            />
 
-  <label for="email">email:</label>
-  <input type="email" placeholder="Digite seu email" id="email" name="email" required>
+            <label for="email">email:</label>
+            <input
+              type="email"
+              placeholder="Digite seu email"
+              id="email"
+              name="email"
+              required
+            />
 
-  <br>
+            <label for="senha">Senha:</label>
+            <input
+              type="password"
+              placeholder="Digite sua senha"
+              id="senha"
+              name="senha"
+              required
+            />
 
-  <label for="senha">Senha:</label>
-  <input type="password" placeholder="Digite sua senha" id="senha" name="senha" required>
-  
-  <label for="confirmarSenha">Confirme a senha:</label>
-  <input type="password" placeholder="Digite sua senha" id="confirmarSenha" name="senha" required>
+            <label for="confirmarSenha">Confirme a senha:</label>
+            <input
+              type="password"
+              placeholder="Digite sua senha"
+              id="confirmarSenha"
+              name="senha"
+              required
+            />
+            <div>
+              <button class="btn-login"  type="submit">Registrar</button>
+            </div>
+          </form>
+        </div>
 
-  <br><br>
-
-  <button type="submit">Registrar</button>
-</form>
-
-<a href="../login/form.php">Faça Login</a>
-
-
-</body>
+          <a href="../login/form.php">Faça Login</a>
+        </div>
+      </div>
+    </main>
+  </body>
 </html>

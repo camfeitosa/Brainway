@@ -1,9 +1,8 @@
-function mudarCor() {
-    var minhaDiv = document.getElementById('minhaDiv');
-    minhaDiv.style.backgroundColor = '#e74c3c'; /* Nova cor ao passar o mouse */
-}
+document.addEventListener('DOMContentLoaded', function () {
+    var pontuacao = document.getElementById('pontuacao-valor').textContent;
+    var pontuacaoBarra = document.getElementById('pontuacao');
 
-function restaurarCor() {
-    var minhaDiv = document.getElementById('minhaDiv');
-    minhaDiv.style.backgroundColor = '#3498db'; /* Restaura a cor original ao tirar o mouse */
-}
+    // Define a largura da barra com base na pontuação (exemplo: pontuação máxima de 100)
+    var larguraBarra = (pontuacao / 100) * 100;
+    pontuacaoBarra.style.width = larguraBarra + '%';
+});

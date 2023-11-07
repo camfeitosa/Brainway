@@ -1,10 +1,17 @@
-#minhaDiv {
-    width: 200px;
-    height: 100px;
-    background-color: #3498db; /* Cor inicial */
+.pontuacao-barra {
+    width: 300px;
+    height: 20px;
+    background-color: #ccc;
+    border: 1px solid #000;
+    margin: 20px;
+}
+
+.pontuacao-progresso {
+    height: 100%;
+    width: 0; /* A largura será ajustada com base na pontuação */
+    background-color: #3498db;
     text-align: center;
-    line-height: 100px;
+    line-height: 20px;
     color: #fff;
-    cursor: pointer;
-    transition: background-color 0.3s; /* Adiciona uma transição suave */
+    font-weight: bold;
 }

@@ -1,0 +1,15 @@
+@import url(../login/css/style.css);
+
+
+.container-cad {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    /* Alterado para row para colocar elementos lado a lado */
+    gap: 30px;
+    width: 1000px;
+height: 750px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.3);
+}
