@@ -6,10 +6,46 @@
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    /* Alterado para row para colocar elementos lado a lado */
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     gap: 30px;
     width: 1000px;
-height: 750px;
+    height: 750px;
     border-radius: 10px;
     background: rgba(255, 255, 255, 0.3);
+}
+
+.input-form {
+    width: 100%;
+    height: 100%;
+    /* background-color: green; */
+    margin-right: 30px;
+}
+
+.form-container {
+    width: 500px;
+    height: 750px;
+    /* background-color: red; */
+}
+
+.img-form {
+    gap: 100px;
+}
+
+.btn-login {
+    margin-top: 28px;
+}
+
+.link-log a {
+    text-align: center;
+    height: 60px;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    align-items: end;
+    display: flex;
+    color: #000;
+}
+
+.link-log a:visited {
+    color: #000;
 }

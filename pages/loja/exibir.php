@@ -17,7 +17,7 @@
     .product {
       background-color: #efefef;
       width: 180px;
-      height: 210px;
+      height: 220px;
       padding: 10px;
       display: inline-block; /* Adicione esta linha */
       margin: 10px; /* Espaçamento entre os produtos */

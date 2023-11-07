@@ -9,9 +9,10 @@
 
   <body>
     <header>
-      <!-- menu -->
+      <div class="logo">
+        <img src="../login/css/logo.svg" alt="">
+      </div>
     </header>
-
     <main>
       <div class="container-cad">
         <div class="img-form">
@@ -30,6 +31,7 @@
             <div class="input-form">
 
               <!-- campo1 div -->
+              <div class="campo1">
             <label for="usuario">Nome de usuário (@):</label>
             <input
               type="text"
@@ -38,6 +40,9 @@
               name="usuario"
               required
             />
+          </div>
+
+          <div class="campo2">
 
             <label for="nome">Nome:</label>
             <input
@@ -47,8 +52,11 @@
               name="nome"
               required
             />
+               
+          </div>
 
-            <label for="email">email:</label>
+          <div class="campo3">
+            <label for="email">E-mail:</label>
             <input
               type="email"
               placeholder="Digite seu email"
@@ -56,7 +64,8 @@
               name="email"
               required
             />
-
+          </div>
+          <div class="campo4">
             <label for="senha">Senha:</label>
             <input
               type="password"
@@ -65,7 +74,8 @@
               name="senha"
               required
             />
-
+          </div>
+            <div class="campo5">
             <label for="confirmarSenha">Confirme a senha:</label>
             <input
               type="password"
@@ -74,13 +84,14 @@
               name="senha"
               required
             />
+          </div>
             <div>
               <button class="btn-login"  type="submit">Registrar</button>
             </div>
           </form>
+          <div class="link-log">
+          <a href="../login/index.html">Já possui uma conta no Brainway? <span>Faça login.</span></a></div>
         </div>
-
-          <a href="../login/form.php">Faça Login</a>
         </div>
       </div>
     </main>

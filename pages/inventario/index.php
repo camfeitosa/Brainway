@@ -31,11 +31,11 @@
 
     .product {
       background-color: #efefef;
-      width: 180px;
+      width: 140px;
       height: 210px;
       padding: 10px;
       display: inline-block; /* Adicione esta linha */
-      margin: 7px; /* Espaçamento entre os produtos */
+      margin: 1px; /* Espaçamento entre os produtos */
       position: relative;
       left: 40px;
     }
@@ -65,8 +65,11 @@
       padding: 3px 10px;
       margin: auto;
       display: block;
+      transition: all 0.3s ease 0s;
     }
-
+.btn-inventario:hover{
+  background-color: #45AAF2;
+}
     @media (max-width: 984px) {
       .product {
         width: 30%; /* Defina a largura para 100% para ocupar toda a largura da tela */

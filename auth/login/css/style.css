@@ -9,6 +9,15 @@ body {
     justify-content: center;
     align-items: center;
     font-family: "Barlow";
+    flex-direction: column;
+}
+
+.logo {
+    display: inline-block;
+    position: absolute;
+    left: 75px;
+    top: 35px;
+    cursor: pointer;
 }
 
 .container-login {
@@ -16,7 +25,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     gap: 30px;
     width: 900px;
     height: 650px;
@@ -30,7 +39,7 @@ body {
     justify-content: flex-end;
     height: 100%;
     flex: 1;
-    gap: 60px;
+    gap: 70px;
 }
 
 .img-form h1 {
@@ -84,6 +93,8 @@ span {
     height: 100%;
     width: 450px;
     gap: 10px;
+    margin-right: 20px;
+
 }
 
 .input-form {
@@ -106,7 +117,7 @@ span {
 
 }
 
-.campo2 {
+.campo2, .campo3, .campo4, .campo5 {
     flex-direction: column;
     justify-content: center;
     justify-content: space-around;
@@ -114,7 +125,6 @@ span {
     width: 360px;
     height: 100px;
     display: flex;
-
 }
 
 input {
@@ -143,6 +153,10 @@ input:focus {
     padding: 10.5px 0px;
     justify-content: center;
     align-items: center;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
 }
 
 label {
@@ -185,7 +199,7 @@ p {
     line-height: normal;
 }
 
-.social{
+.social {
     display: flex;
     flex-direction: column;
     /* background-color: red; */
@@ -193,7 +207,7 @@ p {
     height: 90px;
     align-items: center;
     justify-content: start;
-    
+
 }
 
 .social-container a {
@@ -204,7 +218,7 @@ p {
     color: #000;
 }
 
-.g_id_signin{
+.g_id_signin {
     height: 70px;
 }
 
@@ -212,26 +226,35 @@ p {
     .container-login {
         width: 700px;
         height: 450px;
+        gap: 10px;
     }
+
     .img-form h1 {
         font-size: 35px;
+
     }
-.foquete{
-    width: 50%;
-}
-    .btn-login{
+
+    .img-form {
+        gap: 30px;
+    }
+
+    .foquete img {
+        width: 80%;
+    }
+
+    .btn-login {
         width: 110px;
     }
 
-    .input-form{
-        height: 240px;
+    .input-form {
+        height: 250px;
     }
 
-    .campo1{
+    .campo1 {
         width: 300px;
     }
 
-    .campo2{
+    .campo2 {
         width: 300px;
     }
 }
