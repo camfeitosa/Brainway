@@ -1,0 +1,136 @@
+@import url(assets/style/global.css);
+
+
+.normal {
+    background-color: #efefef;
+}
+
+.perfil {
+    object-fit: cover;
+    display: flex;
+    width: 130px;
+    height: 130px;
+    padding: 15px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 5px;
+}
+
+.btn-se {
+    border-radius: 5px;
+    background-color: #efefef;
+    border: none;
+    cursor: pointer;
+    object-fit: cover;
+    position: relative;
+    transition: 0.3s;
+}
+
+.btn-se:focus {
+    outline: none;
+    background-color: #efefef;
+}
+
+
+.container-perfil {
+    /* background-color: green; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 130px;
+    border-radius: 5px;
+    overflow: hidden;
+    /* Oculta a imagem de sobreposição */
+    transition: 0.3s;
+}
+
+.overlay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    /* Inicialmente, a imagem de sobreposição é invisível */
+    transition: 0.3s;
+
+}
+
+.container-perfil:hover .overlay {
+    opacity: 1;
+    /* Torna a imagem de sobreposição visível no hover */
+    background-color: rgba(0, 0, 0, 0.50);
+    border-radius: 5px;
+}
+
+.container-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 250px;
+    height: 100vh;
+    flex-shrink: 0;
+    background-color: #ffffff;
+}
+
+.container-section h2{
+    color: #000;
+text-align: center;
+font-family: Barlow;
+font-size: 18px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+margin-top: 10px;
+}
+
+.container2 {
+    /* top: 20px;
+    position: absolute;
+    left: 10px; */
+    height: 90%;
+    /* background-color: red; */
+}
+
+.nome{
+    /* background-color: green; */
+    position: relative;
+    top: 10px;
+    width: 80%;
+    height: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    margin-top: 10px;
+    
+}
+
+.nome h1 {
+    color: #000;
+    text-align: center;
+    font-family: Barlow;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.nome p {
+    color: #000;
+    text-align: center;
+    font-family: Barlow;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+
+/* .bdname{
+   
+} */

@@ -1,0 +1,44 @@
+@import url(../login/css/style.css);
+
+.container-quiz {
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.50);
+    width: 1000px;
+    height: 675.813px;
+    flex-shrink: 0;
+}
+
+.header-quiz {
+    display: flex;
+    width: 1000px;
+    height: 120px;
+    padding-bottom: 0px;
+    flex-direction: column;
+    align-items: center;
+    gap: 21px;
+    background-color: #FFF;
+    justify-content: center;
+}
+
+.header-quiz h1 {
+    color: #000;
+    text-align: center;
+    font-family: Barlow;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+#progress-bar {
+    background-color: #FF3598;
+    width: 20%;
+    height: 10px;
+    transition: all 100ms ease-in-out;
+}
+
+.container-progress{
+    background-color:#8FCCF7;
+    width: 100%;
+    height: 10px;
+}
