@@ -1,6 +1,5 @@
 @import url(assets/style/global.css);
 
-
 .normal {
     background-color: #efefef;
 }
@@ -31,7 +30,6 @@
     outline: none;
     background-color: #efefef;
 }
-
 
 .container-perfil {
     /* background-color: green; */
@@ -72,21 +70,44 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin-top: 20px;
+    margin-left: 20px;
     width: 250px;
-    height: 100vh;
+    height: 95vh;
+    margin-bottom: 10px;
     flex-shrink: 0;
     background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
-.container-section h2{
+#progress-bar {
+    background-color: #FF3598;
+    width: 20%;
+    height: 16px;
+    transition: all 100ms ease-in-out;
+    border-radius: 5px;
+}
+
+.progress1, .progress2, .progress3 {
+    background-color: #8FCCF7;
+    width: 135px;
+    height: 16px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.container-section h2 {
     color: #000;
-text-align: center;
-font-family: Barlow;
-font-size: 18px;
-font-style: normal;
-font-weight: 700;
-line-height: normal;
-margin-top: 10px;
+    text-align: center;
+    font-family: Barlow;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-top: 10px;
 }
 
 .container2 {
@@ -95,9 +116,13 @@ margin-top: 10px;
     left: 10px; */
     height: 90%;
     /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
 }
 
-.nome{
+.nome {
     /* background-color: green; */
     position: relative;
     top: 10px;
@@ -108,7 +133,7 @@ margin-top: 10px;
     justify-content: end;
     align-items: center;
     margin-top: 10px;
-    
+
 }
 
 .nome h1 {
@@ -129,6 +154,13 @@ margin-top: 10px;
     font-style: normal;
     font-weight: 300;
     line-height: normal;
+}
+
+.container-header {
+    width: 100%;
+    height: 80px;
+    flex-shrink: 0;
+    background: #FFF;
 }
 
 /* .bdname{

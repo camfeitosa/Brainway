@@ -30,5 +30,3 @@
 
 $ composer install
 $ composer require google/apiclient
-
-<p> Olá, <?=$info['name']?> </p>

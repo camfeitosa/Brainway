@@ -8,8 +8,8 @@
     flex-direction: row;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     gap: 30px;
-    width: 1000px;
-    height: 750px;
+    width: 900px;
+    height: 580px;
     border-radius: 10px;
     background: rgba(255, 255, 255, 0.3);
 }

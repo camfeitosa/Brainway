@@ -1,4 +1,3 @@
-<div class="container-section">
       <?php
       ob_start();
       session_start();
@@ -21,12 +20,12 @@
 
          echo "<div  class='nome'>";
 
-         echo "<p>$usuario[nome] <p>";
+         echo "<div class='bdname'><h1>$usuario[nome] <h1></div>";
 
          if ($usuario['usuario'] != null) {
-            echo "<p>@ $usuario[usuario] <p>";
+            echo "<div class='bduser'><p>@$usuario[usuario] <p></div>";
          } else {
-            echo "<br> @brainway";
+            echo "@brainway";
          }
 
          echo "</div>";
@@ -37,14 +36,35 @@
             echo "<div class='container2'> <div class='container-perfil'><button type='button'class='btn-se' data-toggle='modal' data-target='#modalExemplo''><img src='pages/loja/personagens/aladin.png' class='perfil'><div class='overlay'><img src='edit.svg' class='pencil'></div></a></button></div>";
          }
 
-         echo "<br>Nivel: " . $usuario['nivel'];
-         echo "<br><br>Número de moedas: " . $usuario['moedas'];
-         echo "<br ><a href='pages/recompensa/ad.php'>Ganhe recompensas</a>";
-         echo "<br ><a href='config/form.php'>Configurações da conta</a>";
-         echo "<br ><a href='pages/loja/exibir.php'>Loja</a>";
-         echo "<br ><a href= 'pages/inventario/index.php'>Inventario</a>";
+         echo "<h2>Nivel: " . $usuario['nivel']."</h2>";
 
-         echo "<br ><a href='logout.php'>Fazer logout</a>";
+         // echo "<div class='progress1'>";
+         echo "<div class='progress1'>";
+         echo"<div id='progress-bar'></div>";
+         echo"</div>";
+
+         echo "<div class='progress2'>";
+         echo"<div id='progress-bar'></div>";
+         echo"</div>";
+
+         echo "<div class='progress3'>";
+         echo"<div id='progress-bar'></div>";
+         echo"</div>";
+         
+         echo "<div class='desafios'>";
+         echo"<h1>Supere os desafios</h1>";
+         echo"<p>Conquiste vitórias, acumule pontos e alcance seus objetivos agora!</p>";
+         echo"<button>Comece já</button>";
+         echo"</div>";
+                   
+
+         // echo "<br><br>Número de moedas: " . $usuario['moedas'];
+         // echo "<br ><a href='pages/recompensa/ad.php'>Ganhe recompensas</a>";
+         // echo "<br ><a href='config/form.php'>Configurações da conta</a>";
+         // echo "<br ><a href='pages/loja/exibir.php'>Loja</a>";
+         // echo "<br ><a href= 'pages/inventario/index.php'>Inventario</a>";
+
+         // echo "<br ><a href='logout.php'>Fazer logout</a>";
          echo "</div>";
 
       } else {
@@ -53,3 +73,4 @@
          exit();
       }
       ?>
+
