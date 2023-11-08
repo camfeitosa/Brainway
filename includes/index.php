@@ -34,21 +34,22 @@
             echo " <div class='container2'><div class='container-perfil'><button type='button'class='btn-se' data-toggle='modal' data-target='#modalExemplo'> <img src= '$avatar' alt='Imagem' class='perfil'><div class='overlay'><img src='edit.svg' class='pencil'></div></a></button></div>";
          } else {
             echo "<div class='container2'> <div class='container-perfil'><button type='button'class='btn-se' data-toggle='modal' data-target='#modalExemplo''><img src='pages/loja/personagens/aladin.png' class='perfil'><div class='overlay'><img src='edit.svg' class='pencil'></div></a></button></div>";
+            echo "<h2>Nivel: " . $usuario['nivel']."</h2>" ;
          }
 
-         echo "<h2>Nivel: " . $usuario['nivel']."</h2>";
 
-         // echo "<div class='progress1'>";
+         echo "<div class='barras'>";
          echo "<div class='progress1'>";
-         echo"<div id='progress-bar'></div>";
+         echo"<div id='progress-bar1'><h1>$usuario[moedas]</h1></div>";
          echo"</div>";
 
          echo "<div class='progress2'>";
-         echo"<div id='progress-bar'></div>";
+         echo"<div id='progress-bar2'><h1>$usuario[moedas]</h1></div>";
          echo"</div>";
 
          echo "<div class='progress3'>";
-         echo"<div id='progress-bar'></div>";
+         echo"<div id='progress-bar3'><h1>$usuario[moedas]</h1></div>";
+         echo"</div>";
          echo"</div>";
          
          echo "<div class='desafios'>";
@@ -56,7 +57,7 @@
          echo"<p>Conquiste vitórias, acumule pontos e alcance seus objetivos agora!</p>";
          echo"<button>Comece já</button>";
          echo"</div>";
-                   
+         
 
          // echo "<br><br>Número de moedas: " . $usuario['moedas'];
          // echo "<br ><a href='pages/recompensa/ad.php'>Ganhe recompensas</a>";

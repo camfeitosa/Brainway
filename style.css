@@ -36,11 +36,18 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 130px;
+    height: 300px;
     border-radius: 5px;
     overflow: hidden;
     /* Oculta a imagem de sobreposição */
     transition: 0.3s;
+}
+
+
+element.style {
+    height: 100px;
+    /* background-color: red; */
+    height: 500px;
 }
 
 .overlay {
@@ -81,16 +88,65 @@
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
-#progress-bar {
-    background-color: #FF3598;
-    width: 20%;
+#progress-bar1 {
+    background-color: #F13C4E;
+    width: 25%;
     height: 16px;
     transition: all 100ms ease-in-out;
     border-radius: 5px;
 }
 
+#progress-bar2 {
+    background-color: #27AE61;
+    width: 50%;
+    height: 16px;
+    transition: all 100ms ease-in-out;
+    border-radius: 5px;
+}
+
+#progress-bar3 {
+    background-color: #F5C400;
+    width: 100%;
+    height: 16px;
+    transition: all 100ms ease-in-out;
+    border-radius: 5px;
+}
+
+#progress-bar2 h1 {
+    color: #000;
+    text-align: right;
+    font-family: Barlow;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+
+}
+
+#progress-bar1 h1 {
+    color: #000;
+    text-align: right;
+    font-family: Barlow;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+
+}
+
+#progress-bar3 h1 {
+    color: #000;
+    text-align: right;
+    font-family: Barlow;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+
+}
+
 .progress1, .progress2, .progress3 {
-    background-color: #8FCCF7;
+    background-color: #efefef;
     width: 135px;
     height: 16px;
     display: flex;
@@ -98,6 +154,8 @@
     border-radius: 5px;
     margin-top: 10px;
 }
+
+
 
 .container-section h2 {
     color: #000;
@@ -117,9 +175,63 @@
     height: 90%;
     /* background-color: red; */
     display: flex;
+    width: 95%;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+}
+
+.desafios h1 {
+    color: #000;
+    text-align: center;
+    font-family: Barlow;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.desafios {
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 500px;
+
+}
+
+.desafios p {
+    color: #000;
+    text-align: center;
+    font-family: Barlow;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.desafios button {
+    display: inline-flex;
+    padding: 8px 40px 8px 39px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background: #8854D1;
+    color: #FFF;
+    text-align: center;
+    font-family: Barlow;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    transition: 0.3s;
+
+}
+
+.desafios button:hover {
+    background: #B898E3;
 }
 
 .nome {
