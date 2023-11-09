@@ -32,6 +32,8 @@
 
          if ($avatar != null) {
             echo " <div class='container2'><div class='container-perfil'><button type='button'class='btn-se' data-toggle='modal' data-target='#modalExemplo'> <img src= '$avatar' alt='Imagem' class='perfil'><div class='overlay'><img src='edit.svg' class='pencil'></div></a></button></div>";
+            echo "<h2>Nivel: " . $usuario['nivel']."</h2>" ;
+
          } else {
             echo "<div class='container2'> <div class='container-perfil'><button type='button'class='btn-se' data-toggle='modal' data-target='#modalExemplo''><img src='pages/loja/personagens/aladin.png' class='perfil'><div class='overlay'><img src='edit.svg' class='pencil'></div></a></button></div>";
             echo "<h2>Nivel: " . $usuario['nivel']."</h2>" ;
@@ -65,12 +67,12 @@
          // echo "<br ><a href='pages/loja/exibir.php'>Loja</a>";
          // echo "<br ><a href= 'pages/inventario/index.php'>Inventario</a>";
 
-         // echo "<br ><a href='logout.php'>Fazer logout</a>";
+         echo "<br ><a href='logout.php'>Fazer logout</a>";
          echo "</div>";
 
       } else {
          // Se o usuário não estiver logado, redirecione-o para a página de login
-         echo "<a href='login/form.html'> Faça login </a>";
+         echo "<a href='auth/login/index.php'> Faça login </a>";
          exit();
       }
       ?>
