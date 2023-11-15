@@ -56,11 +56,6 @@ function showNotes() {
                                 <ul class="menu">
                                     <li onclick="updateNote(${id}, '${note.title}', '${filterDesc}')"><i class="uil uil-pen"></i>Editar</li>
                                     <li onclick="deleteNote(${id})"><i class="uil uil-trash"></i>Deletar</li>
-                                    <li>   
-                                        <div class="toggle-container"> <input type="checkbox" id="toggle" name="toggle" /><label for="toggle">Cor</label>
-                                        </div><i class="uil uil-palette"></i>
-                                    </li>
-                            
                                 </ul>
                             </div>
                         </div>
@@ -69,18 +64,6 @@ function showNotes() {
   });
 }
 showNotes();
-
-
-function changeColor(noteId, title, filterDesc) {
-    let description = filterDesc.replaceAll("<br/>", "\r\n");
-  updateId = noteId;
-  isUpdate = true;
-  addBox.click();
-  titleTag.value = title;
-  descTag.value = description;
-  // popupTitle.innerText = "";
-  addBtn.innerText = "Atualizar nota";
-}
 
 
 
@@ -112,6 +95,8 @@ function updateNote(noteId, title, filterDesc) {
   addBtn.innerText = "Atualizar nota";
 }
 
+
+
 // addBtn.addEventListener("click", (e) => {
 //   e.preventDefault();
 //   let title = titleTag.value.trim(),
@@ -133,12 +118,55 @@ function updateNote(noteId, title, filterDesc) {
 //     localStorage.setItem("notes", JSON.stringify(notes));
 //     showNotes();
 //     closeIcon.click();
+//     saveNoteToServer(noteInfo);
+//   }
+
+// });
+
+
+// addBtn.addEventListener("click", (e) => {
+//   e.preventDefault();
+//   let title = titleTag.value.trim(),
+//     description = descTag.value.trim();
+
+//   if (title || description) {
+//     let currentDate = new Date(),
+//       month = months[currentDate.getMonth()],
+//       day = currentDate.getDate(),
+//       year = currentDate.getFullYear();
+
+//     let noteInfo = { title, description, date: `${month} ${day}, ${year}` };
+
+//     // Adiciona ou atualiza a nota no servidor PHP
+//     saveNoteToServer(noteInfo);
 //   }
 // });
 
-const toggle = document.getElementById('toggle')
 
-toggle.addEventListener('change', (e)=> {
-    document.body.classList.toggle('dark', e.target.checked)
-})
 
+function saveNoteToServer(noteInfo) {
+  // Adapte a URL para o seu servidor PHP
+  const url = 'notes.php';
+
+  // Cria uma instância de XMLHttpRequest
+  const xhr = new XMLHttpRequest();
+
+  // Configura a solicitação para o servidor PHP
+  xhr.open('POST', url, true);
+  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+  // Define a função a ser chamada quando a resposta for recebida
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState == 4 && xhr.status == 200) {
+      // Atualiza as notas após a resposta bem-sucedida
+      showNotes();
+      closeIcon.click();
+    }
+  };
+
+  // Converte o objeto noteInfo em uma string de parâmetros POST
+  const params = `title=${encodeURIComponent(noteInfo.title)}&description=${encodeURIComponent(noteInfo.description)}`;
+
+  // Envia a solicitação ao servidor PHP
+  xhr.send(params);
+}

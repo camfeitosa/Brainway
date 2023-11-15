@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" href="style.css">
+   <link rel="stylesheet" href="style2.css">
    <title>Home</title>
 </head>
 
@@ -13,13 +12,8 @@
    <header>
       <div class="container-header">
          <?php
-         include('config/conexao.php');
-         echo "<br ><a href='pages/recompensa/ad.php'>Ganhe recompensas</a>";
-         echo "<br ><a href='config/form.php'>Configurações da conta</a>";
-         echo "<br ><a href='pages/loja/exibir.php'>Loja</a>";
-         echo "<br ><a href='logout.php'>Fazer logout</a>";
+         include('menu');
          ?>
-
       </div>
    </header>
 
@@ -30,7 +24,7 @@
 
       <div class="funcionalidades">
          <div class="func-menu"></div>
-         <?php //include('pages/notas/index.html'); ?>
+         <?php include('pages/notas/index.html'); ?>
       </div>
 
    </div>

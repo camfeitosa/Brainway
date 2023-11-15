@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <!-- Coding By CodingNepal - youtube.com/codingnepal -->
 <html lang="pt-br" dir="ltr">
@@ -11,11 +12,10 @@
   </head>
   <body>
     
-    <!-- <div class="toggle-container">
-      <input type="checkbox" id="toggle" name="toggle" /><label for="toggle"
-        >Toggle Theme</label
-      >
-    </div> -->
+    <!-- 
+      <div class="toggle-container">
+        <input type="checkbox" id="toggle" name="toggle" /><label for="toggle">Toggle Theme</label>
+      </div> -->
 
     <div class="popup-box">
       <div class="popup">

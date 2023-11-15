@@ -75,6 +75,7 @@ function obterDadosNotaInserida($conexao, $id_usuario, $title, $description) {
     return $nota;
 }
 
+
 // Fecha a conexão
 $conexao->close();
 ?>

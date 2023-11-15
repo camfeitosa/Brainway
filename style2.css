@@ -1,0 +1,12 @@
+@import url(assets/style/global.css);
+@import url(style.css);
+
+
+.funcionalidades {
+   justify-content: flex-start;
+    flex-direction: column;
+}
+
+.func-menu {
+    margin-left: 50px;
+}

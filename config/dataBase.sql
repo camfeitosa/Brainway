@@ -98,6 +98,23 @@ inicio DATETIME,
 fim DATETIME,
 FOREIGN KEY (id_user) REFERENCES usuario (id_user)
 );
+
+CREATE TABLE cores (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(50) NOT NULL,
+    codigo_cor VARCHAR(7) NOT NULL
+);
+INSERT INTO cores (nome, codigo_cor) VALUES
+    ('Cor1', '#D6F3ED'),
+    ('Cor2', '#DFF1FC'),
+    ('Cor3', '#DFF3E8'),
+    ('Cor4', '#EDE6F9'),
+    ('Cor5', '#F7DDDD'),
+    ('Cor6', '#FAF6CC'),
+    ('Cor7', '#FBEAD3'),
+    ('Cor8', '#FFE2F0');
+
+
 CREATE TABLE quiz (
     id INT AUTO_INCREMENT PRIMARY KEY,
     pergunta TEXT NOT NULL,
