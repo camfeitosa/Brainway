@@ -2,15 +2,24 @@
 session_start();
 include('../../config/conexao.php');
 
-// Verifica se o usuário está logado
-if (!isset($_SESSION['id_user'])) {
-    // Redireciona para a página de login ou realiza alguma outra ação
-    header("Location: /caminho/para/pagina-de-login.php");
-    exit();
+// Verifique se o usuário está logado
+if (isset($_SESSION['id_user'])) {
+    // Recupere o ID do usuário da sessão
+    $id_usuario = $_SESSION['id_user'];
+ 
+    // Busque o nome do usuario no banco de dados usando o ID do usuário
+    $query = "SELECT moedas FROM usuario WHERE id_user = '$id_usuario'";
+    $resultado = mysqli_query($conexao, $query);
+ 
+    $usuario = mysqli_fetch_assoc($resultado);
+    $recomp_atual = $usuario['moedas'];
+    
+    $nova_recomp = $recomp_atual + 5;
+    
+    //insere as moedas no banco
+    $sql = "UPDATE usuario SET moedas = '$nova_recomp' WHERE id_user = '$id_usuario'";
+    mysqli_query($conexao, $sql);
 }
-
-// Obtém o ID do usuário logado
-$id_usuario = $_SESSION['id_user'];
 
 // Verifica se o formulário foi enviado
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
