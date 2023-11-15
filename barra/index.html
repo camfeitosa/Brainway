@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barra de Progresso</title>
+</head>
+<body>
+    <h1>Barra de Progresso</h1>
+    <div id="progress-bar" style="width: 0%; background-color: #4CAF50; height: 30px;"></div>
+    <button onclick="fazerLogin()">Fazer Login</button>
+
+    <script>
+        function fazerLogin() {
+            fetch('login.php', {
+                method: 'POST',
+            })
+            .then(response => response.json())
+            .then(data => {
+                const progressBar = document.getElementById('progress-bar');
+                
+                if (data.progressIncreased) {
+                    progressBar.style.width = `${data.progress}%`;
+                    alert('Login realizado com sucesso!');
+                } else {
+                    alert('Você já fez login hoje. Tente novamente amanhã.');
+                }
+            })
+            .catch(error => console.error('Erro ao fazer login:', error));
+        }
+    </script>
+</body>
+</html>

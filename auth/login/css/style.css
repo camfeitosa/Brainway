@@ -143,6 +143,7 @@ input {
 
 input:focus {
     outline: none;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.11);
 }
 
 .btn-login {

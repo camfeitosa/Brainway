@@ -132,7 +132,7 @@ $cr = "pages/loja/" . $row['caminho'];
       echo '<div class="container">';
       echo '<div class="product">';
       echo '<img src="' . $cr . '" alt="' . $row['nome'] . '" width="100" class="img-inventario">';
-      echo '<h3>' . $row['nome'] . '</h3>';
+      echo '<h2>' . $row['nome'] . '</h2>';
       echo '<form method="post" action="pages/inventario/selecionar.php">';
       echo '<input type="hidden" name="caminho" value="' . $row['caminho'] . '">
       <button class="btn-inventario" type="submit">Selecionar</button>

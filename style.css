@@ -79,7 +79,7 @@ element.style {
     flex-direction: column;
     margin-top: 20px;
     margin-left: 20px;
-    width: 250px;
+    width: 240px;
     height: 95vh;
     margin-bottom: 10px;
     flex-shrink: 0;
@@ -147,8 +147,8 @@ element.style {
 
 .progress1, .progress2, .progress3 {
     background-color: #efefef;
-    width: 135px;
-    height: 16px;
+    width: 125px;
+    height: 14px;
     display: flex;
     flex-direction: column;
     border-radius: 5px;
@@ -237,12 +237,11 @@ element.style {
 .nome {
     /* background-color: green; */
     position: relative;
-    top: 10px;
     width: 80%;
     height: 70px;
     display: flex;
     flex-direction: column;
-    justify-content: end;
+    justify-content: center;
     align-items: center;
     margin-top: 10px;
 
@@ -273,8 +272,95 @@ element.style {
     height: 80px;
     flex-shrink: 0;
     background: #FFF;
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
 }
 
-/* .bdname{
-   
-} */
+.bdname{
+    width: 100%;
+    height: 25px;
+}
+
+.footer {
+    width: 100%;
+    height: 300px;
+    flex-shrink: 0;
+    background-color: #FFF;
+    margin-top: 70px;
+}
+
+.container-barras {
+    /* background-color: #B898E3; */
+    width: 100%;
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    justify-content: center;
+    height: 150px;
+}
+
+.icons {
+    /* background-color: #8854D1; */
+    display: flex;
+    flex-direction: column;
+    height: 85px;
+    width: 30px;
+    justify-content: space-between;
+}
+
+.container-pontos h5 {
+    font-size: 14px;
+}
+
+.container-pontos {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100px;
+    width: 30px;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.container-barras img {
+    width: 18px;
+    height: 18px;
+}
+
+.barras {
+    width: 60%;
+    /* background-color: blue; */
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+    height: 100px;
+    /* margin-top: 10px; */
+    gap: 9px;
+}
+
+.funcionalidades {
+    /* background-color: red; */
+    height: 95vh;
+    width: 100%;
+    display: flex;
+    margin-top: 20px;
+    justify-content: center;
+    /* flex-direction: column; */
+
+}
+
+.container-all {
+    display: flex;
+}
+
+.func-menu {
+    /* margin-right: 80px; */
+    width: 90%;
+    height: 70px;
+    flex-shrink: 0;
+    border-radius: 5px;
+    background: #FFF;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}

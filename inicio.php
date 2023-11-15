@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
    <meta charset="UTF-8">
@@ -10,14 +10,37 @@
 
 <body class="normal">
 
-<header>
-   <div class="container-header">
-   </div>
-</header>
+   <header>
+      <div class="container-header">
+         <?php
+         include('config/conexao.php');
+         echo "<br ><a href='pages/recompensa/ad.php'>Ganhe recompensas</a>";
+         echo "<br ><a href='config/form.php'>Configurações da conta</a>";
+         echo "<br ><a href='pages/loja/exibir.php'>Loja</a>";
+         echo "<br ><a href='logout.php'>Fazer logout</a>";
+         ?>
 
-<div class="container-section">
-   <?php include('includes/index.php'); ?>
-</div>
+      </div>
+   </header>
+
+   <div class="container-all">
+      <div class="container-section">
+         <?php include('includes/index.php'); ?>
+      </div>
+
+      <div class="funcionalidades">
+         <div class="func-menu">
+            
+         </div>
+         <?php //include('pages/pomodoro/pomodoro.php'); ?>
+      </div>
+
+   </div>
+
+
+   <footer>
+      <div class="footer"></div>
+   </footer>
 
 </body>
 

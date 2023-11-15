@@ -40,20 +40,40 @@
          }
 
 
+         echo "<div class='container-barras'>";
+
+         echo "<div class='icons'>";
+            echo "<img src='includes/img/coracao.png' class='coracao'>";
+            echo "<img src='includes/img/pontos.png' class='pontos'>";
+            echo "<img src='includes/img/moeda.png' class='moeda'>";
+         echo"</div>";
+
          echo "<div class='barras'>";
          echo "<div class='progress1'>";
-         echo"<div id='progress-bar1'><h1>$usuario[moedas]</h1></div>";
-         echo"</div>";
-
-         echo "<div class='progress2'>";
-         echo"<div id='progress-bar2'><h1>$usuario[moedas]</h1></div>";
-         echo"</div>";
-
-         echo "<div class='progress3'>";
-         echo"<div id='progress-bar3'><h1>$usuario[moedas]</h1></div>";
-         echo"</div>";
+         echo"<div id='progress-bar1'></div>";
+         // echo "<h4>$usuario[moedas]</h4>";
          echo"</div>";
          
+         echo "<div class='progress2'>";
+         echo"<div id='progress-bar2'></div>";
+         echo"</div>";
+         // echo "<h3>$usuario[moedas]</h3>";
+
+         echo "<div class='progress3'>";
+         echo"<div id='progress-bar3'></div>";
+         echo"</div>";
+         
+         echo"</div>";
+         
+         echo "<div class='container-pontos'>";
+         echo "<h5>$usuario[moedas]</h5>";
+         echo "<h5>$usuario[moedas]</h5>";
+         echo "<h5>$usuario[moedas]</h5>";
+         echo"</div>";
+
+         echo"</div>";
+         
+
          echo "<div class='desafios'>";
          echo"<h1>Supere os desafios</h1>";
          echo"<p>Conquiste vitórias, acumule pontos e alcance seus objetivos agora!</p>";
@@ -66,8 +86,7 @@
          // echo "<br ><a href='config/form.php'>Configurações da conta</a>";
          // echo "<br ><a href='pages/loja/exibir.php'>Loja</a>";
          // echo "<br ><a href= 'pages/inventario/index.php'>Inventario</a>";
-
-         echo "<br ><a href='logout.php'>Fazer logout</a>";
+         // echo "<br ><a href='logout.php'>Fazer logout</a>";
          echo "</div>";
 
       } else {
