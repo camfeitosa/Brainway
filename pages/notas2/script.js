@@ -95,31 +95,31 @@ function updateNote(noteId, title, filterDesc) {
 }
 
 
-// addBtn.addEventListener("click", (e) => {
-//   e.preventDefault();
-//   let title = titleTag.value.trim(),
-//     description = descTag.value.trim();
+addBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  let title = titleTag.value.trim(),
+    description = descTag.value.trim();
 
-//   if (title || description) {
-//     let currentDate = new Date(),
-//       month = months[currentDate.getMonth()],
-//       day = currentDate.getDate(),
-//       year = currentDate.getFullYear();
+  if (title || description) {
+    let currentDate = new Date(),
+      month = months[currentDate.getMonth()],
+      day = currentDate.getDate(),
+      year = currentDate.getFullYear();
 
-//     let noteInfo = { title, description, date: `${month} ${day}, ${year}` };
-//     if (!isUpdate) {
-//       notes.push(noteInfo);
-//     } else {
-//       isUpdate = false;
-//       notes[updateId] = noteInfo;
-//     }
-//     localStorage.setItem("notes", JSON.stringify(notes));
-//     showNotes();
-//     closeIcon.click();
-//     saveNoteToServer(noteInfo);
-//   }
+    let noteInfo = { title, description, date: `${month} ${day}, ${year}` };
+    if (!isUpdate) {
+      notes.push(noteInfo);
+    } else {
+      isUpdate = false;
+      notes[updateId] = noteInfo;
+    }
+    localStorage.setItem("notes", JSON.stringify(notes));
+    showNotes();
+    closeIcon.click();
+    saveNoteToServer(noteInfo);
+  }
 
-// });
+});
 
 
 // addBtn.addEventListener("click", (e) => {

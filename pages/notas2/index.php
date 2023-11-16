@@ -38,6 +38,27 @@
               <textarea id="description" placeholder="Adicione uma descrição" name="description" spellcheck="false"></textarea>
             </div>
             <button type="submit">Submit</button>
+            <form id="formCor" action="" method="post">
+        <label for="cor">Escolha uma cor:</label>
+        <select name="cor" id="cor">
+            <?php
+            include("../../config/conexao.php");
+
+            // Consulta para obter as cores do banco de dados
+            $query = "SELECT id, nome, codigo_cor FROM cores";
+            $result = $conexao->query($query);
+
+            // Loop para exibir as opções de cores
+            while ($row = $result->fetch_assoc()) {
+                echo "<option value='" . $row['codigo_cor'] . "'>" . $row['nome'] . "</option>";
+            }
+
+            // Fechar a conexão
+            $conexao->close();
+            ?>
+        </select>
+        <button type="button" onclick="mudarCor()">Mudar Cor</button>
+    </form>
           </form>
         </div>
       </div>
@@ -61,29 +82,6 @@
         //}
         ?>
     </div>
-  
-
-    <form id="formCor" action="" method="post">
-        <label for="cor">Escolha uma cor:</label>
-        <select name="cor" id="cor">
-            <?php
-            include("../../config/conexao.php");
-
-            // Consulta para obter as cores do banco de dados
-            $query = "SELECT id, nome, codigo_cor FROM cores";
-            $result = $conexao->query($query);
-
-            // Loop para exibir as opções de cores
-            while ($row = $result->fetch_assoc()) {
-                echo "<option value='" . $row['codigo_cor'] . "'>" . $row['nome'] . "</option>";
-            }
-
-            // Fechar a conexão
-            $conexao->close();
-            ?>
-        </select>
-        <button type="button" onclick="mudarCor()">Mudar Cor</button>
-    </form>
 
     <script>
         function mudarCor() {
@@ -91,12 +89,14 @@
             var corSelecionada = $("#cor").val();
 
             // Atualizar a cor da div usando jQuery
+            $(".content").css("background-color", corSelecionada);
             $(".note").css("background-color", corSelecionada);
         }
     </script>
     <script src="script.js"></script>
-    <!-- Adicione este código onde você deseja exibir as notas -->
-    
+
+
+    <!-- Adicione este código onde você deseja exibir as notas PHP -->
     <div id="notes-container"></div>
 
   </body>

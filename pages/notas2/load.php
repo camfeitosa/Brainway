@@ -54,7 +54,7 @@ $stmt_notas->execute();
 $result_notas = $stmt_notas->get_result();
 
 
-// Mostra as notas na página
+// Mostra as notas na página                                         
 while ($nota = $result_notas->fetch_assoc()) {
     echo "ID Nota: " . $nota['id_nota'] . "<br>";
     echo "Título: " . $nota['titulo'] . "<br>";

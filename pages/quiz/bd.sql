@@ -12,3 +12,4 @@ CREATE TABLE quiz (
     usuario_id INT,
     FOREIGN KEY (usuario_id) REFERENCES usuarios(id)
 );
+ 
