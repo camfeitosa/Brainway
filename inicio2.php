@@ -12,7 +12,7 @@
    <header>
       <div class="container-header">
          <?php
-         include('menu');
+         //include('menu');
          ?>
       </div>
    </header>
@@ -24,7 +24,7 @@
 
       <div class="funcionalidades">
          <div class="func-menu"></div>
-         <?php include('pages/notas/index.html'); ?>
+         <?php include('pages/notas/index.php'); ?>
       </div>
 
    </div>

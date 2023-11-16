@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8">  
     <title>Notes App in JavaScript | CodingNepal</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="pages/notas/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Iconscout Link For Icons -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
@@ -50,7 +50,7 @@
       </li>
     </div>
 
-    <script src="script.js"></script>
+    <script src="pages/notas/script.js"></script>
     
   </body>
 </html>

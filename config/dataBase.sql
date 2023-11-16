@@ -73,14 +73,31 @@ descricao VARCHAR (254),
 status_item VARCHAR (20),
 FOREIGN KEY (id_lista) REFERENCES lista (id_lista)
 );
- 
+
+CREATE TABLE cores (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(50) NOT NULL,
+    codigo_cor VARCHAR(7) NOT NULL
+);
+INSERT INTO cores (nome, codigo_cor) VALUES
+    ('Cor1', '#D6F3ED'),
+    ('Cor2', '#DFF1FC'),
+    ('Cor3', '#DFF3E8'),
+    ('Cor4', '#EDE6F9'),
+    ('Cor5', '#F7DDDD'),
+    ('Cor6', '#FAF6CC'),
+    ('Cor7', '#FBEAD3'),
+    ('Cor8', '#FFE2F0');
+
 CREATE TABLE nota (
 id_nota INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 id_user INT,
+id_cor INT,
 titulo VARCHAR (254),
 conteudo VARCHAR (254),
 data_criacao DATE,
-FOREIGN KEY (id_user) REFERENCES usuario (id_user)
+FOREIGN KEY (id_user) REFERENCES usuario (id_user),
+FOREIGN KEY (id_cor) REFERENCES cores (id)
 );
  
 CREATE TABLE rotina (
@@ -98,22 +115,6 @@ inicio DATETIME,
 fim DATETIME,
 FOREIGN KEY (id_user) REFERENCES usuario (id_user)
 );
-
-CREATE TABLE cores (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    nome VARCHAR(50) NOT NULL,
-    codigo_cor VARCHAR(7) NOT NULL
-);
-INSERT INTO cores (nome, codigo_cor) VALUES
-    ('Cor1', '#D6F3ED'),
-    ('Cor2', '#DFF1FC'),
-    ('Cor3', '#DFF3E8'),
-    ('Cor4', '#EDE6F9'),
-    ('Cor5', '#F7DDDD'),
-    ('Cor6', '#FAF6CC'),
-    ('Cor7', '#FBEAD3'),
-    ('Cor8', '#FFE2F0');
-
 
 CREATE TABLE quiz (
     id INT AUTO_INCREMENT PRIMARY KEY,
