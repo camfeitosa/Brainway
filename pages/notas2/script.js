@@ -66,7 +66,6 @@ function showNotes() {
 showNotes();
 
 
-
 function showMenu(elem) {
   elem.parentElement.classList.add("show");
   document.addEventListener("click", (e) => {
@@ -94,7 +93,6 @@ function updateNote(noteId, title, filterDesc) {
   // popupTitle.innerText = "";
   addBtn.innerText = "Atualizar nota";
 }
-
 
 
 // addBtn.addEventListener("click", (e) => {
@@ -170,3 +168,49 @@ function saveNoteToServer(noteInfo) {
   // Envia a solicitação ao servidor PHP
   xhr.send(params);
 }
+
+
+
+// Função para carregar e exibir as notas do usuário
+function loadNotes() {
+  const xhr = new XMLHttpRequest();
+  const url = 'load.php'; // Nome do arquivo PHP que recuperará as notas
+
+  xhr.open('GET', url, true);
+
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState == 4 && xhr.status == 200) {
+      const notesContainer = document.getElementById('notes-container');
+      notesContainer.innerHTML = xhr.responseText; // Atualiza o conteúdo do contêiner com as notas
+    }
+  };
+
+  xhr.send();
+}
+
+// Chame a função loadNotes() para carregar as notas quando a página for carregada
+document.addEventListener('DOMContentLoaded', function () {
+  loadNotes();
+});
+
+// Modifique a função saveNoteToServer() para chamar loadNotes() após salvar com sucesso
+function saveNoteToServer(noteInfo) {
+  const url = 'notes.php';
+
+  const xhr = new XMLHttpRequest();
+  xhr.open('POST', url, true);
+  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState == 4 && xhr.status == 200) {
+      // Atualiza as notas após a resposta bem-sucedida
+      loadNotes();
+      closeIcon.click();
+    }
+  };
+
+  const params = `title=${encodeURIComponent(noteInfo.title)}&description=${encodeURIComponent(noteInfo.description)}`;
+  xhr.send(params);
+}
+
+

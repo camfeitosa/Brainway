@@ -31,18 +31,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     header("Location: ../../inicio.php");
   } else {
     include ('erro_cad.php');
-    //echo "Erro ao cadastrar <br>";
-    //verifica se já existe esse email ou nome de usuario no bd
-
-
-    /*$verf = "SELECT email FROM  usuario WHERE email = '$email'";
-    $fim = $conexao->query($verf);
-
-    if ($fim->num_rows > 0) {
-    echo "Email já está cadastrado!";
-    } else {
-    echo "Nome de usuário já cadastrado!";
-    } */
 }
 }
 

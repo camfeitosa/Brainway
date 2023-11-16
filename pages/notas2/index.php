@@ -95,6 +95,9 @@
         }
     </script>
     <script src="script.js"></script>
+    <!-- Adicione este código onde você deseja exibir as notas -->
     
+    <div id="notes-container"></div>
+
   </body>
 </html>

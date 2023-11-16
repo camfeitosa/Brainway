@@ -15,14 +15,13 @@ if (isset($_SESSION['id_user'])) {
     $usuario = mysqli_fetch_assoc($resultado);
     $recomp_atual = $usuario['moedas'];
     
-    //Adiciona moedas ao criar uma nota
+    // Adiciona moedas ao criar uma nota
     $nova_recomp = $recomp_atual + 5;
     
-    //insere as moedas no banco
+    // Insere as moedas no banco
     $sql = "UPDATE usuario SET moedas = '$nova_recomp' WHERE id_user = '$id_usuario'";
     mysqli_query($conexao, $sql);
 }
-
 
 // Verifica se o formulário foi enviado
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -41,11 +40,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         echo "Erro: " . $stmt->error;
     }
-
     // Fecha a declaração preparada
     $stmt->close();
 }
-
 
 // Consulta SQL para recuperar todas as notas do usuário
 $sql_notas = "SELECT id_nota, titulo, conteudo, data_criacao FROM nota WHERE id_user = ?";
@@ -53,7 +50,9 @@ $stmt_notas = $conexao->prepare($sql_notas);
 $stmt_notas->bind_param("i", $id_usuario);
 $stmt_notas->execute();
 
+
 $result_notas = $stmt_notas->get_result();
+
 
 // Mostra as notas na página
 while ($nota = $result_notas->fetch_assoc()) {
@@ -67,47 +66,6 @@ while ($nota = $result_notas->fetch_assoc()) {
 // Fecha a declaração preparada
 $stmt_notas->close();
 
-
-// if ($_SERVER["REQUEST_METHOD"] == "POST") {
-//     if (isset($_POST["title"]) && isset($_POST["description"])) {
-//         // Seu código PHP para adicionar nota ao banco de dados aqui
-
-//         // Após inserir a nota, obtenha os dados da nota
-//         $notaInserida = obterDadosNotaInserida($conexao, $id_usuario, $title, $description);
-
-//         // Retorne os dados da nota como JSON
-//         echo json_encode($notaInserida);
-//     } else {
-//         echo json_encode(["erro" => "Campos obrigatórios não definidos."]);
-//     }
-// } else {
-//     echo json_encode(["erro" => "Acesso inválido."]);
-// }
-
-// // Função para obter os dados da nota inserida
-// function obterDadosNotaInserida($conexao, $id_usuario, $title, $description) {
-//     // ... (seu código para inserir a nota)
-
-//     // Obtém o ID da última inserção
-//     $id_inserido = $conexao->insert_id;
-
-//     // Consulta para obter os dados da nota recém-inserida
-//     $sql = "SELECT * FROM nota WHERE id_nota = ?";
-//     $stmt = $conexao->prepare($sql);
-//     $stmt->bind_param("i", $id_inserido);
-//     $stmt->execute();
-
-//     // Obtém os resultados da consulta
-//     $result = $stmt->get_result();
-//     $nota = $result->fetch_assoc();
-
-//     // Fecha a declaração preparada
-//     $stmt->close();
-
-//     return $nota;
-// }
-
-
-// Fecha a conexão
+// Fecha a conexão com o banco de dados
 $conexao->close();
 ?>
