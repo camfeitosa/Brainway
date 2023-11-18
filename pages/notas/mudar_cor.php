@@ -1,5 +1,5 @@
 <?php
-include("../../config/conexao.php");
+include("../../../config/conexao.php");
 
 // Consulta para obter as cores do banco de dados
 $query = "SELECT id, nome, codigo_cor FROM cores";

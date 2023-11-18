@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="pt-br" dir="ltr">
 
@@ -15,11 +13,6 @@
 </head>
 
 <body>
-  <!-- 
-      <div class="toggle-container">
-        <input type="checkbox" id="toggle" name="toggle" /><label for="toggle">Toggle Theme</label>
-      </div> -->
-
   <div class="popup-box">
     <div class="popup">
       <div class="content">
@@ -40,17 +33,28 @@
             <textarea id="description" placeholder="Adicione uma descrição" name="description"
               spellcheck="false"></textarea>
           </div>
-          <button type="submit">Submit</button>
+          <button type="submit">Enviar</button>
         </form>
       </div>
     </div>
+  </div>
+
+  <div class="wrapper">
+    <li class="add-box">
+      <div class="icon"><i class="uil uil-plus"></i></div>
+      <p>Adicionar nota</p>
+    </li>
+  </div>
+
+  <div id="notes-container"></div>
+
   </div>
 
   <form id="formCor" action="" method="post">
     <label for="cor">Escolha uma cor:</label>
     <select name="cor" id="cor">
       <?php
-      include("../../config/conexao.php");
+      include("../../../config/conexao.php");
 
       //cores do banco de dados
       $query = "SELECT id, nome, codigo_cor FROM cores";
@@ -64,18 +68,11 @@
       // Fechar a conexão
       $conexao->close();
       ?>
+
     </select>
+
     <button type="button" onclick="mudarCor()">Mudar Cor</button>
   </form>
-
-  <div class="wrapper">
-    <li class="add-box">
-      <div class="icon"><i class="uil uil-plus"></i></div>
-      <p>Adicionar nota</p>
-    </li>
-  </div>
-  </div>
-
 
   <script>
     function mudarCor() {
@@ -87,10 +84,6 @@
       $(".note").css("background-color", corSelecionada);
     }
   </script>
-
-
-  <!-- Adicione este código onde você deseja exibir as notas PHP -->
-  <div id="notes-container"></div>
 
 </body>
 

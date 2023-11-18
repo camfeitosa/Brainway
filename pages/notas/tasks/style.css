@@ -13,13 +13,7 @@ body{
   color: #EFEFEF;
   background: #EFEFEF;
 }
-.container-wrapper{
-  /* background-color: red; */
-  width: 400px;
-  display: inline-grid;
-  grid-template-columns: repeat(auto-fill, 400px);
 
-}
 .wrapper{
   margin: 50px;
   display: grid;

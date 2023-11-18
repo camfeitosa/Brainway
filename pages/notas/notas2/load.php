@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('../../config/conexao.php');
+include('../../../config/conexao.php');
 
 // Verifique se o usuário está logado
 
@@ -15,57 +15,58 @@ if (isset($_SESSION['id_user'])) {
     $usuario = mysqli_fetch_assoc($resultado);
     $recomp_atual = $usuario['moedas'];
     
-    // Adiciona moedas ao criar uma nota
+    //Adiciona moedas ao criar uma nota
     $nova_recomp = $recomp_atual + 5;
     
-    // Insere as moedas no banco
+    //insere as moedas no banco
     $sql = "UPDATE usuario SET moedas = '$nova_recomp' WHERE id_user = '$id_usuario'";
     mysqli_query($conexao, $sql);
 }
 
-// Verifica se o formulário foi enviado
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $title = $_POST["title"];
-    $description = $_POST["description"];
+$id_user = $_SESSION['id_user'];
 
-    // Prepara e executa a instrução SQL para inserir os dados na tabela
-    $sql = "INSERT INTO nota (id_user, titulo, conteudo, data_criacao) VALUES (?, ?, ?, NOW())";
+// Adapte isso de acordo com o seu banco de dados
+$query = "SELECT * FROM nota WHERE id_user = ?";
+$stmt = $conexao->prepare($query);
+
+if ($stmt) {
+    $stmt->bind_param("i", $id_user);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $notes = $result->fetch_all(MYSQLI_ASSOC);
+
     
-    // Utiliza uma declaração preparada para evitar injeção de SQL
-    $stmt = $conexao->prepare($sql);
-    $stmt->bind_param("iss", $id_usuario, $title, $description);
-
-    if ($stmt->execute()) {
-        header("Location: index.php");
-    } else {
-        echo "Erro: " . $stmt->error;
-    }
-    // Fecha a declaração preparada
+    foreach ($notes as $note) {
+    echo '<div class="container-wrapper">';
+    // Converta as notas em HTML e envie como resposta
+    echo '<div class="wrapper">';
+    echo '<li class="note">';
+    echo '    <div class="details">';
+    // Use os índices corretos para acessar os dados da nota
+    echo '        <p>' . htmlspecialchars($note['titulo']) . '</p>';
+    echo '        <div class="desc">' . nl2br(htmlspecialchars($note['conteudo'])) . '</div>';
+    echo '    </div>';
+    echo '    <div class="bottom-content">';
+    // Adicione uma verificação para o índice 'data_criacao' e use htmlspecialchars apenas quando o valor estiver definido
+    echo '        <span>' . (isset($note['data_criacao']) ? htmlspecialchars($note['data_criacao']) : '') . '</span>';
+    echo '        <div class="settings">';
+    echo '            <i onclick="showMenu(this)" class="uil uil-ellipsis-h"></i>';
+    echo '            <ul class="menu">';
+    // Use os índices corretos para acessar os dados da nota
+    echo '                <li onclick="updateNote(' . $note['id_nota'] . ', \'' . htmlspecialchars($note['titulo']) . '\', \'' . nl2br(htmlspecialchars($note['conteudo'])) . '\')"><i class="uil uil-pen"></i>Editar</li>';
+    echo '                <li onclick="deleteNote(' . $note['id_nota'] . ')"><i class="uil uil-trash"></i>Deletar</li>';
+    echo '            </ul>';
+    echo '        </div>';
+    echo '    </div>';
+    echo '</li>';
+    echo '</div>';
+    echo '</div>';
+}
     $stmt->close();
+} else {
+    // Trate o erro na preparação da declaração
+    die('Erro na preparação da declaração: ' . $conexao->error);
 }
 
-// Consulta SQL para recuperar todas as notas do usuário
-$sql_notas = "SELECT id_nota, titulo, conteudo, data_criacao FROM nota WHERE id_user = ?";
-$stmt_notas = $conexao->prepare($sql_notas);
-$stmt_notas->bind_param("i", $id_usuario);
-$stmt_notas->execute();
-
-
-$result_notas = $stmt_notas->get_result();
-
-
-// Mostra as notas na página                                         
-while ($nota = $result_notas->fetch_assoc()) {
-    echo "ID Nota: " . $nota['id_nota'] . "<br>";
-    echo "Título: " . $nota['titulo'] . "<br>";
-    echo "Conteúdo: " . $nota['conteudo'] . "<br>";
-    echo "Data de Criação: " . $nota['data_criacao'] . "<br>";
-    echo "<hr>";
-}
-
-// Fecha a declaração preparada
-$stmt_notas->close();
-
-// Fecha a conexão com o banco de dados
 $conexao->close();
 ?>

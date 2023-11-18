@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('config/conexao.php');
+include('../../config/conexao.php');
 
 // Verifica se o usuário está logado
 if (!isset($_SESSION['id_user'])) {
@@ -16,9 +16,10 @@ $id_usuario = $_SESSION['id_user'];
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $title = $_POST["title"];
     $description = $_POST["description"];
+    $cor = $_POST["cor"];
 
     // Prepara e executa a instrução SQL para inserir os dados na tabela
-    $sql = "INSERT INTO nota (id_user, titulo, conteudo, data_criacao) VALUES (?, ?, ?, NOW())";
+    $sql = "INSERT INTO notes (id_user, titulo, conteudo, data_criacao, id_cor) VALUES (?, ?, ?, NOW(), ?)";
     
     // Utiliza uma declaração preparada para evitar injeção de SQL
     $stmt = $conexao->prepare($sql);

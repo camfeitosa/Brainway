@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('../../config/conexao.php');
+include('../../../config/conexao.php');
 
 // Verifique se o usuário está logado
 
@@ -38,6 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($stmt->execute()) {
         header("Location: index.php");
+        exit;
     } else {
         echo "Erro: " . $stmt->error;
     }
@@ -46,68 +47,61 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->close();
 }
 
-
-// Consulta SQL para recuperar todas as notas do usuário
-$sql_notas = "SELECT id_nota, titulo, conteudo, data_criacao FROM nota WHERE id_user = ?";
-$stmt_notas = $conexao->prepare($sql_notas);
-$stmt_notas->bind_param("i", $id_usuario);
-$stmt_notas->execute();
-
-$result_notas = $stmt_notas->get_result();
-
-// Mostra as notas na página
-while ($nota = $result_notas->fetch_assoc()) {
-    echo "ID Nota: " . $nota['id_nota'] . "<br>";
-    echo "Título: " . $nota['titulo'] . "<br>";
-    echo "Conteúdo: " . $nota['conteudo'] . "<br>";
-    echo "Data de Criação: " . $nota['data_criacao'] . "<br>";
-    echo "<hr>";
-}
-
-// Fecha a declaração preparada
-$stmt_notas->close();
+// Execute a lógica para carregar notas do banco de dados
+// Certifique-se de selecionar apenas as notas associadas ao ID do usuário
 
 
-// if ($_SERVER["REQUEST_METHOD"] == "POST") {
-//     if (isset($_POST["title"]) && isset($_POST["description"])) {
-//         // Seu código PHP para adicionar nota ao banco de dados aqui
+// $id_user = $_SESSION['id_user'];
 
-//         // Após inserir a nota, obtenha os dados da nota
-//         $notaInserida = obterDadosNotaInserida($conexao, $id_usuario, $title, $description);
+// // Adapte isso de acordo com o seu banco de dados
+// $query = "SELECT * FROM nota WHERE id_user = ?";
+// $stmt = $conexao->prepare($query);
 
-//         // Retorne os dados da nota como JSON
-//         echo json_encode($notaInserida);
-//     } else {
-//         echo json_encode(["erro" => "Campos obrigatórios não definidos."]);
-//     }
-// } else {
-//     echo json_encode(["erro" => "Acesso inválido."]);
-// }
-
-// // Função para obter os dados da nota inserida
-// function obterDadosNotaInserida($conexao, $id_usuario, $title, $description) {
-//     // ... (seu código para inserir a nota)
-
-//     // Obtém o ID da última inserção
-//     $id_inserido = $conexao->insert_id;
-
-//     // Consulta para obter os dados da nota recém-inserida
-//     $sql = "SELECT * FROM nota WHERE id_nota = ?";
-//     $stmt = $conexao->prepare($sql);
-//     $stmt->bind_param("i", $id_inserido);
+// if ($stmt) {
+//     $stmt->bind_param("i", $id_user);
 //     $stmt->execute();
-
-//     // Obtém os resultados da consulta
 //     $result = $stmt->get_result();
-//     $nota = $result->fetch_assoc();
+//     $notes = $result->fetch_all(MYSQLI_ASSOC);
 
-//     // Fecha a declaração preparada
-//     $stmt->close();
+//     // Converta as notas em HTML e envie como resposta
+//     foreach ($notes as $note) {
+//         // Converta as notas em HTML e envie como resposta
+//       // ...
 
-//     return $nota;
+// foreach ($notes as $note) {
+//     // Converta as notas em HTML e envie como resposta
+//     echo '<div class="wrapper">';
+//     echo '<li class="note">';
+//     echo '    <div class="details">';
+//     // Use os índices corretos para acessar os dados da nota
+//     echo '        <p>' . htmlspecialchars($note['titulo']) . '</p>';
+//     echo '        <div class="desc">' . nl2br(htmlspecialchars($note['conteudo'])) . '</div>';
+//     echo '    </div>';
+//     echo '    <div class="bottom-content">';
+//     // Adicione uma verificação para o índice 'data_criacao' e use htmlspecialchars apenas quando o valor estiver definido
+//     echo '        <span>' . (isset($note['data_criacao']) ? htmlspecialchars($note['data_criacao']) : '') . '</span>';
+//     echo '        <div class="settings">';
+//     echo '            <i onclick="showMenu(this)" class="uil uil-ellipsis-h"></i>';
+//     echo '            <ul class="menu">';
+//     // Use os índices corretos para acessar os dados da nota
+//     echo '                <li onclick="updateNote(' . $note['id_nota'] . ', \'' . htmlspecialchars($note['titulo']) . '\', \'' . nl2br(htmlspecialchars($note['conteudo'])) . '\')"><i class="uil uil-pen"></i>Editar</li>';
+//     echo '                <li onclick="deleteNote(' . $note['id_nota'] . ')"><i class="uil uil-trash"></i>Deletar</li>';
+//     echo '            </ul>';
+//     echo '        </div>';
+//     echo '    </div>';
+//     echo '</li>';
+//     echo '</div>';
 // }
 
+// // ...
 
-// Fecha a conexão
+//     }
+
+//     $stmt->close();
+// } else {
+//     // Trate o erro na preparação da declaração
+//     die('Erro na preparação da declaração: ' . $conexao->error);
+// }
+
 $conexao->close();
 ?>

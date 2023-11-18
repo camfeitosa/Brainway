@@ -142,36 +142,39 @@ addBtn.addEventListener("click", (e) => {
 
 
 
+// ...
+
 function saveNoteToServer(noteInfo) {
-  // Adapte a URL para o seu servidor PHP
   const url = 'notes.php';
 
-  // Cria uma instância de XMLHttpRequest
   const xhr = new XMLHttpRequest();
-
-  // Configura a solicitação para o servidor PHP
   xhr.open('POST', url, true);
   xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
-  // Define a função a ser chamada quando a resposta for recebida
   xhr.onreadystatechange = function () {
-    if (xhr.readyState == 4 && xhr.status == 200) {
-      // Atualiza as notas após a resposta bem-sucedida
-      showNotes();
-      closeIcon.click();
+    if (xhr.readyState == 4) {
+      if (xhr.status == 200) {
+        // Sucesso na comunicação com o servidor
+        loadNotes(); // Atualiza as notas após o sucesso
+        closeIcon.click();
+      } else {
+        // Tratamento de erro
+        console.error('Erro na comunicação com o servidor');
+      }
     }
   };
 
-  // Converte o objeto noteInfo em uma string de parâmetros POST
   const params = `title=${encodeURIComponent(noteInfo.title)}&description=${encodeURIComponent(noteInfo.description)}`;
-
-  // Envia a solicitação ao servidor PHP
   xhr.send(params);
 }
+
+// ...
 
 
 
 // Função para carregar e exibir as notas do usuário
+
+
 function loadNotes() {
   const xhr = new XMLHttpRequest();
   const url = 'load.php'; // Nome do arquivo PHP que recuperará as notas
@@ -193,24 +196,27 @@ document.addEventListener('DOMContentLoaded', function () {
   loadNotes();
 });
 
+
+
 // Modifique a função saveNoteToServer() para chamar loadNotes() após salvar com sucesso
-function saveNoteToServer(noteInfo) {
-  const url = 'notes.php';
 
-  const xhr = new XMLHttpRequest();
-  xhr.open('POST', url, true);
-  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+// function saveNoteToServer(noteInfo) {
+//   const url = 'notes.php';
 
-  xhr.onreadystatechange = function () {
-    if (xhr.readyState == 4 && xhr.status == 200) {
-      // Atualiza as notas após a resposta bem-sucedida
-      loadNotes();
-      closeIcon.click();
-    }
-  };
+//   const xhr = new XMLHttpRequest();
+//   xhr.open('POST', url, true);
+//   xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
-  const params = `title=${encodeURIComponent(noteInfo.title)}&description=${encodeURIComponent(noteInfo.description)}`;
-  xhr.send(params);
-}
+//   xhr.onreadystatechange = function () {
+//     if (xhr.readyState == 4 && xhr.status == 200) {
+//       // Atualiza as notas após a resposta bem-sucedida
+//       loadNotes();
+//       closeIcon.click();
+//     }
+//   };
+
+//   const params = `title=${encodeURIComponent(noteInfo.title)}&description=${encodeURIComponent(noteInfo.description)}`;
+//   xhr.send(params);
+// }
 
 
