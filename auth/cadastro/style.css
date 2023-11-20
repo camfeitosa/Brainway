@@ -14,25 +14,49 @@
     background: rgba(255, 255, 255, 0.3);
 }
 
-.input-form {
+#confirmarSenha, #senha{
+    width: 80%;
+}
+
+.campo5, .campo4, .campo1, .campo2, .campo3{
+    background-color: #fff;
+    display: flex;
+    flex-direction: row;
+    height: 45px;
+    border-radius: 5px;
+    align-items: center;
     width: 100%;
-    height: 85%;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.11);
+
+}
+
+input:focus{
+    box-shadow: none;
+}
+
+.input-form {
+    width: 400px;
+    height: 100%;
     /* background-color: green; */
-    margin-right: 3px;
+    margin-right: 50px;
+    display: flex;
+    gap: 10px;
+
 }
 
 .form-container {
-    /* width: 500px; */
+    width: 450px;
     height: 580px;
     /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0px;
 }
 
 .img-form {
-    gap: 30px;
-}
-
-.btn-login {
-    margin-top: 28px;
+    gap: 50px;
 }
 
 .link-log a {
@@ -53,20 +77,27 @@
 
 input{
     height: 35px;
+    width: 90%;
 }
 
+
 .campo1{
-    margin-top: 30px;
+    margin-top: 0px;
 }
 
 label{
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .btn-login {
-    margin-top: 26px;
+    margin-top: 10px;
 }
+
 .btn-login {
     width: 180px;
     padding: 10px 0px;
+}
+
+.foquete img{
+    width: 78%;
 }

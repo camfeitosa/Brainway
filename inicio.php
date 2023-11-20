@@ -19,7 +19,6 @@
          echo "<br ><a href='pages/loja/exibir.php'>Loja</a>";
          echo "<br ><a href='logout.php'>Fazer logout</a>";
          ?>
-
       </div>
    </header>
 

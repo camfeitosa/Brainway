@@ -43,6 +43,7 @@ INSERT INTO avatar VALUES (7, 'ana', 'personagens/ana.png', 20);
 INSERT INTO avatar VALUES (8, 'woody', 'personagens/woody.png', 0);
 INSERT INTO avatar VALUES (9, 'ariel', 'personagens/ariel.png', 10);
 INSERT INTO avatar VALUES (11, 'america', 'personagens/america.png', 0);
+ INSERT INTO avatar VALUES (20, 'loki', 'personagens/loki.png', 50);
 
  
 /*

@@ -43,8 +43,9 @@ function showNotes() {
   if (!notes) return;
   document.querySelectorAll(".note").forEach((li) => li.remove());
   notes.forEach((note, id) => {
-    let filterDesc = note.description.replaceAll("\n", "<br/>");
-    let liTag = `<li class="note">
+    if (note) {
+      let filterDesc = note.description.replaceAll("\n", "<br/>");
+      let liTag = `<li class="note">
                         <div class="details">
                             <p>${note.title}</p>
                             <div class='desc'>${filterDesc}</div>
@@ -60,9 +61,10 @@ function showNotes() {
                             </div>
                         </div>
                     </li>`;
-    addBox.insertAdjacentHTML("afterend", liTag);
+      addBox.insertAdjacentHTML("afterend", liTag);
+    }
   });
-}
+  
 showNotes();
 
 
@@ -121,29 +123,6 @@ addBtn.addEventListener("click", (e) => {
 
 });
 
-
-// addBtn.addEventListener("click", (e) => {
-//   e.preventDefault();
-//   let title = titleTag.value.trim(),
-//     description = descTag.value.trim();
-
-//   if (title || description) {
-//     let currentDate = new Date(),
-//       month = months[currentDate.getMonth()],
-//       day = currentDate.getDate(),
-//       year = currentDate.getFullYear();
-
-//     let noteInfo = { title, description, date: `${month} ${day}, ${year}` };
-
-//     // Adiciona ou atualiza a nota no servidor PHP
-//     saveNoteToServer(noteInfo);
-//   }
-// });
-
-
-
-// ...
-
 function saveNoteToServer(noteInfo) {
   const url = 'notes.php';
 
@@ -168,12 +147,7 @@ function saveNoteToServer(noteInfo) {
   xhr.send(params);
 }
 
-// ...
-
-
-
 // Função para carregar e exibir as notas do usuário
-
 
 function loadNotes() {
   const xhr = new XMLHttpRequest();
@@ -191,32 +165,10 @@ function loadNotes() {
   xhr.send();
 }
 
+
 // Chame a função loadNotes() para carregar as notas quando a página for carregada
 document.addEventListener('DOMContentLoaded', function () {
   loadNotes();
 });
 
-
-
-// Modifique a função saveNoteToServer() para chamar loadNotes() após salvar com sucesso
-
-// function saveNoteToServer(noteInfo) {
-//   const url = 'notes.php';
-
-//   const xhr = new XMLHttpRequest();
-//   xhr.open('POST', url, true);
-//   xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-
-//   xhr.onreadystatechange = function () {
-//     if (xhr.readyState == 4 && xhr.status == 200) {
-//       // Atualiza as notas após a resposta bem-sucedida
-//       loadNotes();
-//       closeIcon.click();
-//     }
-//   };
-
-//   const params = `title=${encodeURIComponent(noteInfo.title)}&description=${encodeURIComponent(noteInfo.description)}`;
-//   xhr.send(params);
-// }
-
-
+}

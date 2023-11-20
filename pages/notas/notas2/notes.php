@@ -37,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bind_param("iss", $id_usuario, $title, $description);
 
     if ($stmt->execute()) {
-        header("Location: index.php");
+        header("Location: load.php");
         exit;
     } else {
         echo "Erro: " . $stmt->error;
