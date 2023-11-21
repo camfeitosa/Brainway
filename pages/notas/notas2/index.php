@@ -46,9 +46,10 @@
     </li>
   </div>
 
-  <div id="notes-container"></div>
+  
+</div>
 
-  </div>
+<div id="notes-container"></div>
 
   <form id="formCor" action="" method="post">
     <label for="cor">Escolha uma cor:</label>
