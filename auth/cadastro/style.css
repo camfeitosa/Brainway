@@ -7,7 +7,7 @@
     align-items: center;
     flex-direction: row;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    gap: 30px;
+    gap: 10px;
     width: 900px;
     height: 580px;
     border-radius: 10px;
@@ -26,19 +26,25 @@
     border-radius: 5px;
     align-items: center;
     width: 100%;
+    align-items: center;
     box-shadow: 0 2px 4px rgba(0,0,0,0.11);
 
 }
+
+.campo4, .campo5{
+    justify-content: space-around;
+}
+
 
 input:focus{
     box-shadow: none;
 }
 
 .input-form {
-    width: 400px;
+    width: 370px;
     height: 100%;
     /* background-color: green; */
-    margin-right: 50px;
+    margin-right: 40px;
     display: flex;
     gap: 10px;
 
@@ -56,7 +62,7 @@ input:focus{
 }
 
 .img-form {
-    gap: 50px;
+    gap: 40px;
 }
 
 .link-log a {
@@ -99,5 +105,5 @@ label{
 }
 
 .foquete img{
-    width: 78%;
+    width: 76%;
 }
