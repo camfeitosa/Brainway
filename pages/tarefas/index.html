@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <title>Todo List App</title>
+    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Iconscout Link For Icons -->
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.10.2/Sortable.min.js"></script>
+  </head>
+  <body>
+    <!-- Adicione isso dentro da tag <body> -->
+<form id="taskForm" action="insert_task.php" method="post">
+  <div class="task-input">
+    <img src="bars-icon.svg" alt="icon" />
+    <input type="text" name="newTask" placeholder="Adicionar nova tarefa" />
+    <button type="submit">Adicionar</button>
+  </div>
+</form>
+
+
+    <!-- <div class="wrapper">
+      <div class="task-input">
+        <img src="bars-icon.svg" alt="icon" />
+        <input type="text" placeholder="Add nova tarefa" />
+      </div> -->
+
+      <!-- Botão para limpar todas as tarefas -->
+      <div class="controls">
+        <button class="clear-btn">Clear All</button>
+      </div>
+
+      <ul class="task-box"></ul>
+
+      <div class="filters">
+        <span id="pending">Pendentes</span>
+        <span class="active" id="all">Todas</span>
+        <span id="completed">Completas</span>
+      </div>
+    </div>
+    
+    <script src="script.js"></script>
+
+    <script>
+      const dragArea = document.querySelector(".task-box");
+      new Sortable(dragArea, {
+        animation: 350,
+      });
+    </script>
+  </body>
+</html>

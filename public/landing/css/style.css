@@ -1,0 +1,604 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@100&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Barlow', sans-serif;
+    text-decoration: none;
+    list-style: none;
+    border: none;
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    background-color: #ffffff;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    height: 90px;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 5%;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+    font-size: 15px;
+    font-weight: 900;
+}
+
+.logo {
+    width: 150px;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+.main button {
+    display: inline-block;
+    font-weight: 900;
+}
+
+.main button:hover {
+    cursor: pointer;
+}
+
+.main a {
+    padding-left: 20px;
+}
+
+.b-main {
+    display: flex;
+    width: 130px;
+    height: 45px;
+    padding: 13px 1px 13px 0px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+#b1 {
+    background-color: #BFE2FA;
+}
+
+#b2 {
+    background-color: #2D99DA;
+}
+
+.nav-links li {
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+.nav-links li:hover {
+    color: #2D99DA;
+    cursor: pointer;
+}
+
+#menu-icon {
+    font-size: 32px;
+    z-index: 1001;
+    cursor: pointer;
+    display: none;
+}
+
+/*responsividade baitola*/
+@media (max-width: 1280px) {
+    header {
+        padding: 8px 2%;
+    }
+
+    .nav-links li {
+        display: inline-block;
+        padding: 0px 10px;
+    }
+}
+
+/*menu suspeito*/
+@media (max-width: 1090px) {
+    header {
+        padding: 8px 2%;
+    }
+
+    #menu-icon {
+        padding-left: 20px;
+        display: inline-block;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        width: 230px;
+        height: 140px;
+        background-color: #ffffff;
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        border-radius: 5px;
+        transition: all .50s ease;
+    }
+
+    .nav-links li {
+        display: block;
+        margin: 12px 0;
+        padding: 0px 25px;
+        transition: all .50s ease;
+    }
+
+    .nav-links li:hover {
+        color: #2D99DA;
+        cursor: pointer;
+        transform: translateX(5px);
+    }
+
+    .nav-links.open {
+        right: 2%;
+    }
+}
+
+/*responsividade pro celular porra*/
+@media (max-width: 550px) {
+    .logo {
+        width: 100px
+    }
+
+    header {
+        height: 70px;
+    }
+
+    .b-main {
+        width: 85px;
+        height: 40px;
+        font-size: 14px;
+    }
+
+    .main a {
+        padding-left: 10px;
+    }
+
+    #menu-icon {
+        padding-left: 0px;
+    }
+}
+
+/*esse tanto de linha só pro menu, me deixa até desmotivada a continuar :(*/
+
+/*conquistas*/
+.conquistas {
+    position: relative;
+    top: 20vh;
+    background-color: #313DA5;
+    display: inline-flex;
+    width: 100%;
+    height: 700px;
+    justify-content: center;
+    align-items: center;
+}
+
+.c-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.c1 {
+    color: #ffffff;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.c2 {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.c1 h1 {
+    font-family: 'Press Start 2P';
+    font-size: 40px;
+}
+
+.c1 p {
+    padding-top: 60px;
+    font-size: 20px;
+    width: 500px;
+}
+
+.c1-titulo {
+    width: 75%;
+}
+
+/*responsividade*/
+@media (max-width: 1280px) {
+    .c1 h1 {
+        font-size: 35px;
+    }
+
+    .c1 p {
+        padding-top: 60px;
+        font-size: 18px;
+        width: 500px;
+    }
+
+    .c2 img {
+        width: 350px;
+    }
+
+    .c1-titulo {
+        width: 85%;
+    }
+}
+
+@media (max-width: 1090px) {
+    .c1 h1 {
+        font-size: 35px;
+    }
+
+    .c1 p {
+        padding-top: 60px;
+        font-size: 18px;
+        width: 400px;
+    }
+
+    .c2 img {
+        width: 300px;
+    }
+
+    .c1-titulo {
+        width: 75%;
+    }
+}
+
+@media (max-width: 850px) {
+    .conquistas {
+        height: 800px;
+        padding: 50px 50px;
+        display: flex;
+    }
+
+    .c-main {
+        flex-direction: column;
+    }
+
+    .c1 {
+        width: 100%;
+    }
+
+    .c2 {
+        width: 100%;
+    }
+
+    .c1 h1 {
+        font-size: 28px;
+    }
+
+    .c1 p {
+        padding-top: 60px;
+        font-size: 20px;
+        width: 400px;
+    }
+
+    .c2 img {
+        padding-top: 60px;
+        width: 300px;
+    }
+
+    .c1-titulo {
+        width: 100%;
+    }
+}
+
+/*fim onquistas*/
+
+/*potencial*/
+.potencial {
+    position: relative;
+    top: 20vh;
+    display: flex;
+    width: 100%;
+    height: 700px;
+    justify-content: center;
+    align-items: center;
+}
+
+.p-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.p1 {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.p2 {
+    color: #000000;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.p2 h1 {
+    font-family: 'Press Start 2P';
+    font-size: 40px;
+}
+
+.p2 p {
+    padding-top: 60px;
+    font-size: 20px;
+    width: 600px;
+}
+
+.p2-titulo {
+    width: 80%;
+}
+
+.p-button button {
+    width: 220px;
+    height: 60px;
+    border-radius: 5px;
+    background: #2D99DA;
+    color: #FFF;
+    text-align: center;
+    font-size: 22px;
+    font-weight: 700;
+    justify-content: flex-start;
+}
+
+.p-button {
+    padding-top: 60px;
+}
+
+@media (max-width: 1280px) {
+    .p2 h1 {
+        font-size: 35px;
+    }
+
+    .p2 p {
+        padding-top: 60px;
+        font-size: 18px;
+        width: 400px;
+    }
+
+    .p1 img {
+        width: 500px;
+    }
+
+    .p2-titulo {
+        width: 85%;
+    }
+
+    .p-button button {
+        width: 200px;
+        height: 60px;
+    }
+}
+
+@media (max-width: 1090px) {
+    .p2 h1 {
+        font-size: 35px;
+    }
+
+    .p2 p {
+        padding-top: 60px;
+        font-size: 18px;
+        width: 350px;
+    }
+
+    .p1 img {
+        width: 400px;
+    }
+
+    .p2-titulo {
+        width: 75%;
+    }
+}
+
+@media (max-width: 850px) {
+    .potencial {
+        height: 800px;
+        padding: 50px 50px;
+        display: flex;
+    }
+
+    .p-main {
+        flex-direction: column;
+    }
+
+    .p1 {
+        width: 100%;
+    }
+
+    .p2 {
+        width: 100%;
+    }
+
+    .p2 h1 {
+        font-size: 30px;
+    }
+
+    .p2 p {
+        padding-top: 60px;
+        font-size: 20px;
+        width: 400px;
+    }
+
+    .p1 img {
+        padding-top: 60px;
+        width: 300px;
+    }
+
+    .p2-titulo {
+        width: 100%;
+    }
+}
+
+/*fim potencial*/
+
+/*mobilidade*/
+.mobilidade {
+    position: relative;
+    top: 20vh;
+    display: flex;
+    width: 100%;
+    height: 700px;
+    justify-content: center;
+    align-items: center;
+}
+
+.m-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.m1 {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.m2 {
+    color: #000000;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.m2 h1 {
+    font-family: 'Press Start 2P';
+    font-size: 40px;
+}
+
+.m2 p {
+    padding-top: 60px;
+    font-size: 20px;
+    width: 600px;
+}
+
+.m2-titulo {
+    width: 80%;
+}
+
+.m-button button {
+    width: 220px;
+    height: 60px;
+    border-radius: 5px;
+    background: #FC8A03;
+    color: #FFF;
+    text-align: center;
+    font-size: 22px;
+    font-weight: 700;
+    justify-content: flex-start;
+}
+
+.m-button {
+    padding-top: 60px;
+}
+
+@media (max-width: 1280px) {
+    .m2 h1 {
+        font-size: 35px;
+    }
+
+    .m2 p {
+        padding-top: 60px;
+        font-size: 18px;
+        width: 400px;
+    }
+
+    .m1 img {
+        width: 500px;
+    }
+
+    .m2-titulo {
+        width: 85%;
+    }
+
+    .m-button button {
+        width: 200px;
+        height: 60px;
+    }
+}
+
+@media (max-width: 1090px) {
+    .m2 h1 {
+        font-size: 35px;
+    }
+
+    .m2 p {
+        padding-top: 60px;
+        font-size: 18px;
+        width: 350px;
+    }
+
+    .m1 img {
+        width: 400px;
+    }
+
+    .m2-titulo {
+        width: 75%;
+    }
+}
+
+@media (max-width: 850px) {
+    .mobilidade {
+        height: 800px;
+        padding: 50px 50px;
+        display: flex;
+    }
+
+    .m-main {
+        flex-direction: column;
+    }
+
+    .m1 {
+        width: 100%;
+    }
+
+    .m2 {
+        width: 100%;
+    }
+
+    .m2 h1 {
+        font-size: 30px;
+    }
+
+    .m2 p {
+        padding-top: 60px;
+        font-size: 20px;
+        width: 400px;
+    }
+
+    .m1 img {
+        padding-top: 60px;
+        width: 300px;
+    }
+
+    .m2-titulo {
+        width: 100%;
+    }
+}
+
+/*fim mobilidade*/
