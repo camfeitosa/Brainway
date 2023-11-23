@@ -28,6 +28,7 @@ if (isset($_SESSION['id_user'])) {
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $title = $_POST["title"];
     $description = $_POST["description"];
+    $id_cor = $_POST['cor'];
 
     // Prepara e executa a instrução SQL para inserir os dados na tabela
     $sql = "INSERT INTO nota (id_user, titulo, conteudo, data_criacao) VALUES (?, ?, ?, NOW())";

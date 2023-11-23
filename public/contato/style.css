@@ -1,0 +1,6 @@
+.container-contato{
+    width: 1200px;
+height: 700px;
+flex-shrink: 0;
+background: #F3F3F3;
+}

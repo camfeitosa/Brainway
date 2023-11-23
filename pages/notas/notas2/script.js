@@ -42,9 +42,12 @@ closeIcon.addEventListener("click", () => {
 function showNotes() {
   if (!notes) return;
   document.querySelectorAll(".note").forEach((li) => li.remove());
+
   notes.forEach((note, id) => {
-    let filterDesc = note.description.replaceAll("\n", "<br/>");
-    let liTag = `<li class="note">
+    // Adicione uma verificação para garantir que 'note' não seja null e tenha a propriedade 'description'
+    if (note && note.description !== undefined) {
+      let filterDesc = note.description.replaceAll("\n", "<br/>");
+      let liTag = `<li class="note">
                         <div class="details">
                             <p>${note.title}</p>
                             <div class='desc'>${filterDesc}</div>
@@ -60,9 +63,11 @@ function showNotes() {
                             </div>
                         </div>
                     </li>`;
-    addBox.insertAdjacentHTML("afterend", liTag);
+      addBox.insertAdjacentHTML("afterend", liTag);
+    }
   });
 }
+
 showNotes();
 
 
@@ -143,13 +148,6 @@ function saveNoteToServer(noteInfo) {
   const params = `title=${encodeURIComponent(noteInfo.title)}&description=${encodeURIComponent(noteInfo.description)}`;
   xhr.send(params);
 }
-
-// ...
-
-
-
-// Função para carregar e exibir as notas do usuário
-
 
 function loadNotes() {
   const xhr = new XMLHttpRequest();
