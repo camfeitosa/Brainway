@@ -10,7 +10,7 @@
 <body>
   <header>
     <div class="logo">
-      <img src="css/logo.svg" alt="">
+      <img src="img/logo.svg" alt="">
     </div>
   </header>
 
@@ -23,7 +23,7 @@
           </div>
         </div>
         <div class="foquete">
-          <img src="css/img.png" alt="">
+          <img src="img/foquete.png" alt="">
         </div>
       </div>
       <div class="form-container">

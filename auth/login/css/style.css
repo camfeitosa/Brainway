@@ -3,7 +3,7 @@
 
 
 body {
-    background: url(fundo.png) center/cover no-repeat;
+    background: url(../img/fundo.png) center/cover no-repeat;
     width: 100vw;
     height: 100vh;
     margin: 0;
@@ -113,17 +113,6 @@ span {
     /* background-color: aquamarine; */
     margin-right: 3px;
     gap: 10px;
-}
-
-.campo1 {
-    /* display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    background-color: red;
-    width: 360px;
-    height: 100px;
-    margin-top: 50px; */
-
 }
 
 .campo5, .campo4, .campo1, .campo2, .campo3{
@@ -270,5 +259,54 @@ label {
 
     .campo2 {
         width: 300px;
+    }
+}
+
+
+@media (max-width: 1900px) {
+    .container-login {
+        width: 700px;
+        height: 450px;
+        gap: 10px;
+    }
+    label{
+        font-size: 16px;
+    }
+
+    .img-form h1 {
+        font-size: 35px;
+
+    }
+
+    .img-form {
+        gap: 30px;
+    }
+
+    .foquete img {
+        width: 80%;
+    }
+
+    .btn-login {
+        width: 110px;
+    }
+
+    .input-form {
+        height: 150px;
+    }
+
+    .campo1 {
+        width: 300px;
+    }
+
+    .campo2 {
+        width: 300px;
+    }
+
+    .logo{
+        top: 20px;
+    }
+
+    .social-container{
+        justify-content: center;
     }
 }

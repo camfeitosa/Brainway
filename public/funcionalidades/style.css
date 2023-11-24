@@ -7,14 +7,41 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+    background-image: url('fundo.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+.fundoUm{
+    position: absolute;
+    right: 0;
+    top: 20%;
+    z-index: 0;
+}
+.fundoDois{
+    position: absolute;
+    left: 0;
+    top: 40%;
+    z-index: 0;
+}
+.fundoTres{
+    position: absolute;
+    right: 0;
+    top: 70%;
+    z-index: 0;
 }
 .wrapper{
-    width: 50%;
+    z-index: 99;
+    width: 60%;
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-top:7rem;
+    padding-bottom:7rem;
+
 } 
 
 .wrapperContent{
@@ -23,11 +50,14 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 7rem;
+    margin-bottom: 10rem;
+}
+.wrapperContent:last-child{
+    margin-bottom: 0;
 }
 
 .wrapperImg{
-    width: 35%;
+    width: 50%;
     height: 100%;
     
 }
@@ -37,7 +67,7 @@
 }
 
 .wrapperText{
-    width: 45%;
+    width: 55%;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -47,11 +77,10 @@
 }
 
 .wrapperText h1{
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
     font-size: 2.5rem;
     font-family: 'Press Start 2P';
-    text-wrap: wrap;
-    
+    /* text-wrap: wrap; */
 }
 
 .wrapperText p {
@@ -60,6 +89,15 @@
   
 }
 
+@media screen and (min-width:1920px) {
+    .wrapperImg{
+        width: 40%;
+    
+    }
+    .wrapperContent{
+        margin-bottom: 15rem;
+    }
+}
 @media screen and (min-width:1200px) {
     .wrapperContent:nth-child(even){
         flex-direction: row-reverse;
@@ -70,8 +108,12 @@
 }
 
 @media screen and (max-width:1200px) {
+    .container{
+        background-size: auto;
+    }
     .wrapperContent{
         flex-direction: column-reverse;
+        margin-bottom: 10rem;
     }
     .wrapper{
         width: 80%;
@@ -93,7 +135,7 @@
     
     }
     .wrapperContent{
-        margin-bottom: 3rem;
+        margin-bottom: 5rem;
     }
     .wrapperText h1{
         font-size:2rem;
@@ -101,6 +143,9 @@
     }
     .wrapper{
         width: 85%;
+    }
+    .fundoUm, .fundoDois, .fundoTres{
+        display: none;
     }
 }
 
