@@ -5,73 +5,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Loja</title>
-  <style>
-    .container {
-      display: inline;
-    }
-
-    h3 {
-      text-align: center;
-    }
-
-    .product {
-      background-color: #efefef;
-      width: 180px;
-      height: 220px;
-      padding: 10px;
-      display: inline-block; /* Adicione esta linha */
-      margin: 10px; /* Espaçamento entre os produtos */
-      left: 90px;
-      position: relative;
-    }
-
-    img, button{
-      margin: auto;
-      display: block;
-    }
-
-    /* img{
-      background-color: #111;
-    } */
-    p{
-      text-align: center;
-    }
-
-    h1{
-      text-align: center;
-      font-family: Arial, Helvetica, sans-serif;
-    }
-    h4{
-      text-align: center;
-      font-family: Arial, Helvetica, sans-serif;
-      color: #2b2b2b;
-      opacity: 60%;
-    }
-
-    @media (max-width: 890px) {
-      .product {
-        width: 30%; /* Defina a largura para 100% para ocupar toda a largura da tela */
-        margin: 5px; /* Espaçamento menor */
-        position: relative;
-        left: 5px;
-      }
-    }
-    @media (max-width: 780px) {
-      .product {
-        width: 30%; /* Defina a largura para 100% para ocupar toda a largura da tela */
-        margin: 5px; /* Espaçamento menor */
-        position: relative;
-        left: 65px;
-      }
-    }
-
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
 <div class="all">
-  
   <h1>LOJA</h1>
  <h4>Bem-vindos a loja Brainway!!! ganha moedas e compre personagens</h4>
   
@@ -87,7 +25,7 @@ include('..\..\config\conexao.php');
 
 
 // Busca o avatar
-$query = "SELECT id_avatar, nome, caminho, valor FROM avatar";
+$query = "SELECT id_avatar, nome, caminho, valor FROM avatar WHERE valor > 0";
 
 $resultado = mysqli_query($conexao, $query);
 
@@ -98,7 +36,10 @@ if ($resultado->num_rows > 0) {
     echo '<div class="product">';
     echo '<img src="' . $row['caminho'] . '" alt="' . $row['nome'] . '" width="100">';
     echo '<h3>' . $row['nome'] . '</h3>';
-    echo '<p>Valor: ' . $row['valor'] . ' moedas </p>';
+    echo '<div class="container-valor">';
+    echo '<div class="moeda"><img src="../../includes/img/moeda.png"> </div>';
+    echo '<div class="valor">' . $row['valor'] . '</div>';
+    echo '</div>';
     echo '<form method="post" action="comprar.php">';
     echo '<input type="hidden" name="id_avatar" value="' . $row['id_avatar'] . '">
       <button type="submit">Comprar</button>
