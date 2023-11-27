@@ -65,15 +65,6 @@
             data-shape="rectangular" data-logo_alignment="left">
           </div>
         </div>
-        <!-- STYLE -->
-        <!-- <div class="g_id_signin"
-         data-type="icon"
-         data-shape="circle"
-         data-theme="outline"
-         data-text="signin_with"
-         data-size="large"
-         data-locale="pt-BR">
-        </div> -->
         <div class="link-log">
           <a href="../cadastro/index.html">Não possui cadastro no Brainway?<span> Cadastro.</span> </a>
         </div>
