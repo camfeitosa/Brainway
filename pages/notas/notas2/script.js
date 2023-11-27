@@ -20,6 +20,7 @@ const months = [
   "Novembro",
   "Dezembro",
 ];
+
 const notes = JSON.parse(localStorage.getItem("notes") || "[]");
 let isUpdate = false,
   updateId;
@@ -148,6 +149,7 @@ function saveNoteToServer(noteInfo) {
   const params = `title=${encodeURIComponent(noteInfo.title)}&description=${encodeURIComponent(noteInfo.description)}`;
   xhr.send(params);
 }
+
 
 function loadNotes() {
   const xhr = new XMLHttpRequest();

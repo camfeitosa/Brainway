@@ -15,7 +15,7 @@ body{
 }
 .container-wrapper{
   /* background-color: red; */
-  width: 400px;
+  width: 300px;
   display: inline-grid;
   grid-template-columns: repeat(auto-fill, 400px);
 
