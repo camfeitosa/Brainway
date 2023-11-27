@@ -1,8 +1,8 @@
       <?php
       ob_start();
       session_start();
-      include('config/conexao.php');
-      include('pages/inventario/index.php');
+      include('../../config/conexao.php');
+      include('../inventario/index.php');
 
 
       // Verifique se o usuário está logado
@@ -31,11 +31,11 @@
          echo "</div>";
 
          if ($avatar != null) {
-            echo " <div class='container2'><div class='container-perfil'><button type='button'class='btn-se' data-toggle='modal' data-target='#modalExemplo'> <img src= '$avatar' alt='Imagem' class='perfil'><div class='overlay'><img src='edit.svg' class='pencil'></div></a></button></div>";
+            echo " <div class='container2'><div class='container-perfil'><button type='button'class='btn-se' data-toggle='modal' data-target='#modalExemplo'> <img src= '$avatar' alt='Imagem' class='perfil'><div class='overlay'><img src='../../edit.svg' class='pencil'></div></a></button></div>";
             echo "<h2>Nivel: " . $usuario['nivel']."</h2>" ;
 
          } else {
-            echo "<div class='container2'> <div class='container-perfil'><button type='button'class='btn-se' data-toggle='modal' data-target='#modalExemplo''><img src='pages/loja/personagens/buzz.png' class='perfil'><div class='overlay'><img src='edit.svg' class='pencil'></div></a></button></div>";
+            echo "<div class='container2'> <div class='container-perfil'><button type='button'class='btn-se' data-toggle='modal' data-target='#modalExemplo''><img src='personagens/buzz.png' class='perfil'><div class='overlay'><img src='../../edit.svg' class='pencil'></div></a></button></div>";
             echo "<h2>Nivel: " . $usuario['nivel']."</h2>" ;
          }
 
@@ -43,9 +43,9 @@
          echo "<div class='container-barras'>";
 
          echo "<div class='icons'>";
-            echo "<img src='includes/img/coracao.png' class='coracao'>";
-            echo "<img src='includes/img/pontos.png' class='pontos'>";
-            echo "<img src='includes/img/moeda.png' class='moeda'>";
+            echo "<img src='../../includes/img/coracao.png' class='coracao'>";
+            echo "<img src='../../includes/img/pontos.png' class='pontos'>";
+            echo "<img src='../../includes/img/moeda.png' class='moeda'>";
          echo"</div>";
 
          echo "<div class='barras'>";

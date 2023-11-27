@@ -10,3 +10,9 @@
 .func-menu {
     margin-left: 50px;
 }
+
+.exibir{
+    /* background-color: aliceblue; */
+    max-height: 100%;
+    overflow: auto;
+}

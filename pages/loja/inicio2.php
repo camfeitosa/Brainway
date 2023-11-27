@@ -3,7 +3,7 @@
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" href="style2.css">
+   <link rel="stylesheet" href="../../style2.css">
    <title>Home</title>
 </head>
 
@@ -19,12 +19,12 @@
 
    <div class="container-all">
       <div class="container-section">
-         <?php include('includes/index.php'); ?>
+         <?php include('../../includes/loja.php'); ?>
       </div>
 
       <div class="funcionalidades">
          <div class="func-menu"></div>
-         <?php //include('pages/loja/exibir.php'); ?>
+         <div class="exibir"> <?php include('exibir.php'); ?> </div>
       </div>
 
    </div>

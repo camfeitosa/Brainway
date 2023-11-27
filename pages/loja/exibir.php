@@ -19,9 +19,8 @@
 </html>
 
 <?php
-
-session_start();
-include('..\..\config\conexao.php');
+// session_start();
+include('../../config/conexao.php');
 
 
 // Busca o avatar
