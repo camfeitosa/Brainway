@@ -28,7 +28,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     $id_usuario = mysqli_insert_id($conexao);
     $_SESSION['id_user'] = $id_usuario;
     // direcionar o usuario para pag inicial/perfil
-    header("Location: ../../inicio.php");
+    header("Location: ../../pages/inicio/inicio.php");
   } else {
     include ('erro_cad.php');
 }

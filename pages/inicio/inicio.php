@@ -13,18 +13,18 @@
    <header>
       <div class="container-header">
          <?php
-         include('config/conexao.php');
-         echo "<br ><a href='pages/recompensa/ad.php'>Ganhe recompensas</a>";
-         echo "<br ><a href='config/form.php'>Configurações da conta</a>";
-         echo "<br ><a href='pages/loja/index.php'>Loja</a>";
-         echo "<br ><a href='logout.php'>Fazer logout</a>";
+         include('../../config/conexao.php');
+         echo "<br ><a href='../recompensa/ad.php'>Ganhe recompensas</a>";
+         echo "<br ><a href='../../config/form.php'>Configurações da conta</a>";
+         echo "<br ><a href='../loja/index.php'>Loja</a>";
+         echo "<br ><a href='../../logout.php'>Fazer logout</a>";
          ?>
       </div>
    </header>
 
    <div class="container-all">
       <div class="container-section">
-         <?php include('includes/index.php'); ?>
+         <?php include('../../includes/pages.php'); ?>
       </div>
 
       <div class="funcionalidades">

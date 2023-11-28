@@ -83,7 +83,7 @@ if (isset($_SESSION['id_user'])) {
 
 } else {
    // Se o usuário não estiver logado, redirecione-o para a página de login
-   echo "<a href='auth/login/index.php'> Faça login </a>";
+   echo "<a href='../../auth/login/index.php'> Faça login </a>";
    exit();
 }
 ?>

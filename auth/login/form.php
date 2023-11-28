@@ -81,10 +81,10 @@ if (isset($payload['email'])) {
               if ($row['email']) {
                   // email existente, permitir o login
                   $_SESSION['id_user'] = $row['id_user'];
-                  header("Location: ../../inicio.php");
+                  header("Location: ../../pages/inicio/inicio.php");
               } else {
                   // email inexistente, negar o login
-                  include('index.html');
+                  include('index.php');
                   echo "Email incorreto. Tente novamente.";
               }
           } else {
