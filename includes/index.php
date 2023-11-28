@@ -79,14 +79,6 @@
          echo"<p>Conquiste vitórias, acumule pontos e alcance seus objetivos agora!</p>";
          echo"<button>Comece já</button>";
          echo"</div>";
-         
-
-         // echo "<br><br>Número de moedas: " . $usuario['moedas'];
-         // echo "<br ><a href='pages/recompensa/ad.php'>Ganhe recompensas</a>";
-         // echo "<br ><a href='config/form.php'>Configurações da conta</a>";
-         // echo "<br ><a href='pages/loja/exibir.php'>Loja</a>";
-         // echo "<br ><a href= 'pages/inventario/index.php'>Inventario</a>";
-         // echo "<br ><a href='logout.php'>Fazer logout</a>";
          echo "</div>";
 
       } else {

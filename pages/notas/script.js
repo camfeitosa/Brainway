@@ -20,6 +20,7 @@ const months = [
   "Novembro",
   "Dezembro",
 ];
+
 const notes = JSON.parse(localStorage.getItem("notes") || "[]");
 let isUpdate = false,
   updateId;
@@ -42,9 +43,12 @@ closeIcon.addEventListener("click", () => {
 function showNotes() {
   if (!notes) return;
   document.querySelectorAll(".note").forEach((li) => li.remove());
+
   notes.forEach((note, id) => {
-    let filterDesc = note.description.replaceAll("\n", "<br/>");
-    let liTag = `<li class="note">
+    // Adicione uma verificação para garantir que 'note' não seja null e tenha a propriedade 'description'
+    if (note && note.description !== undefined) {
+      let filterDesc = note.description.replaceAll("\n", "<br/>");
+      let liTag = `<li class="note">
                         <div class="details">
                             <p>${note.title}</p>
                             <div class='desc'>${filterDesc}</div>
@@ -56,32 +60,16 @@ function showNotes() {
                                 <ul class="menu">
                                     <li onclick="updateNote(${id}, '${note.title}', '${filterDesc}')"><i class="uil uil-pen"></i>Editar</li>
                                     <li onclick="deleteNote(${id})"><i class="uil uil-trash"></i>Deletar</li>
-                                    <li>   
-                                        <div class="toggle-container"> <input type="checkbox" id="toggle" name="toggle" /><label for="toggle">Cor</label>
-                                        </div><i class="uil uil-palette"></i>
-                                    </li>
-                            
                                 </ul>
                             </div>
                         </div>
                     </li>`;
-    addBox.insertAdjacentHTML("afterend", liTag);
+      addBox.insertAdjacentHTML("afterend", liTag);
+    }
   });
 }
+
 showNotes();
-
-
-function changeColor(noteId, title, filterDesc) {
-    let description = filterDesc.replaceAll("<br/>", "\r\n");
-  updateId = noteId;
-  isUpdate = true;
-  addBox.click();
-  titleTag.value = title;
-  descTag.value = description;
-  // popupTitle.innerText = "";
-  addBtn.innerText = "Atualizar nota";
-}
-
 
 
 function showMenu(elem) {
@@ -112,6 +100,7 @@ function updateNote(noteId, title, filterDesc) {
   addBtn.innerText = "Atualizar nota";
 }
 
+
 addBtn.addEventListener("click", (e) => {
   e.preventDefault();
   let title = titleTag.value.trim(),
@@ -133,6 +122,52 @@ addBtn.addEventListener("click", (e) => {
     localStorage.setItem("notes", JSON.stringify(notes));
     showNotes();
     closeIcon.click();
+    saveNoteToServer(noteInfo);
   }
+
 });
 
+function saveNoteToServer(noteInfo) {
+  const url = 'notes.php';
+
+  const xhr = new XMLHttpRequest();
+  xhr.open('POST', url, true);
+  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState == 4) {
+      if (xhr.status == 200) {
+        // Sucesso na comunicação com o servidor
+        loadNotes(); // Atualiza as notas após o sucesso/        closeIcon.click();
+      } else {
+        // Tratamento de erro
+        console.error('Erro na comunicação com o servidor');
+      }
+    }
+  };
+
+  const params = `title=${encodeURIComponent(noteInfo.title)}&description=${encodeURIComponent(noteInfo.description)}`;
+  xhr.send(params);
+}
+
+
+function loadNotes() {
+  const xhr = new XMLHttpRequest();
+  const url = 'load.php'; // Nome do arquivo PHP que recuperará as notas
+
+  xhr.open('GET', url, true);
+
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState == 4 && xhr.status == 200) {
+      const notesContainer = document.getElementById('notes-container');
+      notesContainer.innerHTML = xhr.responseText; // Atualiza o conteúdo do contêiner com as notas
+    }
+  };
+
+  xhr.send();
+}
+
+// Chame a função loadNotes() para carregar as notas quando a página for carregada
+document.addEventListener('DOMContentLoaded', function () {
+  loadNotes();
+});

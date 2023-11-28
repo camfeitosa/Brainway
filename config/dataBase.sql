@@ -20,71 +20,51 @@ nome VARCHAR (30),
 caminho VARCHAR (100),
 valor INT
 );
-INSERT INTO avatar VALUES (NULL, 'Aladin', 'personagens/aladin.png', 20);
+INSERT INTO avatar VALUES (NULL, 'Aladin', 'personagens/aladdin.png', 200);
+INSERT INTO avatar VALUES (NULL, 'Alice', 'personagens/alice.png', 100);
 INSERT INTO avatar VALUES (NULL, 'America', 'personagens/america.png', 20);
 INSERT INTO avatar VALUES (NULL, 'Ana', 'personagens/ana.png', 20);
 INSERT INTO avatar VALUES (NULL, 'Homem-Aranha', 'personagens/aranha.png', 500);
-INSERT INTO avatar VALUES (NULL, 'Ariel', 'personagens/ariel.png', 20);
-INSERT INTO avatar VALUES (NULL, 'Aurora', 'personagens/aurora.png', 20);
-INSERT INTO avatar VALUES (NULL, 'Barbie', 'personagens/barbie.png', 20);
-INSERT INTO avatar VALUES (NULL, 'Bela', 'personagens/bela.png', 20);
-INSERT INTO avatar VALUES (NULL, 'Branca', 'personagens/branca.png', 20);
-INSERT INTO avatar VALUES (NULL, 'Buzz', 'personagens/buzz.png', 20);
+INSERT INTO avatar VALUES (NULL, 'Ariel', 'personagens/ariel.png', 200);
+INSERT INTO avatar VALUES (NULL, 'Aurora', 'personagens/aurora.png', 200);
+INSERT INTO avatar VALUES (NULL, 'Barbie', 'personagens/barbie.png', 500);
+INSERT INTO avatar VALUES (NULL, 'Bela', 'personagens/bela.png', 200);
+INSERT INTO avatar VALUES (NULL, 'Branca', 'personagens/branca.png', 200);
+INSERT INTO avatar VALUES (NULL, 'Buzz', 'personagens/buzz.png', 500);
 INSERT INTO avatar VALUES (NULL, 'Cartola', 'personagens/cartola.png', 20);
 INSERT INTO avatar VALUES (NULL, 'Cheshire', 'personagens/cheshire.png', 20);
-INSERT INTO avatar VALUES (NULL, 'Cinderela', 'personagens/cinderela.png', 20);
+INSERT INTO avatar VALUES (NULL, 'Cinderela', 'personagens/cinderela.png', 200);
 INSERT INTO avatar VALUES (NULL, 'Coelho', 'personagens/coelho.png', 20);
 INSERT INTO avatar VALUES (NULL, 'Copas', 'personagens/copas.png', 20);
-INSERT INTO avatar VALUES (NULL, 'Coringa', 'personagens/coringa.png', 20);
+INSERT INTO avatar VALUES (NULL, 'Coringa', 'personagens/coringa.png', 500);
 INSERT INTO avatar VALUES (NULL, 'Doende', 'personagens/doende.png', 20);
 INSERT INTO avatar VALUES (NULL, 'Eric', 'personagens/eric.png', 20);
 INSERT INTO avatar VALUES (NULL, 'Homem de Ferro', 'personagens/ferro.png', 20);
-INSERT INTO avatar VALUES (NULL, 'Freddy', 'personagens/freddy.png', 20);
+INSERT INTO avatar VALUES (NULL, 'Freddy', 'personagens/freddy.png', 400);
 INSERT INTO avatar VALUES (NULL, 'Genio', 'personagens/genio.png', 20);
 INSERT INTO avatar VALUES (NULL, 'Grinch', 'personagens/grinch.png', 20);
 INSERT INTO avatar VALUES (NULL, 'Homer', 'personagens/homer.png', 20);
-INSERT INTO avatar VALUES (NULL, 'Jasmine', 'personagens/jasmine.png', 20);
-INSERT INTO avatar VALUES (NULL, 'Jigsaw', 'personagens/jigsaw.png', 20);
+INSERT INTO avatar VALUES (NULL, 'Jasmine', 'personagens/jasmine.png', 200);
+INSERT INTO avatar VALUES (NULL, 'Jigsaw', 'personagens/jigsaw.png', 200);
 INSERT INTO avatar VALUES (NULL, 'Ken', 'personagens/ken.png', 20);
-INSERT INTO avatar VALUES (NULL, 'Loki', 'personagens/loki.png', 20);
-INSERT INTO avatar VALUES (NULL, 'Malevola', 'personagens/malevola.png', 20);
+INSERT INTO avatar VALUES (NULL, 'Loki', 'personagens/loki.png', 400);
+INSERT INTO avatar VALUES (NULL, 'Malevola', 'personagens/malevola.png', 200);
 INSERT INTO avatar VALUES (NULL, 'Margot', 'personagens/margot.png', 20);
-INSERT INTO avatar VALUES (NULL, 'Merida', 'personagens/merida.png', 20);
+INSERT INTO avatar VALUES (NULL, 'Merida', 'personagens/merida.png', 200);
 INSERT INTO avatar VALUES (NULL, 'Mickey', 'personagens/mickey.png', 20);
-INSERT INTO avatar VALUES (NULL, 'Mike', 'personagens/mike.png', 20);
-INSERT INTO avatar VALUES (NULL, 'Mulan', 'personagens/mulan.png', 20);
-INSERT INTO avatar VALUES (NULL, 'Olaf', 'personagens/olaf.png', 20);
-INSERT INTO avatar VALUES (NULL, 'Pocahontas', 'personagens/pocahontas.png', 20);
-INSERT INTO avatar VALUES (NULL, 'Rapunzel', 'personagens/rapunzel.png', 20);
-INSERT INTO avatar VALUES (NULL, 'Shrek', 'personagens/shrek.png', 20);
-INSERT INTO avatar VALUES (NULL, 'Stitch', 'personagens/stitch.png', 20);
-INSERT INTO avatar VALUES (NULL, 'Sullivan', 'personagens/sullivan.png', 20);
-INSERT INTO avatar VALUES (NULL, 'Tiana', 'personagens/tiana.png', 20);
+INSERT INTO avatar VALUES (NULL, 'Mike', 'personagens/mike.png', 200);
+INSERT INTO avatar VALUES (NULL, 'Mulan', 'personagens/mulan.png', 200);
+INSERT INTO avatar VALUES (NULL, 'Olaf', 'personagens/olaf.png', 200);
+INSERT INTO avatar VALUES (NULL, 'Pocahontas', 'personagens/pocahontas.png', 200);
+INSERT INTO avatar VALUES (NULL, 'Rapunzel', 'personagens/rapunzel.png', 200);
+INSERT INTO avatar VALUES (NULL, 'Shrek', 'personagens/shrek.png', 500);
+INSERT INTO avatar VALUES (NULL, 'Stitch', 'personagens/stitch.png', 300);
+INSERT INTO avatar VALUES (NULL, 'Sullivan', 'personagens/sullivan.png', 200);
+INSERT INTO avatar VALUES (NULL, 'Tiana', 'personagens/tiana.png', 200);
 INSERT INTO avatar VALUES (NULL, 'Tritão', 'personagens/tritao.png', 20);
 INSERT INTO avatar VALUES (NULL, 'Ursola', 'personagens/ursola.png', 20);
-INSERT INTO avatar VALUES (NULL, 'Woody', 'personagens/woody.png', 20);
-INSERT INTO avatar VALUES (NULL, 'Yoda', 'personagens/yoda.png', 20);
- 
-/*PERSONAGENS INICIAIS */
- 
-INSERT INTO avatar VALUES (NULL, 'Masculino 1', 'personagens/m1.png', 0);
-INSERT INTO avatar VALUES (NULL, 'Masculino 2', 'personagens/m2.png', 0);
-INSERT INTO avatar VALUES (NULL, 'Masculino 3', 'personagens/m3.png', 0);
-INSERT INTO avatar VALUES (NULL, 'Masculino 4', 'personagens/m4.png', 0);
-INSERT INTO avatar VALUES (NULL, 'Masculino 5', 'personagens/m5.png', 0);
- 
-INSERT INTO avatar VALUES (NULL, 'Feminino 1', 'personagens/f1.png', 0);
-INSERT INTO avatar VALUES (NULL, 'Feminino 2', 'personagens/f2.png', 0);
-INSERT INTO avatar VALUES (NULL, 'Feminino 3', 'personagens/f3.png', 0);
-INSERT INTO avatar VALUES (NULL, 'Feminino 4', 'personagens/f4.png', 0);
-INSERT INTO avatar VALUES (NULL, 'Feminino 5', 'personagens/f5.png', 0);
- 
- 
-INSERT INTO avatar VALUES (NULL, 'Não Binário 1', 'personagens/nb1.png', 0);
-INSERT INTO avatar VALUES (NULL, 'Não Binário 2', 'personagens/nb2.png', 0);
-INSERT INTO avatar VALUES (NULL, 'Não Binário 3', 'personagens/nb3.png', 0);
-INSERT INTO avatar VALUES (NULL, 'Não Binário 4', 'personagens/nb4.png', 0);
-INSERT INTO avatar VALUES (NULL, 'Não Binário 5', 'personagens/nb5.png', 0);
+INSERT INTO avatar VALUES (NULL, 'Woody', 'personagens/woody.png', 500);
+INSERT INTO avatar VALUES (NULL, 'Yoda', 'personagens/yoda.png', 300);
  
 CREATE TABLE compra (
 id_compra INT NOT NULL AUTO_INCREMENT PRIMARY KEY,

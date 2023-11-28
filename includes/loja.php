@@ -2,7 +2,7 @@
       ob_start();
       session_start();
       include('../../config/conexao.php');
-      include('../inventario/index.php');
+      include('../inventario/loja.php');
 
 
       // Verifique se o usuário está logado

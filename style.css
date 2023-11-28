@@ -357,6 +357,7 @@ element.style {
 
 .func-menu {
     /* margin-right: 80px; */
+    margin-left: 20px;
     width: 90%;
     height: 70px;
     flex-shrink: 0;

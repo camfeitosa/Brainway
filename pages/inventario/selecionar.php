@@ -7,14 +7,14 @@ echo $id_usuario;
 
 if (isset($_POST['caminho'])) {
     //caminho da tela inicial até a loja
-    $caminho = "pages/loja/" . $_POST['caminho'];
+    $caminho = "" . $_POST['caminho'];
     echo $caminho;  
 
     $sql = "UPDATE usuario SET avatar = '$caminho' WHERE id_user = '$id_usuario'";
 
     if ($conexao->query($sql) === TRUE) {
         echo "Informações da conta atualizadas com sucesso.";
-        header("Location: ../../inicio.php");
+        header("Location: ../loja/index.php");
 
     } else {
         echo "Erro na atualização: " . $conexao->error;

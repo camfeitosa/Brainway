@@ -57,7 +57,7 @@
 
           <div id="g_id_onload"
             data-client_id="614116390287-toeb1trkh4bs40q8evalqjonftj4tahm.apps.googleusercontent.com"
-            data-login_uri="http://localhost/camila/a/Brainway/auth/login/form.php" data-auto_prompt="false"
+            data-login_uri="http://localhost/Brainway/auth/login/form.php" data-auto_prompt="false"
             data-cancel_on_tap_outside="false">
           </div>
           <!-- STYLE -->

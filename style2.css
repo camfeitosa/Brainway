@@ -5,10 +5,11 @@
 .funcionalidades {
    justify-content: flex-start;
     flex-direction: column;
+    gap: 20px;
 }
 
 .func-menu {
-    margin-left: 50px;
+    margin-left: 20px;
 }
 
 .exibir{
@@ -16,3 +17,4 @@
     max-height: 100%;
     overflow: auto;
 }
+

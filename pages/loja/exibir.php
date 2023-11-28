@@ -10,8 +10,8 @@
 <body>
 
 <div class="all">
-  <h1>LOJA</h1>
- <h4>Bem-vindos a loja Brainway!!! ganha moedas e compre personagens</h4>
+  <h1>Loja</h1>
+ <h4>Bem-vindos a loja Brainway! ganhe moedas e compre personagens</h4>
   
 </div>
 </body>
@@ -52,14 +52,6 @@ if ($resultado->num_rows > 0) {
 
 
 ?>
-
-<style>
-  .avatar {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-  }
-</style>
 
 </body>
 

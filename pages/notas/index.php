@@ -1,33 +1,31 @@
 <!DOCTYPE html>
-<!-- Coding By CodingNepal - youtube.com/codingnepal -->
 <html lang="pt-br" dir="ltr">
 
 <head>
   <meta charset="utf-8">
-  <title>Notes App in JavaScript | CodingNepal</title>
-  <link rel="stylesheet" href="pages/notas/style.css">
+  <title>Notas</title>
+  <link rel="stylesheet" href="style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Iconscout Link For Icons -->
+  <!-- Icons -->
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="script.js" defer></script>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
 </head>
 
 <body>
-
-  <!-- 
-      <div class="toggle-container">
-        <input type="checkbox" id="toggle" name="toggle" /><label for="toggle">Toggle Theme</label>
-      </div> -->
-
   <div class="popup-box">
     <div class="popup">
       <div class="content">
-        <form id="noteForm" action="pages/notas/notes.php" method="post">
-
+        <form id="noteForm" action="notes.php" method="post">
           <header>
+
             <div class="row title">
               <label for="title">Título: </label>
               <input type="text" id="title" name="title" placeholder="Adicione um título" spellcheck="false">
             </div>
+
             <p></p>
             <i class="uil uil-times"></i>
           </header>
@@ -37,35 +35,11 @@
             <textarea id="description" placeholder="Adicione uma descrição" name="description"
               spellcheck="false"></textarea>
           </div>
-
-          <label for="cor">Escolha uma cor:</label>
-    <select name="cor" id="cor">
-      <?php
-      include("../../config/conexao.php");
-
-      //cores do banco de dados
-      $query = "SELECT id, nome, codigo_cor FROM cores";
-      $result = $conexao->query($query);
-
-      // Loop para exibir as opções de cores
-      while ($row = $result->fetch_assoc()) {
-        echo "<option value='" . $row['codigo_cor'] . "'>" . $row['nome'] . "</option>";
-      }
-
-      // Fechar a conexão
-      $conexao->close();
-      ?>
-    </select>
-    <button type="button" onclick="mudarCor()">Mudar Cor</button>
-          <button type="submit">Submit</button>
-
-
-
+          <button type="submit">Enviar</button>
         </form>
       </div>
     </div>
   </div>
-
 
   <div class="wrapper">
     <li class="add-box">
@@ -74,7 +48,35 @@
     </li>
   </div>
 
-  <script src="pages/notas/script.js"></script>
+
+  </div>
+
+  <div id="notes-container"></div>
+
+  <form id="formCor" action="" method="post">
+    <label for="cor">Escolha uma cor:</label>
+    <select name="cor" id="cor">
+      <?php
+      include("../../config/conexao.php");
+      
+      //cores do banco de dados
+      $query = "SELECT id, nome, codigo_cor FROM cores";
+      $result = $conexao->query($query);
+      
+      // Loop para exibir as opções de cores
+      while ($row = $result->fetch_assoc()) {
+        echo "<option value='" . $row['codigo_cor'] . "'>" . $row['nome'] . "</option>";
+      }
+
+      // Fechar a conexão
+      $conexao->close();
+      ?>
+
+<button type="button" onclick="mudarCor()">Mudar Cor</button>
+    </select>
+
+  </form>
+
   <script>
     function mudarCor() {
       // Obter a cor selecionada do select
@@ -86,7 +88,7 @@
     }
   </script>
 
-  
+
 </body>
 
 </html>

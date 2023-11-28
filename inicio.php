@@ -16,7 +16,7 @@
          include('config/conexao.php');
          echo "<br ><a href='pages/recompensa/ad.php'>Ganhe recompensas</a>";
          echo "<br ><a href='config/form.php'>Configurações da conta</a>";
-         echo "<br ><a href='pages/loja/exibir.php'>Loja</a>";
+         echo "<br ><a href='pages/loja/index.php'>Loja</a>";
          echo "<br ><a href='logout.php'>Fazer logout</a>";
          ?>
       </div>

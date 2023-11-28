@@ -10,11 +10,12 @@ body {
 
 .container {
     display: inline;
-
 }
 
 h3 {
     text-align: center;
+    margin-top: 6px;
+    font-size: 19px;
 }
 
 .container button {
@@ -34,27 +35,31 @@ h3 {
     font-weight: 600;
     line-height: normal;
     border: none;
+    cursor: pointer;
 }
 
 .product {
     background-color: #FFF;
-    width: 180px;
+    width: 165px;
     height: 240px;
     padding: 10px;
     display: inline-block;
     /* Adicione esta linha */
     margin: 10px;
     /* Espaçamento entre os produtos */
-    left: 95px;
+    left: 80px;
     position: relative;
     border-radius: 5px;
     background: #FFF;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-
 }
+.avatar {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+  }
 
-img,
-button {
+.product img, .product button {
     margin: auto;
     display: block;
 }
@@ -84,16 +89,31 @@ button {
     gap: 10px;
 }
 
-h1 {
-    text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
+.all h1 {
+    text-align: left;
+    margin-left: 100px;
+    color: #000;
+    font-family: Barlow;
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
 }
 
-h4 {
-    text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
-    color: #2b2b2b;
-    opacity: 60%;
+.all h4 {
+    text-align: left;
+    /* font-family: Arial, Helvetica, sans-serif; */
+    /* color: #2b2b2b; */
+    /* opacity: 60%; */
+    color: #000;
+    /* text-align: center; */
+    font-family: Barlow;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-left: 100px;
+    margin-bottom: 20px;
 }
 
 @media (max-width: 890px) {
