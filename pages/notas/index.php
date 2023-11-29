@@ -40,12 +40,13 @@
       </div>
     </div>
   </div>
-
+  <div class="container-wrapper >
   <div class="wrapper">
     <li class="add-box">
       <div class="icon"><i class="uil uil-plus"></i></div>
       <p>Adicionar nota</p>
     </li>
+  </div>
   </div>
 
 
@@ -53,16 +54,16 @@
 
   <div id="notes-container"></div>
 
-  <form id="formCor" action="" method="post">
+  <!-- <form id="formCor" action="" method="post">
     <label for="cor">Escolha uma cor:</label>
     <select name="cor" id="cor">
       <?php
-      include("../../config/conexao.php");
-      
+      // include("../../config/conexao.php");
+
       //cores do banco de dados
       $query = "SELECT id, nome, codigo_cor FROM cores";
       $result = $conexao->query($query);
-      
+
       // Loop para exibir as opções de cores
       while ($row = $result->fetch_assoc()) {
         echo "<option value='" . $row['codigo_cor'] . "'>" . $row['nome'] . "</option>";
@@ -72,10 +73,10 @@
       $conexao->close();
       ?>
 
+</select>
 <button type="button" onclick="mudarCor()">Mudar Cor</button>
-    </select>
 
-  </form>
+  </form> -->
 
   <script>
     function mudarCor() {
@@ -87,7 +88,6 @@
       $(".note").css("background-color", corSelecionada);
     }
   </script>
-
 
 </body>
 

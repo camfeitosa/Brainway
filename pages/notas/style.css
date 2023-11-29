@@ -6,9 +6,12 @@
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
+
 body{
   background: #efefef;
+  /* display: ; */
 }
+
 ::selection{
   color: #EFEFEF;
   background: #EFEFEF;
@@ -17,6 +20,7 @@ body{
   /* background-color: red; */
   width: 300px;
   display: inline-grid;
+  margin-top: -45px;
   grid-template-columns: repeat(auto-fill, 400px);
 
 }
@@ -68,9 +72,14 @@ body{
   margin-top: 20px;
 }
 
-li.add-box{
+li.add-box {
   background-color: #fff;
+  width: 250px;
+  height: 250px;
+  margin: 50px;
+  border-radius: 5px;
 }
+
 /* fim icon add */
 
 
@@ -83,6 +92,7 @@ li.add-box{
 .note .details{
   max-height: 165px;
   overflow-y: hidden;
+  overflow-x: hidden;
 }
 
 /* .note .details::-webkit-scrollbar,
@@ -347,10 +357,23 @@ form button{
 
 #notes-container{
   /* background-color: red; */
-  max-height: 800px;
+  max-height: 655px;
   overflow: auto;
-  margin-left: 40px;
+  margin-left: 0px;
+  position: absolute;
+  left: 38%;
+  top: 190px;
+  /* margin-left: 0px; */
 }
+.note p{
+  text-align: left;
+}
+
+.notes-container{
+  position: relative;
+  left: -40px;
+}
+
 
 @media (max-width: 660px){
   .wrapper{

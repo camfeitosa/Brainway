@@ -1,6 +1,14 @@
 <?php
 session_start();
 include('../../config/conexao.php');
+// include('style.css');
+
+echo '<head>';
+echo '  <link rel="stylesheet" type="text/css" href="style.css">';
+echo '</head>';
+
+
+// include('index.php');
 
 // Verifique se o usuário está logado
 
@@ -22,7 +30,6 @@ if (isset($_SESSION['id_user'])) {
     // $sql = "UPDATE usuario SET moedas = '$nova_recomp' WHERE id_user = '$id_usuario'";
     // mysqli_query($conexao, $sql);
 
-
     $id_user = $_SESSION['id_user'];
 
     $query = "SELECT * FROM nota WHERE id_user = ? ORDER BY id_nota DESC";
@@ -36,15 +43,32 @@ if (isset($_SESSION['id_user'])) {
 
         echo '<div class="notes-container" style="display: flex; flex-wrap: wrap;">';
 
-        echo ' <div class="wrapper">
+        echo ' 
+                <div class="popup-box">
+                <div class="wrapper">
                 <li class="add-box">
                 <div class="icon"><i class="uil uil-plus"></i></div>
                 <p>Adicionar nota</p>
                 </li>
-                </div>';
+                </div></div>';
+
+        $mesesEmPortugues = [
+            'January' => 'Janeiro',
+            'February' => 'Fevereiro',
+            'March' => 'Março',
+            'April' => 'Abril',
+            'May' => 'Maio',
+            'June' => 'Junho',
+            'July' => 'Julho',
+            'August' => 'Agosto',
+            'September' => 'Setembro',
+            'October' => 'Outubro',
+            'November' => 'Novembro',
+            'December' => 'Dezembro',
+        ];
 
         foreach ($notes as $note) {
-            echo '<div class="container-wrapper">';
+            echo '<div class="container-wrapper style="display: flex;">';
             // Converta as notas em HTML e envie como resposta
             echo '<div class="wrapper">';
             echo '<li class="note">';
@@ -54,8 +78,22 @@ if (isset($_SESSION['id_user'])) {
             echo '        <div class="desc">' . nl2br(htmlspecialchars($note['conteudo'])) . '</div>';
             echo '    </div>';
             echo '    <div class="bottom-content">';
+            
             // Adicione uma verificação para o índice 'data_criacao' e use htmlspecialchars apenas quando o valor estiver definido
-            echo '        <span>' . (isset($note['data_criacao']) ? htmlspecialchars($note['data_criacao']) : '') . '</span>';
+            $dataCriacao = isset($note['data_criacao']) ? $note['data_criacao'] : '';
+
+            // Converta a data para o formato desejado (mês, dia e ano) usando DateTime
+            $dataFormatada = DateTime::createFromFormat('Y-m-d', $dataCriacao);
+
+            // Obtenha o nome do mês em português usando o mapeamento
+            $nomeMesEmPortugues = $mesesEmPortugues[$dataFormatada->format('F')];
+
+            // Formate a data para exibir o nome do mês em português
+            $dataFormatada = $dataFormatada->format('d \d\e ') . $nomeMesEmPortugues . $dataFormatada->format(' \d\e Y');
+
+            echo '        <span>' . htmlspecialchars($dataFormatada) . '</span>';
+
+            // echo '        <span>' . (isset($note['data_criacao']) ? htmlspecialchars($note['data_criacao']) : '') . '</span>';
             echo '        <div class="settings">';
             echo '            <i onclick="showMenu(this)" class="uil uil-ellipsis-h"></i>';
             echo '            <ul class="menu">';
@@ -69,9 +107,9 @@ if (isset($_SESSION['id_user'])) {
             echo '</div>';
             echo '</div>';
         }
-        
-    echo '</div>';
-    
+
+        echo '</div>';
+
         $stmt->close();
     }
 } else {

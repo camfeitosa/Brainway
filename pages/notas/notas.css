@@ -1,11 +1,12 @@
 @import url(../../assets/style/global.css);
-@import url(style.css);
+@import url(../inicio/style.css);
 
 
 .funcionalidades {
    justify-content: flex-start;
     flex-direction: column;
     gap: 20px;
+    /* background-color: aqua; */
 }
 
 .func-menu {
@@ -13,8 +14,13 @@
 }
 
 .exibir{
-    /* background-color: aliceblue; */
+    /* background-color: red; */
     max-height: 100%;
     overflow: auto;
 }
 
+.teste{
+ display: flex;
+ flex-direction: column;
+ width: 25%;
+}
