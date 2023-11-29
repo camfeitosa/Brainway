@@ -10,7 +10,7 @@
          $id_usuario = $_SESSION['id_user'];
 
          // Busque o nome do usuário no banco de dados usando o ID do usuário
-         $query = "SELECT usuario, nome, moedas, nivel, avatar FROM usuario WHERE id_user = $id_usuario";
+         $query = "SELECT usuario, nome, moedas, pontos, nivel, avatar FROM usuario WHERE id_user = $id_usuario";
          $resultado = mysqli_query($conexao, $query);
 
          // Exiba o nome do usuário
@@ -65,13 +65,18 @@
          echo"</div>";
          
          echo "<div class='container-pontos'>";
-         echo "<h5>$usuario[moedas]</h5>";
-         echo "<h5>$usuario[moedas]</h5>";
+         echo "<h5>$usuario[pontos]</h5>";
+         echo "<h5>$usuario[pontos]</h5>";
          echo "<h5>$usuario[moedas]</h5>";
          echo"</div>";
 
          echo"</div>";
          
+         echo '<div id="progress-bar">
+    <div id="barra-progresso"></div>
+</div>
+
+<div id="mensagem">Parabéns! Você atingiu o valor máximo da barra!</div>';
 
          echo "<div class='desafios'>";
          echo"<h1>Supere os desafios</h1>";

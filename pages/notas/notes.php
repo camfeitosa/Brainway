@@ -9,17 +9,17 @@ if (isset($_SESSION['id_user'])) {
     $id_usuario = $_SESSION['id_user'];
  
     // Busque o nome do usuario no banco de dados usando o ID do usuário
-    $query = "SELECT moedas FROM usuario WHERE id_user = '$id_usuario'";
+    $query = "SELECT pontos FROM usuario WHERE id_user = '$id_usuario'";
     $resultado = mysqli_query($conexao, $query);
  
     $usuario = mysqli_fetch_assoc($resultado);
-    $recomp_atual = $usuario['moedas'];
+    $recomp_atual = $usuario['pontos'];
     
-    //Adiciona moedas ao criar uma nota
+    //Adiciona pontos ao criar uma nota
     $nova_recomp = $recomp_atual + 5;
     
-    //insere as moedas no banco
-    $sql = "UPDATE usuario SET moedas = '$nova_recomp' WHERE id_user = '$id_usuario'";
+    //insere as pontos no banco
+    $sql = "UPDATE usuario SET pontos = '$nova_recomp' WHERE id_user = '$id_usuario'";
     mysqli_query($conexao, $sql);
 }
 

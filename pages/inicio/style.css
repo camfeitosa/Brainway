@@ -1,4 +1,4 @@
-@import url(assets/style/global.css);
+@import url(../../assets/style/global.css);
 
 .normal {
     background-color: #efefef;
@@ -147,15 +147,13 @@ element.style {
 
 .progress1, .progress2, .progress3 {
     background-color: #efefef;
-    width: 125px;
+    width: 100%;
     height: 14px;
     display: flex;
     flex-direction: column;
     border-radius: 5px;
     margin-top: 10px;
 }
-
-
 
 .container-section h2 {
     color: #000;
@@ -244,6 +242,7 @@ element.style {
     justify-content: center;
     align-items: center;
     margin-top: 10px;
+    /* gap: 20px; */
 
 }
 
@@ -283,6 +282,11 @@ element.style {
     height: 25px;
 }
 
+.bduser{
+    width: 100%;
+    height: 30px;
+}
+
 .footer {
     width: 100%;
     height: 300px;
@@ -299,6 +303,7 @@ element.style {
     align-items: center;
     justify-content: center;
     height: 150px;
+    gap: 5px;
 }
 
 .icons {
@@ -308,10 +313,11 @@ element.style {
     height: 85px;
     width: 30px;
     justify-content: space-between;
+    align-items: center;
 }
 
 .container-pontos h5 {
-    font-size: 14px;
+    font-size: 12px;
 }
 
 .container-pontos {
@@ -319,9 +325,10 @@ element.style {
     flex-direction: column;
     justify-content: space-around;
     height: 100px;
-    width: 30px;
+    width: 40px;
     margin-top: 10px;
     font-size: 14px;
+    align-items: center;
 }
 
 .container-barras img {
@@ -330,7 +337,7 @@ element.style {
 }
 
 .barras {
-    width: 60%;
+    width: 50%;
     /* background-color: blue; */
     display: flex;
     justify-content: start;

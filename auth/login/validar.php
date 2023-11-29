@@ -18,7 +18,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     if (password_verify($senhaFornecida, $row['senha'])) {
         // Senha correta, permitir o login
         $_SESSION['id_user'] = $row['id_user'];
-        header("Location: ../../inicio.php");
+        include('numero_logins.php');
+        header("Location: ../../pages/inicio/inicio.php");
     } else {
         // Senha incorreta, negar o login
         include('form.html');
