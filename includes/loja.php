@@ -3,8 +3,7 @@
       session_start();
       include('../../config/conexao.php');
       include('../inventario/loja.php');
-
-
+      
       // Verifique se o usuário está logado
       if (isset($_SESSION['id_user'])) {
          // Recupere o ID do usuário da sessão
