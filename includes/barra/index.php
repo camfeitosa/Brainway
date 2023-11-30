@@ -88,6 +88,5 @@ if (isset($_SESSION['id_user'])) {
 </div>
 
 <div id="mensagem">Parabéns! Você atingiu o valor máximo da barra!</div>
-
 </body>
 </html>
