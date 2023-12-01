@@ -29,7 +29,14 @@
 
       <div class="funcionalidades">
          <div class="func-menu"></div>
-         <?php //include('pages/notas/index.html'); ?>
+         <div class="img-inicio">
+            <img src="img/celular.png" alt="">
+            <div class="texto">
+               <h1>Comece agora sua jornada de produtividade.</h1>
+               <p>Tente explorar a barra de tarefas ou adicionar uma nova tarefa para começar a usá-la imediatamente.
+               </p>
+            </div>
+         </div>
       </div>
 
    </div>

@@ -1,0 +1,38 @@
+@import url(../../assets/style/global.css);
+@import url(../inicio/style.css);
+
+
+.funcionalidades {
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.func-menu {
+    margin-left: 20px;
+}
+
+.exibir {
+    max-height: 100%;
+    overflow: auto;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.teste {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+}
+
+.wrapper-exibir{
+    background-color: #fff;
+    width: 70%;
+}
+
+.container-pontos{
+    margin-top: 0px;
+}

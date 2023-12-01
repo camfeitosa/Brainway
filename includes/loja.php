@@ -81,7 +81,7 @@
          echo "<div class='desafios'>";
          echo"<h1>Supere os desafios</h1>";
          echo"<p>Conquiste vitórias, acumule pontos e alcance seus objetivos agora!</p>";
-         echo"<button>Comece já</button>";
+         echo"<button>Confira</button>";
          echo"</div>";
          
 
