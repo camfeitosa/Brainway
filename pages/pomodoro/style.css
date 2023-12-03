@@ -1,7 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500&family=Poppins&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    border: none;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    font-family: "Barlow";
+}
+
 :root {
     --color-primary: #123456;
     --color-secondary: #FFF;
-    --azul-royal:  rgba(255, 255, 255, 0.30);
+    --cinza:  rgba(255, 255, 255, 0.30);
     --fundo-card-timer: #F13C4E ;
     --lils: #f1f1f1;
     --linear-botes: #efefef;
@@ -77,7 +89,7 @@ html {
 
 .app__card-button.active {
     border-radius: 0.8rem;
-    background: var(--azul-royal);
+    background: var(--cinza);
     font-weight: 600;
 }
 
@@ -111,7 +123,7 @@ html {
 
 .app__card-primary-button {
     padding: 0.8rem;
-    color: #F13C4E;
+    color: #2b2b2b;
     border: none;
     cursor: pointer;
     outline: inherit;
@@ -133,6 +145,10 @@ html {
     position: absolute;
     visibility: hidden;
 }
+
+.app__card-primary-button:active {
+    outline: none;
+  }
 
 /* fim - toggle */
 

@@ -1,6 +1,6 @@
 <?php
 //arrumar
-include('../config/conexao.php');
+include('../../config/conexao.php');
 include('form.php');
 
 // Processar o envio do formulário e atualizar as informações

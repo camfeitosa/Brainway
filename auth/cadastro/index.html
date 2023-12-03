@@ -5,12 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <title>Cadastro</title>
+    <script>
+      function link() {
+        window.location = "../../index.html";
+      }
+    </script>
+    <style>
+      .input-error {
+        color: #ff0000; /*texto vermelho */
+      }
+
+      .campo4.input-error,
+      .campo5.input-error {
+        border: 2px solid #ff0000; /* borda vermelha */
+      }
+    </style>
   </head>
 
   <body>
     <header>
       <div class="logo">
-        <img src="../login/img/logo.svg" alt="">
+        <img src="../login/img/logo.svg" alt="" onclick="link()">
       </div>
     </header>
     <main>
@@ -27,9 +42,8 @@
         </div>
 
         <div class="form-container">
-          <form method="POST" action="salvar.php">
+          <form method="POST" action="salvar.php" onsubmit="return validarSenhas()">
             <div class="input-form">
-
               <!-- campo1 div -->
               
               <label for="nome">Nome:</label>
@@ -64,6 +78,7 @@
               required
             />
           </div>
+
           <label for="senha">Senha:</label>
           <div class="campo4">
             <input
@@ -73,31 +88,88 @@
               name="senha"
               required
             />
-            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
-              <path d="M12.5003 16.2988C13.8024 16.2988 14.9092 15.8613 15.8206 14.9863C16.7321 14.1113 17.1878 13.0488 17.1878 11.7988C17.1878 10.5488 16.7321 9.48633 15.8206 8.61133C14.9092 7.73633 13.8024 7.29883 12.5003 7.29883C11.1982 7.29883 10.0915 7.73633 9.18001 8.61133C8.26855 9.48633 7.81283 10.5488 7.81283 11.7988C7.81283 13.0488 8.26855 14.1113 9.18001 14.9863C10.0915 15.8613 11.1982 16.2988 12.5003 16.2988ZM12.5003 14.4988C11.7191 14.4988 11.055 14.2363 10.5081 13.7113C9.96126 13.1863 9.68783 12.5488 9.68783 11.7988C9.68783 11.0488 9.96126 10.4113 10.5081 9.88633C11.055 9.36133 11.7191 9.09883 12.5003 9.09883C13.2816 9.09883 13.9456 9.36133 14.4925 9.88633C15.0394 10.4113 15.3128 11.0488 15.3128 11.7988C15.3128 12.5488 15.0394 13.1863 14.4925 13.7113C13.9456 14.2363 13.2816 14.4988 12.5003 14.4988ZM12.5003 19.2988C9.9656 19.2988 7.65658 18.6197 5.57324 17.2613C3.48991 15.903 1.97949 14.0822 1.04199 11.7988C1.97949 9.51549 3.48991 7.69466 5.57324 6.33633C7.65658 4.97799 9.9656 4.29883 12.5003 4.29883C15.035 4.29883 17.3441 4.97799 19.4274 6.33633C21.5107 7.69466 23.0212 9.51549 23.9587 11.7988C23.0212 14.0822 21.5107 15.903 19.4274 17.2613C17.3441 18.6197 15.035 19.2988 12.5003 19.2988ZM12.5003 17.2988C14.4621 17.2988 16.2633 16.803 17.904 15.8113C19.5446 14.8197 20.7989 13.4822 21.667 11.7988C20.7989 10.1155 19.5446 8.778 17.904 7.78633C16.2633 6.79466 14.4621 6.29883 12.5003 6.29883C10.5385 6.29883 8.7373 6.79466 7.09668 7.78633C5.45605 8.778 4.20171 10.1155 3.33366 11.7988C4.20171 13.4822 5.45605 14.8197 7.09668 15.8113C8.7373 16.803 10.5385 17.2988 12.5003 17.2988Z" fill="black" fill-opacity="0.8"/>
-            </svg>
+            <img src="./svg/olho-riscado.svg" class="olho" alt="olho" id="toggleBtnSenha" onclick="togglePasswordVisibility('senha', 'toggleBtnSenha')">
           </div>
+  
           <label for="confirmarSenha">Confirme a senha:</label>
-            <div class="campo5">
+          <div class="campo5">
             <input
               type="password"
               placeholder="Digite sua senha"
               id="confirmarSenha"
-              name="senha"
+              name="confirmarSenha"
               required
             /> 
-        <img src="./svg/logo.svg" class="logo" alt="logo" onclick="link()">
-
+            <img src="./svg/olho-riscado.svg" class="olho" alt="olho" id="toggleBtnConfirmarSenha" onclick="togglePasswordVisibility('confirmarSenha', 'toggleBtnConfirmarSenha')">
           </div>
-            <div>
-              <button class="btn-login"  type="submit">Registrar</button>
-            </div>
-          </form>
-          <div class="link-log">
-          <a href="../login/index.php">Já possui uma conta no Brainway? <span>Faça login.</span></a></div>
-        </div>
+  
+          <div>
+            <button class="btn-login" type="submit">Registrar</button>
+          </div>
+        </form>
+        <div class="link-log">
+          <a href="../login/index.php">Já possui uma conta no Brainway? <span>Faça login.</span></a>
         </div>
       </div>
     </main>
+  
+    <script>
+      function validarSenhas() {
+      var senha = document.getElementById('senha');
+      var confirmarSenha = document.getElementById('confirmarSenha');
+      var campo4 = document.querySelector('.campo4');
+      var campo5 = document.querySelector('.campo5');
+
+      if (senha.value !== confirmarSenha.value) {
+        // Adiciona a classe de erro aos inputs e divs
+        senha.classList.add('input-error');
+        confirmarSenha.classList.add('input-error');
+        campo4.classList.add('input-error');
+        campo5.classList.add('input-error');
+
+        // Muda os placeholders
+        senha.placeholder = 'Senhas não correspondem';
+        confirmarSenha.placeholder = 'Senhas não correspondem';
+
+        return false;
+      }
+
+      // Remove a classe de erro se as senhas coincidirem
+      senha.classList.remove('input-error');
+      confirmarSenha.classList.remove('input-error');
+      campo4.classList.remove('input-error');
+      campo5.classList.remove('input-error');
+
+      // Restaura os placeholders originais
+      senha.placeholder = 'Digite sua senha';
+      confirmarSenha.placeholder = 'Digite sua senha';
+
+      // Adiciona a classe de sucesso aos inputs e divs
+      senha.classList.add('input-success');
+      confirmarSenha.classList.add('input-success');
+      campo4.classList.add('input-success');
+      campo5.classList.add('input-success');
+
+      return true;
+    }
+
+    function togglePasswordVisibility(fieldId, toggleBtnId) {
+      var passwordField = document.getElementById(fieldId);
+      var toggleBtn = document.getElementById(toggleBtnId);
+
+      if (passwordField.type === 'password') {
+        passwordField.type = 'text';
+        toggleBtn.src = './svg/olho.svg';
+      } else {
+        passwordField.type = 'password';
+        toggleBtn.src = './svg/olho-riscado.svg';
+      }
+    }
+
+    document.getElementById('confirmarSenha').addEventListener('input', function () {
+      validarSenhas();
+    });
+
+    </script>
   </body>
-</html>
+  </html>

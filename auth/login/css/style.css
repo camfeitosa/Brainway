@@ -18,19 +18,22 @@ body {
     display: inline-block;
     position: absolute;
     left: 75px;
-    top: 35px;
+    top: 20px;
     cursor: pointer;
 }
 
 .container-login {
+    width: 700px;
+    height: 450px;
+    gap: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: row;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    gap: 50px;
+    /* gap: 50px;
     width: 750px;
-    height: 550px;
+    height: 550px; */
     border-radius: 10px;
     background: rgba(255, 255, 255, 0.3);
 }
@@ -43,17 +46,17 @@ body {
     justify-content: flex-end;
     height: 100%;
     flex: 1;
-    gap: 50px;
+    gap: 30px;
 }
 
 .img-form h1 {
     color: #000;
-    font-size: 40px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
     width: 310px;
     overflow-wrap: break-word;
+    font-size: 35px;
 }
 
 .titulo-container {
@@ -74,7 +77,7 @@ body {
 }
 
 .foquete img {
-    width: 85%;
+    width: 80%;
     padding: 0%;
 }
 
@@ -91,7 +94,7 @@ span {
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-    height: 100%;
+    /* height: 100%; */
     width: 350px;
     gap: 10px;
     margin-right: 25px;
@@ -101,7 +104,7 @@ span {
 .link-log{
     display: block;
     width: 100%;
-    height: 30px;
+    height: 10px;
 }
 
 .input-form {
@@ -109,7 +112,7 @@ span {
     flex-direction: column;
     justify-content: center;
     width: 100%;
-    height: 300px;
+    height: 150px;
     /* background-color: aquamarine; */
     margin-right: 3px;
     gap: 10px;
@@ -124,7 +127,12 @@ span {
     align-items: center;
     width: 100%;
     box-shadow: 0 2px 4px rgba(0,0,0,0.11);
+    width: 300px;
 
+}
+
+#senha{
+    width: 260px;
 }
 
 input {
@@ -134,6 +142,7 @@ input {
     height: 40px;
     padding: 3px;
     border-radius: 5px;
+    margin-left: 4px;
     background: #FFF;
 }
 
@@ -150,7 +159,7 @@ input:focus {
     color: #ffffff;
     padding: 3px 10px;
     display: flex;
-    width: 220px;
+    width: 110px;
     padding: 10.5px 0px;
     justify-content: center;
     align-items: center;
@@ -162,21 +171,33 @@ input:focus {
 
 label {
     color: #000;
-    font-size: 18px;
+    /* font-size: 18px; */
     font-style: normal;
     font-weight: 500;
     line-height: normal;
+    font-size: 16px;
+
 
 }
 
-.input-form a {
+.logar a {
     text-align: end;
     color: #F13C4E;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
-.input-form a:visited {
+.logar a:visited {
     color: #EB5262;
+}
+
+.logar{
+    display: flex;
+    flex-direction: column;
+    height: 100px;
+    width: 100%;
+    cursor: pointer;
+
+    /* background-color: green; */
 }
 
 .social-container {
@@ -184,7 +205,7 @@ label {
     align-items: center;
     flex-direction: column;
     /* background-color: #efefef; */
-    justify-content: flex-start;
+    justify-content: center;
     text-align: center;
     height: 200px;
     width: 100%;
@@ -204,11 +225,15 @@ label {
     flex-direction: column;
     /* background-color: red; */
     width: 50%;
-    height: 80px;
+    height: 70px;
     align-items: center;
     justify-content: center;
 
 }
+
+#toggleBtn {
+    cursor: pointer;
+  }
 
 .social-container a {
     color: #000;
@@ -263,50 +288,3 @@ label {
 }
 
 
-@media (max-width: 1900px) {
-    .container-login {
-        width: 700px;
-        height: 450px;
-        gap: 10px;
-    }
-    label{
-        font-size: 16px;
-    }
-
-    .img-form h1 {
-        font-size: 35px;
-
-    }
-
-    .img-form {
-        gap: 30px;
-    }
-
-    .foquete img {
-        width: 80%;
-    }
-
-    .btn-login {
-        width: 110px;
-    }
-
-    .input-form {
-        height: 150px;
-    }
-
-    .campo1 {
-        width: 300px;
-    }
-
-    .campo2 {
-        width: 300px;
-    }
-
-    .logo{
-        top: 20px;
-    }
-
-    .social-container{
-        justify-content: center;
-    }
-}

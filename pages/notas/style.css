@@ -359,6 +359,7 @@ form button{
   /* background-color: red; */
   max-height: 655px;
   overflow: auto;
+  overflow-x: hidden;
   margin-left: 0px;
   position: absolute;
   left: 38%;

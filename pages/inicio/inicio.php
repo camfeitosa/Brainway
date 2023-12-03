@@ -15,8 +15,10 @@
          <?php
          include('../../config/conexao.php');
          echo "<br ><a href='../recompensa/ad.php'>Ganhe recompensas</a>";
-         echo "<br ><a href='../../config/form.php'>Configurações da conta</a>";
+         echo "<br ><a href='../alterar/index.php'>Configurações da conta</a>";
          echo "<br ><a href='../loja/index.php'>Loja</a>";
+         echo "<br ><a href='../cronograma/inicio.php'>Crono</a>";
+         echo "<br ><a href='../notas/inicio.php'>Nota</a>";
          echo "<br ><a href='../../logout.php'>Fazer logout</a>";
          ?>
       </div>
