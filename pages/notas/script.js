@@ -51,14 +51,66 @@ function showMenu(elem) {
 }
 
 function deleteNote(noteId) {
-  let confirmDel = confirm("Deseja deletar?");
-  if (!confirmDel) return;
-  notes.splice(noteId, 1);
-  localStorage.setItem("notes", JSON.stringify(notes));
-  // showNotes();
+  // Exibir um alerta de confirmação
+  const isConfirmed = window.confirm("Tem certeza que deseja excluir esta nota?");
+
+  // Se o usuário confirmar, proceda com a exclusão
+  if (isConfirmed) {
+      const url = 'delete.php';
+      const data = new URLSearchParams();
+      data.append('note_id', noteId);
+
+      fetch(url, {
+          method: 'POST',
+          body: data,
+          headers: {
+              'Content-Type': 'application/x-www-form-urlencoded',
+          },
+      })
+      .then(response => response.text())
+      .then(result => {
+          console.log(result);
+          loadNotes(); // Atualize a interface do usuário após a exclusão bem-sucedida
+      })
+      .catch(error => {
+          console.error('Erro na solicitação:', error);
+      });
+  }
 }
 
+
 function updateNote(noteId, title, filterDesc) {
+
+  const url = 'update.php';
+
+  // Dados a serem enviados para o servidor
+  const data = new URLSearchParams();
+  data.append('noteId', noteId);
+  data.append('title', title);
+  data.append('filterDesc', filterDesc);
+
+  // Configuração da solicitação Fetch
+  fetch(url, {
+      method: 'POST',
+      body: data,
+      headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+      },
+  })
+  .then(response => response.text())
+  .then(result => {
+      // Exiba a resposta ou faça algo com ela
+      console.log(result);
+
+      // Atualize a interface do usuário conforme necessário
+      // Por exemplo, recarregue as notas após a atualização bem-sucedida
+      loadNotes();
+  })
+  .catch(error => {
+      // Lida com erros na solicitação
+      console.error('Erro na solicitação:', error);
+  });
+
   let description = filterDesc.replaceAll("<br/>", "\r\n");
   updateId = noteId;
   isUpdate = true;
@@ -68,6 +120,9 @@ function updateNote(noteId, title, filterDesc) {
   // popupTitle.innerText = "";
   addBtn.innerText = "Atualizar nota";
 }
+
+
+
 
 
 addBtn.addEventListener("click", (e) => {
@@ -99,7 +154,7 @@ function saveNoteToServer(noteInfo) {
     if (xhr.readyState == 4) {
       if (xhr.status == 200) {
         // Sucesso na comunicação com o servidor
-        loadNotes(); // Atualiza as notas após o sucesso/        closeIcon.click();
+        loadNotes(); // Atualiza as notas após o sucesso
       } else {
         // Tratamento de erro
         console.error('Erro na comunicação com o servidor');
@@ -128,7 +183,7 @@ function loadNotes() {
   xhr.send();
 }
 
-// Chame a função loadNotes() para carregar as notas quando a página for carregada
+// Função loadNotes() para carregar as notas quando a página for carregada
 document.addEventListener('DOMContentLoaded', function () {
   loadNotes();
 });

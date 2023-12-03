@@ -36,6 +36,7 @@
               spellcheck="false"></textarea>
           </div>
           <button type="submit">Enviar</button>
+          <button id="updateButton" style="display: none;">Atualizar Nota</button>
         </form>
       </div>
     </div>

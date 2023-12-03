@@ -1,7 +1,8 @@
 <?php
 
 include('..\..\config\conexao.php');
-// session_start();
+session_start();
+
 
 //Recupera informações do usuário pelo ID 
 if (isset($_SESSION['id_user'])) {
@@ -24,7 +25,6 @@ if (isset($_SESSION['id_user'])) {
 
 ?>
 
-
 <html>
 
 <head>
@@ -44,26 +44,54 @@ if (isset($_SESSION['id_user'])) {
 
                 <div class="campo1">
                     <label for="nome">Nome:</label>
-                    <input type="text" name="nome" id="nome" value="<?php echo $usuario['nome']; ?>"><br>
+                    <div class="input-container">
+                        <input type="text" name="nome" id="nome" value="<?php echo $usuario['nome']; ?>"
+                            placeholder="Nome">
+                    </div>
                 </div>
+
+                <div class="line"></div>
 
                 <div class="campo2">
                     <label for="nome">Nome de usuário (@):</label>
-                    <input type="text" name="user" id="user" value="<?php echo $usuario['usuario'];
-                    ; ?>"><br>
+                    <div class="input-container">
+                        <input type="text" name="user" id="user" value="<?php echo $usuario['usuario'];
+                        ; ?>" placeholder="Username">
+                    </div>
                 </div>
+
+                <div class="line"></div>
+
                 <div class="campo3">
                     <label for="email">E-mail:</label>
-                    <input type="email" name="email" id="email" value="<?php echo $usuario['email']; ?>"><br>
+                    <div class="input-container">
+                        <input type="email" name="email" id="email" value="<?php echo $usuario['email']; ?>"
+                            placeholder="E-mail">
+                    </div>
                 </div>
+
+                <div class="line"></div>
 
                 <div class="campo4">
                     <label for="senha">Nova senha:</label>
-                    <input type="password" name="senha" id="senha"><br>
+                    <div class="input-container">
+                        <input type="password" name="senha" id="senha" placeholder="Nova senha">
+                    </div>
                 </div>
-                <br>
 
-                <input type="submit" value="Salvar">
+                <div class="line"></div>
+
+                <input type="submit" value="Salvar" style="
+                    color: #2D99DA;
+                    text-align: left;
+                    font-family: Barlow;
+                    font-size: 22px;
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: normal;
+                    height: 100px;
+                ">
+
             </form>
         </div>
     </div>

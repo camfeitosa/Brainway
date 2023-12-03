@@ -24,11 +24,9 @@
 
       <div class="funcionalidades">
          <div class="func-menu"></div>
-         <div class="exibir">
-            <div class="wrapper">
+        
          <?php include('form.php'); ?>
-         </div>
-         </div>
+       
       </div>
 
    </div>

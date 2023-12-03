@@ -83,16 +83,16 @@
 
       echo "<div  class='nome'>";
 
-      echo "<div class='bdname'><h1>$usuario[nome] <h1></div>";
+      echo "<div class='bdname'><h1>$usuario[nome] <h1>";
 
 
       if ($usuario['usuario'] != null) {
-         echo "<div class='bduser'><p>@$usuario[usuario] <p></div>";
+         echo "<div class='bduser'><p>@$usuario[usuario] </p></div>";
       } else {
-         echo "@brainway";
+         echo "<div class='bduser'><p>@brainway</p></div>";
       }
 
-      echo "</div>";
+      echo "</div> </div>";
 
       if ($avatar != null) {
          echo " <div class='container2'><div class='container-perfil'><button type='button'class='btn-se' data-toggle='modal' data-target='#modalExemplo'> <img src= '$avatar' alt='Imagem' class='perfil'><div class='overlay'><img src='../../edit.svg' class='pencil'></div></a></button></div>";

@@ -1,40 +1,55 @@
 <?php
-// Código para conexão com o banco de dados
 session_start();
 include('../../config/conexao.php');
 
-// Assuming you have a database connection established
-// Include your database connection code here
-
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Get data from the frontend
-    $noteId = isset($_POST["noteId"]) ? $_POST["noteId"] : null;
-    $title = isset($_POST["title"]) ? $_POST["title"] : null;
-    $description = isset($_POST["description"]) ? $_POST["description"] : null;
+    $noteId = $_POST['noteId'];
+    $title = $_POST['title'];
+    $description = $_POST['filterDesc'];
 
-    // Check if data is set
-    if ($noteId !== null && $title !== null && $description !== null) {
-        // Perform the update query
-        $sql = "UPDATE nota SET title = ?, description = ? WHERE id = ?";
-        $stmt = $pdo->prepare($sql);
-        $stmt->execute([$title, $description, $noteId]);
+    // Exclua a nota anterior
+    $deleteSql = "DELETE FROM nota WHERE id_nota = ?";
+    $deleteStmt = $conexao->prepare($deleteSql);
+    $deleteStmt->bind_param("i", $noteId);
+    $deleteStmt->execute();
 
-        // You can check if the update was successful
-        $rowCount = $stmt->rowCount();
-        if ($rowCount > 0) {
-            echo "Note updated successfully!";
+    $response = array();
+
+    if ($deleteStmt->affected_rows > 0) {
+        // Nota anterior excluída com sucesso
+        $sql = "INSERT INTO nota (id_user, titulo, conteudo, data_criacao) VALUES (?, ?, ?, NOW())";
+        $stmt = $conexao->prepare($sql);
+        $stmt->bind_param("iss", $id_usuario, $title, $description);
+
+        if ($stmt->execute()) {
+            // Busca a nota atualizada no banco e a retorna como parte da resposta
+            $selectSql = "SELECT * FROM nota WHERE id_nota = ?";
+            $selectStmt = $conexao->prepare($selectSql);
+            $selectStmt->bind_param("i", $noteId);
+            $selectStmt->execute();
+            $result = $selectStmt->get_result();
+
+            if ($result->num_rows > 0) {
+                $note = $result->fetch_assoc();
+                $response['success'] = true;
+                $response['note'] = $note;
+            } else {
+                $response['success'] = false;
+                $response['message'] = 'Nota não encontrada após a atualização.';
+            }
         } else {
-            echo "Failed to update note.";
+            $response['success'] = false;
+            $response['message'] = 'Erro ao atualizar a nota: ' . $stmt->error;
         }
     } else {
-        echo "Invalid data received.";
+        $response['success'] = false;
+        $response['message'] = 'Erro ao excluir a nota anterior: ' . $deleteStmt->error;
     }
-} else {
-    // Handle invalid requests
-    http_response_code(400);
-    echo "Invalid request";
+
+    // Retorna a resposta como JSON
+    header('Content-Type: application/json');
+    echo json_encode($response);
 }
+
+$conexao->close();
 ?>
-
-

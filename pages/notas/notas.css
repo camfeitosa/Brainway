@@ -24,3 +24,9 @@
  flex-direction: column;
  width: 25%;
 }
+
+.rodape-btn{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}

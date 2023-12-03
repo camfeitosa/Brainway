@@ -191,7 +191,8 @@ element.style {
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    width: 240px;}
+    width: 240px;
+}
 
 .desafios button {
     display: inline-flex;
@@ -217,17 +218,14 @@ element.style {
 }
 
 .nome {
-    /* background-color: green; */
     position: relative;
     width: 80%;
-    height: 70px;
+    height: 100px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    margin-top: 10px;
-    /* gap: 20px; */
-
+    align-items: self-start;
+    margin-bottom: 5px;
 }
 
 .nome h1 {
