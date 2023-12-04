@@ -1,25 +1,35 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
    <meta charset="UTF-8">
-   <title></title>  
+   <title></title>
 
    <script>
-    function atualizarPontos() {
-        var xhr = new XMLHttpRequest();
-        xhr.onreadystatechange = function () {
-            if (xhr.readyState === 4 && xhr.status === 200) {
-                var pontos = parseInt(xhr.responseText);
-                document.getElementById("pontos").innerText = pontos;
+      function atualizarPontos() {
+         var xhr = new XMLHttpRequest();
+         xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4) {
+               if (xhr.status === 200) {
+                  var pontos = parseInt(xhr.responseText);
+                  document.getElementById("pontos").innerText = pontos + '/100';
+               } else {
+                  console.error("Error fetching points. Status code: " + xhr.status);
+               }
             }
-        };
-        xhr.open("GET", "../../includes/barra/obter_pontuacao.php", true);
-        xhr.send();
-    }
+         };
+         xhr.open("GET", "../../includes/barra/obter_pontuacao.php", true);
+         xhr.send();
+      }
 
-    setInterval(atualizarPontos, 2000);
-    atualizarPontos();  // Chame a função na inicialização da página
-</script>
+      // Update points every 2000 milliseconds (2 seconds)
+      setInterval(atualizarPontos, 2000);
+
+      // Initial call to update points on page load
+      atualizarPontos();
+
+
+   </script>
 
 
    <style>
@@ -99,7 +109,7 @@
          echo "<h2>Nivel: " . $usuario['nivel'] . "</h2>";
 
       } else {
-         echo "<div class='container2'> <div class='container-perfil'><button type='button'class='btn-se' data-toggle='modal' data-target='#modalExemplo''><img src='../loja/personagens/buzz.png' class='perfil'><div class='overlay'><img src='../../edit.svg' class='pencil'></div></a></button></div>";
+         echo "<div class='container2'> <div class='container-perfil'><button type='button'class='btn-se' data-toggle='modal' data-target='#modalExemplo''><img src='../loja/personagens/m1.png' class='perfil'><div class='overlay'><img src='../../edit.svg' class='pencil'></div></a></button></div>";
          echo "<h2>Nivel: " . $usuario['nivel'] . "</h2>";
       }
 
@@ -165,50 +175,50 @@
 
 
    <script>
-         function atualizarProgressBar() {
-            var xhr = new XMLHttpRequest();
-            xhr.onreadystatechange = function () {
-               if (xhr.readyState === 4 && xhr.status === 200) {
-                  var pontuacao = parseInt(xhr.responseText);
-                  var valorMaximo = 100; // Substitua pelo valor máximo esperado
+      function atualizarProgressBar() {
+         var xhr = new XMLHttpRequest();
+         xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+               var pontuacao = parseInt(xhr.responseText);
+               var valorMaximo = 100; // Substitua pelo valor máximo esperado
 
-                  // Calcular a porcentagem
-                  var porcentagem = (pontuacao / valorMaximo) * 100;
+               // Verificar se a pontuação é maior que zero antes de calcular a porcentagem
+               var porcentagem = pontuacao > 0 ? (pontuacao / valorMaximo) * 100 : 0;
 
-                  // Limitar a porcentagem para não ultrapassar 100%
-                  porcentagem = Math.min(100, porcentagem);
+               // Limitar a porcentagem para não ultrapassar 100%
+               porcentagem = Math.min(100, porcentagem);
 
-                  // Atualizar a barra de progresso
-                  var progressBar = document.getElementById("barra-progresso");
-                  progressBar.style.width = porcentagem + "%";
+               // Atualizar a barra de progresso
+               var progressBar = document.getElementById("barra-progresso");
+               progressBar.style.width = porcentagem + "%";
 
-                  // Exibir mensagem e reiniciar a barra quando atingir o valor máximo
-                  var mensagem = document.getElementById("mensagem");
-                  if (pontuacao == valorMaximo) {
-                     mensagem.style.display = "block";
+               // Exibir mensagem e reiniciar a barra quando atingir o valor máximo
+               var mensagem = document.getElementById("mensagem");
+               if (pontuacao == valorMaximo) {
+                  mensagem.style.display = "block";
 
-                     // Zerar a pontuação no banco de dados e adicionar moedas
-                     zerarPontuacaoEAdicionarMoedas();
-                  } else {
-                     mensagem.style.display = "none";
-                  }
+                  // Zerar a pontuação no banco de dados e adicionar moedas
+                  zerarPontuacaoEAdicionarMoedas();
+               } else {
+                  mensagem.style.display = "none";
                }
-            };
-            xhr.open("GET", "../../includes/barra/obter_pontuacao.php", true);
-            xhr.send();
-         }
+            }
+         };
+         xhr.open("GET", "../../includes/barra/obter_pontuacao.php", true);
+         xhr.send();
+      }
 
-         function zerarPontuacaoEAdicionarMoedas() {
-            var xhr = new XMLHttpRequest();
-            xhr.open("GET", "../../includes/barra/atualizar_pontuacao.php", true);
-            xhr.send();
-         }
+      function zerarPontuacaoEAdicionarMoedas() {
+         var xhr = new XMLHttpRequest();
+         xhr.open("GET", "../../includes/barra/atualizar_pontuacao.php", true);
+         xhr.send();
+      }
 
-         setInterval(atualizarProgressBar, 5000);
-         atualizarProgressBar();
-      </script>
+      setInterval(atualizarProgressBar, 5000);
+      atualizarProgressBar();
+   </script>
 
-  <script>
+   <script>
       function atualizarBarraDeProgresso() {
          var xhr = new XMLHttpRequest();
          xhr.onreadystatechange = function () {
@@ -241,11 +251,11 @@
 
       setInterval(atualizarBarraDeProgresso, 2000);
       atualizarBarraDeProgresso();
-      
+
    </script>
 
 
-   
+
 </body>
 
 </html>

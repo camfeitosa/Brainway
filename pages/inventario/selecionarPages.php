@@ -15,7 +15,7 @@ if (isset($_POST['caminho'])) {
 
     if ($conexao->query($sql) === TRUE) {
         echo "Informações da conta atualizadas com sucesso.";
-        header("Location: ../pomodoro/index.php");
+        header("Location: ../inicio/inicio.php");
 
     } else {
         echo "Erro na atualização: " . $conexao->error;

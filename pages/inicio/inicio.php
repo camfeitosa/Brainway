@@ -19,6 +19,8 @@
          echo "<br ><a href='../loja/index.php'>Loja</a>";
          echo "<br ><a href='../cronograma/inicio.php'>Crono</a>";
          echo "<br ><a href='../notas/inicio.php'>Nota</a>";
+         echo "<br ><a href='../tarefas/index.php'>Tasks</a>";
+         echo "<br ><a href='../pomodoro/index.php'>Pomo</a>";
          echo "<br ><a href='../../logout.php'>Fazer logout</a>";
          ?>
       </div>

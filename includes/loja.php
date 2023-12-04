@@ -1,102 +1,251 @@
-      <?php
-      ob_start();
-      session_start();
-      include('../../config/conexao.php');
-      include('../inventario/loja.php');
-      
-      // Verifique se o usuário está logado
-      if (isset($_SESSION['id_user'])) {
-         // Recupere o ID do usuário da sessão
-         $id_usuario = $_SESSION['id_user'];
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+   <meta charset="UTF-8">
+   <title></title>  
 
-         // Busque o nome do usuário no banco de dados usando o ID do usuário
-         $query = "SELECT usuario, nome, moedas, pontos, nivel, avatar FROM usuario WHERE id_user = $id_usuario";
-         $resultado = mysqli_query($conexao, $query);
+   <script>
+    function atualizarPontos() {
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                var pontos = parseInt(xhr.responseText);
+                document.getElementById("pontos").innerText = pontos;
+            }
+        };
+        xhr.open("GET", "../../includes/barra/obter_pontuacao.php", true);
+        xhr.send();
+    }
 
-         // Exiba o nome do usuário
-         $usuario = mysqli_fetch_assoc($resultado);
-         $avatar = $usuario["avatar"];
-
-         echo "<div  class='nome'>";
-
-         echo "<div class='bdname'><h1>$usuario[nome] <h1></div>";
-
-         if ($usuario['usuario'] != null) {
-            echo "<div class='bduser'><p>@$usuario[usuario] <p></div>";
-         } else {
-            echo "@brainway";
-         }
-
-         echo "</div>";
-
-         if ($avatar != null) {
-            echo " <div class='container2'><div class='container-perfil'><button type='button'class='btn-se' data-toggle='modal' data-target='#modalExemplo'> <img src= '$avatar' alt='Imagem' class='perfil'><div class='overlay'><img src='../../edit.svg' class='pencil'></div></a></button></div>";
-            echo "<h2>Nivel: " . $usuario['nivel']."</h2>" ;
-
-         } else {
-            echo "<div class='container2'> <div class='container-perfil'><button type='button'class='btn-se' data-toggle='modal' data-target='#modalExemplo''><img src='personagens/buzz.png' class='perfil'><div class='overlay'><img src='../../edit.svg' class='pencil'></div></a></button></div>";
-            echo "<h2>Nivel: " . $usuario['nivel']."</h2>" ;
-         }
+    setInterval(atualizarPontos, 2000);
+    atualizarPontos();  // Chame a função na inicialização da página
+</script>
 
 
-         echo "<div class='container-barras'>";
+   <style>
+      #progress-bar,
+      #progress-bar1 {
+         background-color: #efefef;
+         width: 100%;
+         height: 14px;
+         display: flex;
+         flex-direction: column;
+         border-radius: 5px;
+      }
 
-         echo "<div class='icons'>";
-            echo "<img src='../../includes/img/coracao.png' class='coracao'>";
-            echo "<img src='../../includes/img/pontos.png' class='pontos'>";
-            echo "<img src='../../includes/img/moeda.png' class='moeda'>";
-         echo"</div>";
+      #barra-progresso,
+      #barra-progresso1 {
+         height: 20px;
+         border-radius: 5px;
+         transition: width 0.5s;
+         /* Adiciona uma transição suave à largura da barra */
+      }
 
-         echo "<div class='barras'>";
-         echo "<div class='progress1'>";
-         echo"<div id='progress-bar1'></div>";
-         // echo "<h4>$usuario[moedas]</h4>";
-         echo"</div>";
-         
-         echo "<div class='progress2'>";
-         echo"<div id='progress-bar2'></div>";
-         echo"</div>";
-         // echo "<h3>$usuario[moedas]</h3>";
+      #mensagem,
+      #mensagem1 {
+         display: none;
+         color: #27AE61;
+         font-weight: bold;
+         margin-top: 5px;
+      }
 
-         echo "<div class='progress3'>";
-         echo"<div id='progress-bar3'></div>";
-         echo"</div>";
-         
-         echo"</div>";
-         
-         echo "<div class='container-pontos'>";
-         echo "<h5>$usuario[pontos]</h5>";
-         echo "<h5>$usuario[pontos]</h5>";
-         echo "<h5>$usuario[moedas]</h5>";
-         echo"</div>";
+      #barra-progresso {
+         background-color: #27AE61;
+      }
 
-         echo"</div>";
-         
-         echo '<div id="progress-bar">
-    <div id="barra-progresso"></div>
-</div>
+      #barra-progresso1 {
+         background-color: #F13C4E;
+      }
+   </style>
+</head>
 
-<div id="mensagem">Parabéns! Você atingiu o valor máximo da barra!</div>';
+<body>
 
-         echo "<div class='desafios'>";
-         echo"<h1>Supere os desafios</h1>";
-         echo"<p>Conquiste vitórias, acumule pontos e alcance seus objetivos agora!</p>";
-         echo"<button>Confira</button>";
-         echo"</div>";
-         
+   <?php
+   ob_start();
+   session_start();
+   include('../../config/conexao.php');
+   include('../inventario/pages.php');
 
-         // echo "<br><br>Número de moedas: " . $usuario['moedas'];
-         // echo "<br ><a href='pages/recompensa/ad.php'>Ganhe recompensas</a>";
-         // echo "<br ><a href='config/form.php'>Configurações da conta</a>";
-         // echo "<br ><a href='pages/loja/exibir.php'>Loja</a>";
-         // echo "<br ><a href= 'pages/inventario/index.php'>Inventario</a>";
-         // echo "<br ><a href='logout.php'>Fazer logout</a>";
-         echo "</div>";
+
+   // Verifique se o usuário está logado
+   if (isset($_SESSION['id_user'])) {
+      // Recupere o ID do usuário da sessão
+      $id_usuario = $_SESSION['id_user'];
+
+      // Busque o nome do usuário no banco de dados usando o ID do usuário
+      $query = "SELECT usuario, nome, moedas, pontos, nivel, num_logins, avatar FROM usuario WHERE id_user = $id_usuario";
+      $resultado = mysqli_query($conexao, $query);
+
+      // Exiba o nome do usuário
+      $usuario = mysqli_fetch_assoc($resultado);
+      $avatar = $usuario["avatar"];
+
+      echo "<div  class='nome'>";
+
+      echo "<div class='bdname'><h1>$usuario[nome] <h1>";
+
+
+      if ($usuario['usuario'] != null) {
+         echo "<div class='bduser'><p>@$usuario[usuario] </p></div>";
+      } else {
+         echo "<div class='bduser'><p>@brainway</p></div>";
+      }
+
+      echo "</div> </div>";
+
+      if ($avatar != null) {
+         echo " <div class='container2'><div class='container-perfil'><button type='button'class='btn-se' data-toggle='modal' data-target='#modalExemplo'> <img src= '$avatar' alt='Imagem' class='perfil'><div class='overlay'><img src='../../edit.svg' class='pencil'></div></a></button></div>";
+         echo "<h2>Nivel: " . $usuario['nivel'] . "</h2>";
 
       } else {
-         // Se o usuário não estiver logado, redirecione-o para a página de login
-         echo "<a href='auth/login/index.php'> Faça login </a>";
-         exit();
+         echo "<div class='container2'> <div class='container-perfil'><button type='button'class='btn-se' data-toggle='modal' data-target='#modalExemplo''><img src='../loja/personagens/m1.png' class='perfil'><div class='overlay'><img src='../../edit.svg' class='pencil'></div></a></button></div>";
+         echo "<h2>Nivel: " . $usuario['nivel'] . "</h2>";
       }
-      ?>
 
+      // include('../../includes/barra/index.php');
+   
+      echo "<div class='container-barras'>";
+
+      echo "<div class='icons'>";
+      echo "<img src='../../includes/img/coracao.png' class='coracao'>";
+      echo "<img src='../../includes/img/pontos.png' class='pontos'>";
+      echo "<img src='../../includes/img/moeda.png' class='moeda'>";
+      echo "</div>";
+
+      echo "<div class='barras'>";
+      echo "<div class='progress1'>";
+      // echo "<div id='progress-bar1'></div>";
+      echo '<div id="progress-bar1"> 
+      <div id="barra-progresso1"></div>
+      </div>
+      <div id="mensagem1">Parabéns! Você atingiu o valor máximo de logins!</div>';
+      // echo "<h4>$usuario[moedas]</h4>";
+      echo "</div>";
+
+      echo "<div class='progress2'>";
+      // echo "<div id='progress-bar2'></div>";
+      echo '<div id="progress-bar">
+      <div id="barra-progresso"></div>
+      </div>
+      <div id="mensagem">Parabéns! Você atingiu o valor máximo da barra!</div>';
+      echo "</div>";
+      // echo "<h3>$usuario[moedas]</h3>";
+   
+      echo "<div class='progress3'>";
+      echo "<div id='progress-bar3'></div>";
+      echo "</div>";
+
+      echo "</div>";
+
+      echo "<div class='container-pontos' id='container-pontos'>";
+      echo "<h5>$usuario[num_logins]/20</h5>";
+      echo "<h5  id='pontos'>$usuario[pontos]/100</h5>";
+      echo "<h5>$usuario[moedas]</h5>";
+      echo "</div>";
+
+      echo "</div>";
+
+
+      echo "<div class='desafios'>";
+      echo "<h1>Supere os desafios</h1>";
+      echo "<p>Conquiste vitórias, acumule pontos e alcance seus objetivos agora!</p>";
+      echo "<button>Confira</button>";
+      echo "</div>";
+      echo "</div>";
+
+   } else {
+      // Se o usuário não estiver logado, redirecione-o para a página de login
+      echo "<a href='../../auth/login/index.php'> Faça login </a>";
+      exit();
+   }
+
+
+   ?>
+
+
+   <script>
+         function atualizarProgressBar() {
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function () {
+               if (xhr.readyState === 4 && xhr.status === 200) {
+                  var pontuacao = parseInt(xhr.responseText);
+                  var valorMaximo = 100; // Substitua pelo valor máximo esperado
+
+                  // Calcular a porcentagem
+                  var porcentagem = (pontuacao / valorMaximo) * 100;
+
+                  // Limitar a porcentagem para não ultrapassar 100%
+                  porcentagem = Math.min(100, porcentagem);
+
+                  // Atualizar a barra de progresso
+                  var progressBar = document.getElementById("barra-progresso");
+                  progressBar.style.width = porcentagem + "%";
+
+                  // Exibir mensagem e reiniciar a barra quando atingir o valor máximo
+                  var mensagem = document.getElementById("mensagem");
+                  if (pontuacao == valorMaximo) {
+                     mensagem.style.display = "block";
+
+                     // Zerar a pontuação no banco de dados e adicionar moedas
+                     zerarPontuacaoEAdicionarMoedas();
+                  } else {
+                     mensagem.style.display = "none";
+                  }
+               }
+            };
+            xhr.open("GET", "../../includes/barra/obter_pontuacao.php", true);
+            xhr.send();
+         }
+
+         function zerarPontuacaoEAdicionarMoedas() {
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "../../includes/barra/atualizar_pontuacao.php", true);
+            xhr.send();
+         }
+
+         setInterval(atualizarProgressBar, 5000);
+         atualizarProgressBar();
+      </script>
+
+  <script>
+      function atualizarBarraDeProgresso() {
+         var xhr = new XMLHttpRequest();
+         xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+               var numLogins = parseInt(xhr.responseText);
+               var valorMaximo = 20; // Substitua pelo valor máximo esperado (neste caso, 50)
+
+               // Calcular a porcentagem
+               var porcentagem = (numLogins / valorMaximo) * 100;
+
+               // Limitar a porcentagem para não ultrapassar 100%
+               porcentagem = Math.min(100, porcentagem);
+
+               // Atualizar a barra de progresso
+               var progressBar = document.getElementById("barra-progresso1");
+               progressBar.style.width = porcentagem + "%";
+
+               // Exibir mensagem se atingir o valor máximo
+               var mensagem = document.getElementById("mensagem1");
+               if (numLogins >= valorMaximo) {
+                  mensagem.style.display = "block";
+               } else {
+                  mensagem.style.display = "none";
+               }
+            }
+         };
+         xhr.open("GET", "../../includes/barra-login/numero_logins.php", true);
+         xhr.send();
+      }
+
+      setInterval(atualizarBarraDeProgresso, 2000);
+      atualizarBarraDeProgresso();
+      
+   </script>
+
+
+   
+</body>
+
+</html>

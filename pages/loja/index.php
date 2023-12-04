@@ -19,7 +19,7 @@
 
    <div class="container-all">
       <div class="container-section">
-         <?php include('../../includes/loja.php'); ?>
+         <?php include('../../includes/pages.php'); ?>
       </div>
 
       <div class="funcionalidades">

@@ -114,45 +114,44 @@
 
             <?php
             // session_start();
-            include('../../config/conexao.php');
 
-            $id_usuario = $_SESSION['id_user'];
+      //       $id_usuario = $_SESSION['id_user'];
 
-            $query = "SELECT id_avatar from compra WHERE id_user = '$id_usuario';";
-            $resultado = mysqli_query($conexao, $query);
+      //       $query = "SELECT id_avatar from compra WHERE id_user = '$id_usuario';";
+      //       $resultado = mysqli_query($conexao, $query);
 
-            // Verifica se foi encontrado e a exibe
-            if ($resultado->num_rows > 0) {
-              while ($row = $resultado->fetch_assoc()) {
-                $id_av = $row['id_avatar'];
-
-
-                $query1 = "SELECT id_avatar, nome, caminho from avatar WHERE id_avatar = '$id_av'";
-                $resultado1 = mysqli_query($conexao, $query1);
+      //       // Verifica se foi encontrado e a exibe
+      //       if ($resultado->num_rows > 0) {
+      //         while ($row = $resultado->fetch_assoc()) {
+      //           $id_av = $row['id_avatar'];
 
 
-                if ($resultado1->num_rows > 0) {
-                  while ($row = $resultado1->fetch_assoc()) {
-                    $cr = "../loja/" . $row['caminho'];
-                    // $cr = "pages/loja/" . $row['caminho'];
-                    echo '<div class="container">';
-                    echo '<div class="product">';
-                    echo '<img src="' . $cr . '" alt="' . $row['nome'] . '" width="100" class="img-inventario">';
-                    echo '<h2>' . $row['nome'] . '</h2>';
-                    echo '<form method="post" action="../inventario/selecionar.php">';
-                    echo '<input type="hidden" name="caminho" value="' . $row['caminho'] . '">
-      <button class="btn-inventario" type="submit">Selecionar</button>
-      </form> <br>';
-                    echo '</div>';
-                    echo '</div>';
-                  }
-                }
-              }
-            } else {
-              echo "Nenhum avatar encontrado.";
-            }
+      //           $query1 = "SELECT id_avatar, nome, caminho from avatar WHERE id_avatar = '$id_av'";
+      //           $resultado1 = mysqli_query($conexao, $query1);
 
-            ?>
+
+      //           if ($resultado1->num_rows > 0) {
+      //             while ($row = $resultado1->fetch_assoc()) {
+      //               $cr = "../loja/" . $row['caminho'];
+      //               // $cr = "pages/loja/" . $row['caminho'];
+      //               echo '<div class="container">';
+      //               echo '<div class="product">';
+      //               echo '<img src="' . $cr . '" alt="' . $row['nome'] . '" width="100" class="img-inventario">';
+      //               echo '<h2>' . $row['nome'] . '</h2>';
+      //               echo '<form method="post" action="../inventario/selecionar.php">';
+      //               echo '<input type="hidden" name="caminho" value="' . $row['caminho'] . '">
+      // <button class="btn-inventario" type="submit">Selecionar</button>
+      // </form> <br>';
+      //               echo '</div>';
+      //               echo '</div>';
+      //             }
+      //           }
+      //         }
+      //       } else {
+      //         echo "Nenhum avatar encontrado.";
+      //       }
+
+           ?>
           </div>
           <div class="modal-footer">
             <input type="submit" value="Fechar" class="btn btn-secondary" data-dismiss="modal">

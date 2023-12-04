@@ -1,0 +1,8 @@
+.container-tasks{
+    /* background-color: aliceblue; */
+    width: 100%;
+    display: flex;
+    align-items: inherit;
+    justify-content: center;
+    height: 100%;
+}
