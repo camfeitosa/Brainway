@@ -11,19 +11,41 @@
     <main>
         <header>
             <div class="logo">
-              <img src="../login/css/logo.svg" alt="">
+              <img src="../login/img/logo.svg" alt="">
             </div>
           </header>
           
-          <div class="container-quiz">
+          <div class="container-quiz" id="quiz">
               <div class="container-progress">
                   <div id="progress-bar"></div>
               </div>
-            <div class="header-quiz">
-                <h1>Você costuma adiar tarefas ou projetos importantes?</h1>
-            </div>
-          </div>
 
+            <div class="header-quiz">
+                <h1 id="question">Você costuma adiar tarefas ou projetos importantes?</h1>
+            </div> 
+
+            <!-- <div class="quiz-header">
+            <h2 id="question">Texto da Pergunta</h2> -->
+            <ul>
+                <li>
+                    <input type="radio" id="a" class="answer" name="answer">
+                    <label for="a" id="a_text">Question</label>
+                </li>
+                <li>
+                    <input type="radio" id="b" class="answer" name="answer">
+                    <label for="b"id="b_text">Question</label>
+                </li>
+                <li>
+                    <input type="radio" id="c" class="answer" name="answer">
+                    <label for="c"id="c_text">Question</label>
+                </li>
+            </ul>
+            <div class="btn-quiz">
+                <button id="botao">Enviar</button>
+            </div>
+        </div>
+        </div>
+          </div>
     </main>
 </body>
 </html>

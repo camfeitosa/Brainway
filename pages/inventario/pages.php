@@ -149,7 +149,7 @@
                 }
               }
             } else {
-              // echo "Nenhum avatar encontrado.";
+              echo "Nenhum avatar encontrado.";
               //         echo '<div class="container">';
               //         echo '<div class="product">';
               //         echo '<img src="../loja/personagens/m1.png" alt="Masculino" width="100" class="img-inventario">';
