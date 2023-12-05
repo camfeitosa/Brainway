@@ -18,3 +18,37 @@
     overflow: auto;
 }
 
+
+
+/* Estilos para navegadores baseados em WebKit (Chrome, Safari, etc.) */
+.exibir::-webkit-scrollbar {
+    width: 8px; /* Largura da scrollbar */
+}
+
+.exibir::-webkit-scrollbar-thumb {
+    background-color: #efefef; /* Cor da thumb (parte que você arrasta) */
+    border-radius: 6px; /* Raio da borda da thumb */
+}
+
+.exibir::-webkit-scrollbar-track {
+    background-color: #fff; /* Cor de fundo da scrollbar */
+}
+
+/* Estilos para navegadores baseados na Mozilla (Firefox) */
+.exibir {
+    scrollbar-width: thin;
+    scrollbar-color: #888 #f1f1f1; /* Cor da thumb e cor de fundo */
+}
+
+/* Estilos para navegadores baseados na Microsoft (Edge) */
+.exibir {
+    -ms-overflow-style: none; /* Remove scrollbar padrão do Edge */
+}
+
+.exibir::-ms-scrollbar-thumb {
+    background-color: #888; /* Cor da thumb (parte que você arrasta) */
+}
+
+.exibir::-ms-scrollbar-track {
+    background-color: #f1f1f1; /* Cor de fundo da scrollbar */
+}
