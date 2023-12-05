@@ -81,6 +81,40 @@ box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     overflow: auto;
 }
 
+/* Estilos para navegadores baseados em WebKit (Chrome, Safari, etc.) */
+#tasks::-webkit-scrollbar {
+    width: 8px; /* Largura da scrollbar */
+}
+
+#tasks::-webkit-scrollbar-thumb {
+    background-color: #fff; /* Cor da thumb (parte que você arrasta) */
+    border-radius: 6px; /* Raio da borda da thumb */
+}
+
+#tasks::-webkit-scrollbar-track {
+    background-color: #efefef; /* Cor de fundo da scrollbar */
+}
+
+/* Estilos para navegadores baseados na Mozilla (Firefox) */
+#tasks {
+    scrollbar-width: thin;
+    scrollbar-color: #888 #f1f1f1; /* Cor da thumb e cor de fundo */
+}
+
+/* Estilos para navegadores baseados na Microsoft (Edge) */
+#tasks {
+    -ms-overflow-style: none; /* Remove scrollbar padrão do Edge */
+}
+
+#tasks::-ms-scrollbar-thumb {
+    background-color: #888; /* Cor da thumb (parte que você arrasta) */
+}
+
+#tasks::-ms-scrollbar-track {
+    background-color: #f1f1f1; /* Cor de fundo da scrollbar */
+}
+
+
 .task {
     display: flex;
     align-items: center;
