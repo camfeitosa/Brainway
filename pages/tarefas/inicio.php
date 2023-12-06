@@ -69,7 +69,7 @@ $tasks = isset($tasks) ? $tasks : [];
                 </button>
             </div>
         </form>
-
+    
         <div id="tasks">
             <!-- <h2>Incomplete Tasks</h2> -->
             <?php foreach ($tasks as $task): ?>

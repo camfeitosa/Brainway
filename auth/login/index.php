@@ -1,6 +1,6 @@
 <?php
 // Defina o tempo máximo de vida da sessão em segundos (por exemplo, 30 minutos)
-$sessionLifetime = 1800; // 30 minutos
+$sessionLifetime = 2400; // 40 minutos
 
 // Configurar o tempo de vida da sessão antes de iniciar a sessão
 ini_set('session.gc_maxlifetime', $sessionLifetime);
