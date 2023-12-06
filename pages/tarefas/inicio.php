@@ -64,7 +64,7 @@ $tasks = isset($tasks) ? $tasks : [];
         <form action="actions/create.php" method="POST" class="to-do-form">
             <div class="container-add">
                 <input id="input" type="text" name="description" placeholder="Adicionar tarefa" required>
-                <button type="submit" class="form-button">
+                <button type="submit" class="form-button" autocomplete="off">
                     <i class="fa-solid fa-plus"></i>
                 </button>
             </div>
