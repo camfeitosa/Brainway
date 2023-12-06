@@ -1,3 +1,39 @@
+<?php
+// Defina o tempo máximo de vida da sessão em segundos (por exemplo, 30 minutos)
+$sessionLifetime = 1800; // 30 minutos
+
+// Configurar o tempo de vida da sessão antes de iniciar a sessão
+ini_set('session.gc_maxlifetime', $sessionLifetime);
+
+// Definir o tempo de expiração do cookie da sessão antes de iniciar a sessão
+session_set_cookie_params($sessionLifetime);
+
+// Iniciar a sessão após as configurações terem sido definidas
+session_start();
+
+// Verificar se o usuário está autenticado
+if (isset($_SESSION['id_user'])) {
+    // Verificar o tempo de inatividade do usuário
+    $lastActivity = isset($_SESSION['last_activity']) ? $_SESSION['last_activity'] : 0;
+    $currentTime = time();
+
+    // Se o usuário ficou inativo por mais de 1 minuto, encerrar a sessão
+    if ($currentTime - $lastActivity > 2400) {
+        session_unset();    // Remove todas as variáveis de sessão
+        session_destroy();  // Destroi a sessão
+        header('Location: ../../logout.php'); // Redirecionar para a página de logout ou onde desejar
+        exit();
+    }
+
+    // Atualizar o timestamp da última atividade
+    $_SESSION['last_activity'] = $currentTime;
+
+    // Se o usuário estiver autenticado, redirecione para a página inicial
+    header('Location: ../../pages/inicio/inicio.php');
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 

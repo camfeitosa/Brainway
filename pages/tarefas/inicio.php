@@ -63,7 +63,7 @@ $tasks = isset($tasks) ? $tasks : [];
 
         <form action="actions/create.php" method="POST" class="to-do-form">
             <div class="container-add">
-                <input type="text" name="description" placeholder="Adicionar tarefa" required>
+                <input id="input" type="text" name="description" placeholder="Adicionar tarefa" required>
                 <button type="submit" class="form-button">
                     <i class="fa-solid fa-plus"></i>
                 </button>
@@ -142,20 +142,20 @@ $tasks = isset($tasks) ? $tasks : [];
             });
         });
 
-         // // Função para focar no input
-        // function focarNoInput() {
-        //     // Obtenha o elemento de input pelo ID
-        //     var inputElement = document.getElementById("input");
+         // Função para focar no input
+        function focarNoInput() {
+            // Obtenha o elemento de input pelo ID
+            var inputElement = document.getElementById("input");
 
-        //     // Verifique se o elemento de input existe antes de chamar focus
-        //     if (inputElement) {
-        //         // Aplica o foco no input
-        //         inputElement.focus();
-        //     }
-        // }
+            // Verifique se o elemento de input existe antes de chamar focus
+            if (inputElement) {
+                // Aplica o foco no input
+                inputElement.focus();
+            }
+        }
 
-        // // Chame a função ao carregar a página
-        // window.addEventListener("load", focarNoInput);
+        // Chame a função ao carregar a página
+        window.addEventListener("load", focarNoInput);
 
     </script>
 </body>

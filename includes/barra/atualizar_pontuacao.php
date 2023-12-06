@@ -23,7 +23,7 @@ if (isset($_SESSION['id_user'])) {
             $moedasAtual += 100;
 
             // Calcular o novo nível com base nas moedas acumuladas (exemplo: a cada 200 moedas, o nível aumenta)
-            $moedasPorNivel = 200;
+            $moedasPorNivel = 100;
             $novoNivel = floor($moedasAtual / $moedasPorNivel) + 1;
 
             // Limitar o nível máximo a 5

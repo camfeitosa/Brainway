@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../inicio/style2.css">
     <link rel="stylesheet" href="src/styles/inicio.css">
-    <title>Home</title>
+    <title>Lista de tarefas</title>
 </head>
 
 <body class="normal">

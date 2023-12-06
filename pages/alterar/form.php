@@ -1,8 +1,17 @@
 <?php
 
-// session_start();
 include('..\..\config\conexao.php');
 
+// Iniciar a sessão apenas se não estiver iniciada
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+
+include('../../config/conexao.php');
+
+$id_usuario = $_SESSION['id_user'];
+
+// Restante do código...
 
 //Recupera informações do usuário pelo ID 
 if (isset($_SESSION['id_user'])) {
@@ -46,7 +55,7 @@ if (isset($_SESSION['id_user'])) {
                     <label for="nome">Nome:</label>
                     <div class="input-container">
                         <input type="text" name="nome" id="nome" value="<?php echo $usuario['nome']; ?>"
-                            placeholder="Nome">
+                            placeholder="Nome" maxlength="15">
                     </div>
                 </div>
 
@@ -56,7 +65,7 @@ if (isset($_SESSION['id_user'])) {
                     <label for="nome">Nome de usuário (@):</label>
                     <div class="input-container">
                         <input type="text" name="user" id="user" value="<?php echo $usuario['usuario'];
-                        ; ?>" placeholder="Username">
+                        ; ?>" placeholder="Username" maxlength="12">
                     </div>
                 </div>
 
@@ -89,10 +98,16 @@ if (isset($_SESSION['id_user'])) {
                     font-style: normal;
                     font-weight: 600;
                     line-height: normal;
-                    height: 100px;
+                    height: 70px;
+                    cursor: pointer;
                 ">
 
             </form>
+
+            <h4>  <a href="excluir.php">Deletar conta </a></h4>
+            <p> Sua conta será deletada permanentemente </p>
+
+
         </div>
     </div>
 </body>

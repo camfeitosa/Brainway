@@ -21,16 +21,16 @@
       display: inline;
     }
 
-    h3 {
+    .container h3 {
       text-align: center;
       font-size: 20px;
       margin-bottom: 20px;
 
     }
 
-    .product {
+    .product2 {
       background-color: #efefef;
-      width: 140px;
+      width: 120px;
       height: 210px;
       padding: 10px;
       display: inline-block;
@@ -38,7 +38,7 @@
       margin: 1px;
       /* Espaçamento entre os produtos */
       position: relative;
-      left: 40px;
+      left: 10px;
     }
 
     .img-inventario {
@@ -49,11 +49,11 @@
     /* img{
       background-color: #111;
     } */
-    p {
+    .container p {
       text-align: center;
     }
 
-    h1 {
+    .container h1 {
       text-align: center;
       font-family: Arial, Helvetica, sans-serif;
     }
@@ -68,6 +68,7 @@
       margin: auto;
       display: block;
       transition: all 0.3s ease 0s;
+      font-size: 14px;
     }
 
     .btn-inventario:hover {
@@ -113,6 +114,7 @@
           <div class="modal-body">
 
             <?php
+
             // session_start();
             include('../../config/conexao.php');
 
@@ -121,22 +123,16 @@
             $query = "SELECT id_avatar from compra WHERE id_user = '$id_usuario';";
             $resultado = mysqli_query($conexao, $query);
 
-            // Verifica se foi encontrado e a exibe
             if ($resultado->num_rows > 0) {
               while ($row = $resultado->fetch_assoc()) {
                 $id_av = $row['id_avatar'];
-
-
                 $query1 = "SELECT id_avatar, nome, caminho from avatar WHERE id_avatar = '$id_av'";
                 $resultado1 = mysqli_query($conexao, $query1);
-
-
                 if ($resultado1->num_rows > 0) {
                   while ($row = $resultado1->fetch_assoc()) {
                     $cr = "../loja/" . $row['caminho'];
-                    // $cr = "pages/loja/" . $row['caminho'];
                     echo '<div class="container">';
-                    echo '<div class="product">';
+                    echo '<div class="product2">';
                     echo '<img src="' . $cr . '" alt="' . $row['nome'] . '" width="100" class="img-inventario">';
                     echo '<h2>' . $row['nome'] . '</h2>';
                     echo '<form method="post" action="../inventario/selecionarPages.php">';
@@ -148,269 +144,40 @@
                   }
                 }
               }
-            } else {
-              echo "Nenhum avatar encontrado.";
-              //         echo '<div class="container">';
-              //         echo '<div class="product">';
-              //         echo '<img src="../loja/personagens/m1.png" alt="Masculino" width="100" class="img-inventario">';
-              //         echo '<h2>Masculino</h2>';
-              //         echo '<form method="post" action="../inventario/selecionarPages.php">';
-              //         echo '<input type="hidden" name="caminho" value="../loja/personagens/m1.png">
-              // <button class="btn-inventario" type="submit">Selecionar</button>
-              // </form> <br>';
-              //         echo '</div>';
-              //         echo '<div class="product">';
-              //         echo '<img src="../loja/personagens/m2.png" alt="Masculino" width="100" class="img-inventario">';
-              //         echo '<h2>Masculino</h2>';
-              //         echo '<form method="post" action="../inventario/selecionarPages.php">';
-              //         echo '<input type="hidden" name="caminho" value="../loja/personagens/m2.png">
-              // <button class="btn-inventario" type="submit">Selecionar</button>
-              // </form> <br>';
-              //         echo '</div>';
-              //         echo '<div class="product">';
-              //         echo '<img src="../loja/personagens/m3.png" alt="Masculino" width="100" class="img-inventario">';
-              //         echo '<h2>Masculino</h2>';
-              //         echo '<form method="post" action="../inventario/selecionarPages.php">';
-              //         echo '<input type="hidden" name="caminho" value="../loja/personagens/m3.png">
-              // <button class="btn-inventario" type="submit">Selecionar</button>
-              // </form> <br>';
-              //         echo '</div>';
-              //         echo '<div class="product">';
-              //         echo '<img src="../loja/personagens/m4.png" alt="Masculino" width="100" class="img-inventario">';
-              //         echo '<h2>Masculino</h2>';
-              //         echo '<form method="post" action="../inventario/selecionarPages.php">';
-              //         echo '<input type="hidden" name="caminho" value="../loja/personagens/m4.png">
-              // <button class="btn-inventario" type="submit">Selecionar</button>
-              // </form> <br>';
-              //         echo '</div>';
-              //         echo '<div class="product">';
-              //         echo '<img src="../loja/personagens/m5.png" alt="Masculino" width="100" class="img-inventario">';
-              //         echo '<h2>Masculino</h2>';
-              //         echo '<form method="post" action="../inventario/selecionarPages.php">';
-              //         echo '<input type="hidden" name="caminho" value="../loja/personagens/m5.png">
-              // <button class="btn-inventario" type="submit">Selecionar</button>
-              // </form> <br>';
-              //         echo '</div>';
-              //         echo '</div>';
+            }
+
+            $query2 = "SELECT id_avatar, nome, caminho from avatar WHERE valor = 0";
+            $resultado2 = mysqli_query($conexao, $query2);
+            while ($row2 = $resultado2->fetch_assoc()) {
+              if ($resultado2->num_rows > 0) {
+                while ($row2 = $resultado2->fetch_assoc()) {
+                  $cr2 = "../loja/" . $row2['caminho'];
+                  echo '<div class="container">';
+                  echo '<div class="product2">';
+                  echo '<img src="' . $cr2 . '" alt="' . $row2['nome'] . '" width="100" class="img-inventario">';
+                  echo '<h2>' . $row2['nome'] . '</h2>';
+                  echo '<form method="post" action="../inventario/selecionarPages.php">';
+                  echo '<input type="hidden" name="caminho" value="' . $row2['caminho'] . '">
+        <button class="btn-inventario" type="submit">Selecionar</button>
+        </form> <br>';
+                  echo '</div>';
+                  echo '</div>';
+                }
+              }
             }
             ?>
-
-            <!-- <div class="container">
-              <div class="product">
-                <img src="../loja/personagens/m1.png" alt="Masculino" width="100" class="img-inventario">
-                <h2>Masculino</h2>
-                <form method="post" action="../inventario/selecionarPages.php">
-                  <input type="hidden" name="caminho" value="../loja/personagens/m1.png">
-                  <button class="btn-inventario" type="submit">Selecionar</button>
-                </form> 
-              </div>
-              </div>
-
-              <div class="product">
-                <img src="../loja/personagens/m2.png" alt="Masculino" width="100" class="img-inventario">
-                <h2>Masculino</h2>
-                <form method="post" action="../inventario/selecionarPages.php">
-                  <input type="hidden" name="caminho" value="../loja/personagens/m2.png">
-                  <button class="btn-inventario" type="submit">Selecionar</button>
-                </form> 
-              </div>
-              </div>
-
-              <div class="product">
-                <img src="../loja/personagens/m3.png" alt="Masculino" width="100" class="img-inventario">
-                <h2>Masculino</h2>
-                <form method="post" action="../inventario/selecionarPages.php">
-                  <input type="hidden" name="caminho" value="../loja/personagens/m3.png">
-                  <button class="btn-inventario" type="submit">Selecionar</button>
-                </form> 
-              </div>
-              </div>
-
-              <div class="product">
-                <img src="../loja/personagens/m4.png" alt="Masculino" width="100" class="img-inventario">
-                <h2>Masculino</h2>
-                <form method="post" action="../inventario/selecionarPages.php">
-                  <input type="hidden" name="caminho" value="../loja/personagens/m4.png">
-                  <button class="btn-inventario" type="submit">Selecionar</button>
-                </form> 
-              </div>
-              </div>
-
-              <div class="product">
-                <img src="../loja/personagens/m5.png" alt="Masculino" width="100" class="img-inventario">
-                <h2>Masculino</h2>
-                <form method="post" action="../inventario/selecionarPages.php">
-                  <input type="hidden" name="caminho" value="../loja/personagens/m5.png">
-                  <button class="btn-inventario" type="submit">Selecionar</button>
-                </form> 
-              </div>
-              </div>
+          </div>
+          <div class="modal-footer">
+            <input type="submit" value="Fechar" class="btn btn-secondary" data-dismiss="modal">
+            </form>
 
 
-              <div class="product">
-                <img src="../loja/personagens/f1.png" alt="Masculino" width="100" class="img-inventario">
-                <h2>Masculino</h2>
-                <form method="post" action="../inventario/selecionarPages.php">
-                  <input type="hidden" name="caminho" value="../loja/personagens/f1.png">
-                  <button class="btn-inventario" type="submit">Selecionar</button>
-                </form> 
-              </div>
-              </div>
-
-
-              <div class="product">
-                <img src="../loja/personagens/f2.png" alt="Masculino" width="100" class="img-inventario">
-                <h2>Masculino</h2>
-                <form method="post" action="../inventario/selecionarPages.php">
-                  <input type="hidden" name="caminho" value="../loja/personagens/f2.png">
-                  <button class="btn-inventario" type="submit">Selecionar</button>
-                </form> 
-              </div>
-              </div>
-
-
-              <div class="product">
-                <img src="../loja/personagens/f3.png" alt="Masculino" width="100" class="img-inventario">
-                <h2>Masculino</h2>
-                <form
-rm method="post" action="../inventario/selecionarPages.php">
-                  <input type="hidden" name="caminho" value="../loja/personagens/f3.png">
-                  <button class="btn-inventario" type="submit">Selecionar</button>
-                </form> 
-              </div>
-              </div>
-
-
-              <div class="product">
-                <img src="../loja/personagens/f4.png" alt="Masculino" width="100" class="img-inventario">
-                <h2>Masculino</h2>
-                <form method="post" action="../inventario/selecionarPages.php">
-                  <input type="hidden" name="caminho" value="../loja/personagens/f4.png">
-                  <button class="btn-inventario" type="submit">Selecionar</button>
-                </form> 
-              </div>
-              </div>
-
-              <div class="product">
-                <img src="../loja/personagens/f5.png" alt="Masculino" width="100" class="img-inventario">
-                <h2>Masculino</h2>
-                <form method="post" action="../inventario/selecionarPages.php">
-                  <input type="hidden" name="caminho" value="../loja/personagens/f5.png">
-                  <button class="btn-inventario" type="submit">Selecionar</button>
-                </form> 
-              </div>
-              </div> -->
-        </div>
-        <div class="modal-footer">
-          <input type="submit" value="Fechar" class="btn btn-secondary" data-dismiss="modal">
-          </form>
-
-
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
   </div>
 </body>
 
 </html>
-
-<!-- echo '<div class="container">';
-              echo '<div class="product">';
-              echo '<img src="../loja/personagens/m1.png" alt="Masculino" width="100" class="img-inventario">';
-              echo '<h2>Masculino</h2>';
-              echo '<form method="post" action="../inventario/selecionarPages.php">';
-              echo '<input type="hidden" name="caminho" value="../loja/personagens/m1.png">
-      <button class="btn-inventario" type="submit">Selecionar</button>
-      </form> <br>';
-              echo '</div>';
-
-              echo '<div class="product">';
-              echo '<img src="../loja/personagens/m2.png" alt="Masculino" width="100" class="img-inventario">';
-              echo '<h2>Masculino</h2>';
-              echo '<form method="post" action="../inventario/selecionarPages.php">';
-              echo '<input type="hidden" name="caminho" value="../loja/personagens/m2.png">
-      <button class="btn-inventario" type="submit">Selecionar</button>
-      </form> <br>';
-              echo '</div>';
-
-              echo '<div class="product">';
-              echo '<img src="../loja/personagens/m3.png" alt="Masculino" width="100" class="img-inventario">';
-              echo '<h2>Masculino</h2>';
-              echo '<form method="post" action="../inventario/selecionarPages.php">';
-              echo '<input type="hidden" name="caminho" value="../loja/personagens/m3.png">
-      <button class="btn-inventario" type="submit">Selecionar</button>
-      </form> <br>';
-              echo '</div>';
-
-              echo '<div class="product">';
-              echo '<img src="../loja/personagens/m4.png" alt="Masculino" width="100" class="img-inventario">';
-              echo '<h2>Masculino</h2>';
-              echo '<form method="post" action="../inventario/selecionarPages.php">';
-              echo '<input type="hidden" name="caminho" value="../loja/personagens/m4.png">
-      <button class="btn-inventario" type="submit">Selecionar</button>
-      </form> <br>';
-              echo '</div>';
-
-              echo '<div class="product">';
-              echo '<img src="../loja/personagens/m5.png" alt="Masculino" width="100" class="img-inventario">';
-              echo '<h2>Masculino</h2>';
-              echo '<form method="post" action="../inventario/selecionarPages.php">';
-              echo '<input type="hidden" name="caminho" value="../loja/personagens/m5.png">
-      <button class="btn-inventario" type="submit">Selecionar</button>
-      </form> <br>';
-      echo '</div>';
-
-             
-      echo '<div class="product">';
-      echo '<img src="../loja/personagens/f1.png" alt="Masculino" width="100" class="img-inventario">';
-      echo '<h2>Masculino</h2>';
-      echo '<form method="post" action="../inventario/selecionarPages.php">';
-      echo '<input type="hidden" name="caminho" value="../loja/personagens/f1.png">
-<button class="btn-inventario" type="submit">Selecionar</button>
-</form> <br>';
-echo '</div>';
-
-
-      echo '<div class="product">';
-      echo '<img src="../loja/personagens/f2.png" alt="Masculino" width="100" class="img-inventario">';
-      echo '<h2>Masculino</h2>';
-      echo '<form method="post" action="../inventario/selecionarPages.php">';
-      echo '<input type="hidden" name="caminho" value="../loja/personagens/f2.png">
-<button class="btn-inventario" type="submit">Selecionar</button>
-</form> <br>';
-echo '</div>';
-
-
-      echo '<div class="product">';
-      echo '<img src="../loja/personagens/f3.png" alt="Masculino" width="100" class="img-inventario">';
-      echo '<h2>Masculino</h2>';
-      echo '<form method="post" action="../inventario/selecionarPages.php">';
-      echo '<input type="hidden" name="caminho" value="../loja/personagens/f3.png">
-<button class="btn-inventario" type="submit">Selecionar</button>
-</form> <br>';
-echo '</div>';
-
-
-      echo '<div class="product">';
-      echo '<img src="../loja/personagens/f4.png" alt="Masculino" width="100" class="img-inventario">';
-      echo '<h2>Masculino</h2>';
-      echo '<form method="post" action="../inventario/selecionarPages.php">';
-      echo '<input type="hidden" name="caminho" value="../loja/personagens/f4.png">
-<button class="btn-inventario" type="submit">Selecionar</button>
-</form> <br>';
-echo '</div>';
-
-      echo '<div class="product">';
-      echo '<img src="../loja/personagens/f5.png" alt="Masculino" width="100" class="img-inventario">';
-      echo '<h2>Masculino</h2>';
-      echo '<form method="post" action="../inventario/selecionarPages.php">';
-      echo '<input type="hidden" name="caminho" value="../loja/personagens/f5.png">
-<button class="btn-inventario" type="submit">Selecionar</button>
-</form> <br>';
-echo '</div>';
-
-              echo '</div>';
-              echo '</div>';
-            } -->

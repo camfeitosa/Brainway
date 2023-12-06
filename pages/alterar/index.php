@@ -4,7 +4,7 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel="stylesheet" href="config.css">
-   <title>Home</title>
+   <title>Configurações</title>
 </head>
 
 <body class="normal">
@@ -24,9 +24,9 @@
 
       <div class="funcionalidades">
          <div class="func-menu"></div>
-        
+        <div class="exibir">
          <?php include('form.php'); ?>
-       
+       </div>
       </div>
 
    </div>

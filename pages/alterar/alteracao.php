@@ -1,6 +1,7 @@
 <?php
 //arrumar
 include('../../config/conexao.php');
+include('index.php');
 
 // Processar o envio do formulário e atualizar as informações
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -22,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $sql .= " WHERE id_user = $id_usuario";
 
             if ($conexao->query($sql) === TRUE) {
-                echo "Informações da conta atualizadas com sucesso.";
+                echo "<br><br>Informações da conta atualizadas com sucesso.";
             } else {
                 echo "Erro na atualização: " . $conexao->error;
             }

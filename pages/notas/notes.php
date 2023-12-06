@@ -26,7 +26,7 @@ if (isset($_SESSION['id_user'])) {
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $title = $_POST["title"];
     $description = $_POST["description"];
-    $id_cor = $_POST['cor'];
+    // $id_cor = $_POST['cor'];
 
     // Se noteId estiver definido, trata-se de uma atualização
     if (isset($_POST['noteId'])) {

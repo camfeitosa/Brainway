@@ -6,27 +6,27 @@
    <title></title>
 
    <script>
-      // function atualizarPontos() {
-      //    var xhr = new XMLHttpRequest();
-      //    xhr.onreadystatechange = function () {
-      //       if (xhr.readyState === 4) {
-      //          if (xhr.status === 200) {
-      //             var pontos = parseInt(xhr.responseText);
-      //             document.getElementById("pontos").innerText = pontos + '/100';
-      //          } else {
-      //             console.error("Error fetching points. Status code: " + xhr.status);
-      //          }
-      //       }
-      //    };
-      //    xhr.open("GET", "../../includes/barra/obter_pontuacao.php", true);
-      //    xhr.send();
-      // }
+      function atualizarPontos() {
+         var xhr = new XMLHttpRequest();
+         xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4) {
+               if (xhr.status === 200) {
+                  var pontos = parseInt(xhr.responseText);
+                  document.getElementById("pontos").innerText = pontos + '/100';
+               } else {
+                  console.error("Error fetching points. Status code: " + xhr.status);
+               }
+            }
+         };
+         xhr.open("GET", "../../includes/barra/obter_pontuacao.php", true);
+         xhr.send();
+      }
 
-      // // Update points every 2000 milliseconds (2 seconds)
-      // setInterval(atualizarPontos, 2000);
+      // Update points every 2000 milliseconds (2 seconds)
+      setInterval(atualizarPontos, 2000);
 
-      // // Initial call to update points on page load
-      // atualizarPontos();
+      // Initial call to update points on page load
+      atualizarPontos();
 
 
    </script>
@@ -73,7 +73,20 @@
 
    <?php
    ob_start();
-   session_start();
+
+// Iniciar a sessão apenas se não estiver iniciada
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+
+// Verificar se 'id_user' está definido na sessão
+if (!isset($_SESSION['id_user'])) {
+    header('Location: ../../auth/login/index.php');
+    exit(); 
+}
+
+$id_user = $_SESSION['id_user'];
+
    include('../../config/conexao.php');
    include('../inventario/pages.php');
 
@@ -109,7 +122,7 @@
          echo "<h2>Nivel: " . $usuario['nivel'] . "</h2>";
 
       } else {
-         echo "<div class='container2'> <div class='container-perfil'><button type='button'class='btn-se' data-toggle='modal' data-target='#modalExemplo''><img src='../loja/personagens/m1.png' class='perfil'><div class='overlay'><img src='../../edit.svg' class='pencil'></div></a></button></div>";
+         echo "<div class='container2'> <div class='container-perfil'><button type='button'class='btn-se' data-toggle='modal' data-target='#modalExemplo''><img src='../loja/personagens/m12.png' class='perfil'><div class='overlay'><img src='../../edit.svg' class='pencil'></div></a></button></div>";
          echo "<h2>Nivel: " . $usuario['nivel'] . "</h2>";
       }
 
@@ -125,22 +138,18 @@
 
       echo "<div class='barras'>";
       echo "<div class='progress1'>";
-      // echo "<div id='progress-bar1'></div>";
       echo '<div id="progress-bar1"> 
       <div id="barra-progresso1"></div>
       </div>
       <div id="mensagem1">Parabéns! Você atingiu o valor máximo de logins!</div>';
-      // echo "<h4>$usuario[moedas]</h4>";
       echo "</div>";
 
       echo "<div class='progress2'>";
-      // echo "<div id='progress-bar2'></div>";
       echo '<div id="progress-bar">
       <div id="barra-progresso"></div>
       </div>
       <div id="mensagem">Parabéns! Você atingiu o valor máximo da barra!</div>';
       echo "</div>";
-      // echo "<h3>$usuario[moedas]</h3>";
    
       echo "<div class='progress3'>";
       echo "<div id='progress-bar3'></div>";

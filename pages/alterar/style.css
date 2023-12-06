@@ -11,12 +11,13 @@
 }
 
 .container-config {
-    width: 80%;
+    width: 90%;
     display: flex;
     gap: 10px;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    height: 90%;
 }
 
 .config-form {
@@ -74,7 +75,7 @@
 
 
 .line {
-    width: 1000px;
+    width: 900px;
     height: 1px;
     background: #9E9E9E;
 }
@@ -90,3 +91,19 @@
     height: 100px;
 } */
 
+h4 a{
+    color: #F13C4E;
+    text-align: left;
+    font-family: Barlow;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    height: 150px;
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: none;
+    color: #F13C4E;
+}

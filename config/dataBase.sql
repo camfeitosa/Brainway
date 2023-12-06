@@ -89,6 +89,16 @@ INSERT INTO avatar VALUES (NULL, 'Tritão', 'personagens/tritao.png', 20);
 INSERT INTO avatar VALUES (NULL, 'Ursola', 'personagens/ursola.png', 20);
 INSERT INTO avatar VALUES (NULL, 'Woody', 'personagens/woody.png', 500);
 INSERT INTO avatar VALUES (NULL, 'Yoda', 'personagens/yoda.png', 300);
+INSERT INTO avatar VALUES (NULL, 'Masculino', 'personagens/m1.png', 0);
+INSERT INTO avatar VALUES (NULL, 'Masculino', 'personagens/m2.png', 0);
+INSERT INTO avatar VALUES (NULL, 'Masculino', 'personagens/m3.png', 0);
+INSERT INTO avatar VALUES (NULL, 'Masculino', 'personagens/m4.png', 0);
+INSERT INTO avatar VALUES (NULL, 'Masculino', 'personagens/m5.png', 0);
+INSERT INTO avatar VALUES (NULL, 'Feminino', 'personagens/f1.png', 0);
+INSERT INTO avatar VALUES (NULL, 'Feminino', 'personagens/f2.png', 0);
+INSERT INTO avatar VALUES (NULL, 'Feminino', 'personagens/f3.png', 0);
+INSERT INTO avatar VALUES (NULL, 'Feminino', 'personagens/f4.png', 0);
+INSERT INTO avatar VALUES (NULL, 'Feminino', 'personagens/f5.png', 0);
  
 
 
