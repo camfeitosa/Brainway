@@ -41,6 +41,13 @@ CREATE TABLE quiz (
 	caminho VARCHAR (100),
 	valor INT
 	);
+  CREATE TABLE compra (
+id_compra INT NOT NULL AUTO_INCREMENT PRIMARY KEY, 
+id_user INT,
+id_avatar INT, 
+FOREIGN KEY (id_user) REFERENCES usuario (id_user),
+FOREIGN KEY (id_avatar) REFERENCES avatar (id_avatar)
+);
 
  INSERT INTO avatar VALUES (NULL, 'Masculino', 'personagens/m1.png', 0);
 INSERT INTO avatar VALUES (NULL, 'Masculino', 'personagens/m1.png', 0);
