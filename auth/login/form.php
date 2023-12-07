@@ -50,7 +50,7 @@ if (isset($payload['email'])) {
     if ($row['count'] == 0) {
 
         // inserir dados do usuário na tabela
-        $sql = "INSERT INTO usuario (id_user, usuario, nome, email, senha, data_cad, moedas, avatar, nivel) VALUES (null, null ,'$name', '$email', '', '$data_cad', '$moedas','pages/loja/personagens/fem1.png' ,'$nivel')";
+        $sql = "INSERT INTO usuario (id_user, usuario, nome, email, senha, data_cad, moedas, avatar, nivel) VALUES (null, null ,'$name', '$email', '', '$data_cad', '$moedas','pages/loja/personagens/m12.png' ,'$nivel')";
         // Execute a consulta SQL
         if (mysqli_query($conexao, $sql)) {
             // Redirecione para a página de acesso
