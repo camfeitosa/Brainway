@@ -22,7 +22,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         header("Location: ../../pages/inicio/inicio.php");
     } else {
         // Senha incorreta, negar o login
-        include('form.html');
+        include('form.php');
         echo "Senha incorreta. Tente novamente.";
     }
 } else {

@@ -35,7 +35,7 @@ h3 {
     font-weight: 600;
     line-height: normal;
     border: none;
-    cursor: pointer;
+	cursor: url("../inicio/pointer.svg"), pointer;
 }
 
 .product {

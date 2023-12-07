@@ -99,7 +99,7 @@ if (isset($_SESSION['id_user'])) {
                     font-weight: 600;
                     line-height: normal;
                     height: 70px;
-                    cursor: pointer;
+                    cursor: url('../inicio/pointer.svg'), pointer;
                 ">
 
             </form>

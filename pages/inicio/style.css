@@ -1,5 +1,11 @@
 @import url(../../assets/style/global.css);
 
+body{
+    cursor: url("cursor.svg"), auto;
+    /* cursor: url('icon.png'), auto; */
+
+    /* cursor: url("pointer.svg"), pointer; */
+}
 .normal {
     background-color: #efefef;
 }
@@ -20,7 +26,7 @@
     border-radius: 5px;
     background-color: #efefef;
     border: none;
-    cursor: pointer;
+    cursor: url("pointer.svg"), pointer;
     object-fit: cover;
     position: relative;
     transition: 0.3s;
@@ -209,6 +215,8 @@ element.style {
     font-weight: 500;
     line-height: normal;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+	cursor: url("pointer.svg"), pointer;
+
     transition: 0.3s;
 
 }

@@ -13,7 +13,7 @@ moedas INT,
 avatar VARCHAR (100),
 pontos INT DEFAULT 0,
 num_logins INT DEFAULT 0,
-nivel INT DEFAULT 1,
+nivel INT DEFAULT 0
 );
 
 CREATE TABLE task (
@@ -35,7 +35,6 @@ CREATE TABLE quiz (
     FOREIGN KEY (id_user) REFERENCES usuario(id_user)
 );
 
-
 	CREATE TABLE avatar (
 	id_avatar INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	nome VARCHAR (30),
@@ -43,7 +42,17 @@ CREATE TABLE quiz (
 	valor INT
 	);
 
- 
+ INSERT INTO avatar VALUES (NULL, 'Masculino', 'personagens/m1.png', 0);
+INSERT INTO avatar VALUES (NULL, 'Masculino', 'personagens/m1.png', 0);
+INSERT INTO avatar VALUES (NULL, 'Masculino', 'personagens/m2.png', 0);
+INSERT INTO avatar VALUES (NULL, 'Masculino', 'personagens/m3.png', 0);
+INSERT INTO avatar VALUES (NULL, 'Masculino', 'personagens/m4.png', 0);
+INSERT INTO avatar VALUES (NULL, 'Masculino', 'personagens/m5.png', 0);
+INSERT INTO avatar VALUES (NULL, 'Feminino', 'personagens/f1.png', 0);
+INSERT INTO avatar VALUES (NULL, 'Feminino', 'personagens/f2.png', 0);
+INSERT INTO avatar VALUES (NULL, 'Feminino', 'personagens/f3.png', 0);
+INSERT INTO avatar VALUES (NULL, 'Feminino', 'personagens/f4.png', 0);
+INSERT INTO avatar VALUES (NULL, 'Feminino', 'personagens/f5.png', 0);
 INSERT INTO avatar VALUES (NULL, 'Aladin', 'personagens/aladdin.png', 200);
 INSERT INTO avatar VALUES (NULL, 'Alice', 'personagens/alice.png', 100);
 INSERT INTO avatar VALUES (NULL, 'America', 'personagens/america.png', 20);
@@ -89,16 +98,6 @@ INSERT INTO avatar VALUES (NULL, 'Tritão', 'personagens/tritao.png', 20);
 INSERT INTO avatar VALUES (NULL, 'Ursola', 'personagens/ursola.png', 20);
 INSERT INTO avatar VALUES (NULL, 'Woody', 'personagens/woody.png', 500);
 INSERT INTO avatar VALUES (NULL, 'Yoda', 'personagens/yoda.png', 300);
-INSERT INTO avatar VALUES (NULL, 'Masculino', 'personagens/m1.png', 0);
-INSERT INTO avatar VALUES (NULL, 'Masculino', 'personagens/m2.png', 0);
-INSERT INTO avatar VALUES (NULL, 'Masculino', 'personagens/m3.png', 0);
-INSERT INTO avatar VALUES (NULL, 'Masculino', 'personagens/m4.png', 0);
-INSERT INTO avatar VALUES (NULL, 'Masculino', 'personagens/m5.png', 0);
-INSERT INTO avatar VALUES (NULL, 'Feminino', 'personagens/f1.png', 0);
-INSERT INTO avatar VALUES (NULL, 'Feminino', 'personagens/f2.png', 0);
-INSERT INTO avatar VALUES (NULL, 'Feminino', 'personagens/f3.png', 0);
-INSERT INTO avatar VALUES (NULL, 'Feminino', 'personagens/f4.png', 0);
-INSERT INTO avatar VALUES (NULL, 'Feminino', 'personagens/f5.png', 0);
  
 
 

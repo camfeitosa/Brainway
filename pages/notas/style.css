@@ -51,7 +51,7 @@ body{
   justify-content: space-between;
 }
 .add-box{
-  cursor: pointer;
+  cursor: url("../inicio/pointer.svg"), pointer;
   flex-direction: column;
   justify-content: center;
 }
@@ -144,7 +144,7 @@ li.add-box {
 }
 .bottom-content .settings i{
   color: #6D6D6D;
-  cursor: pointer;
+  cursor: url("../inicio/pointer.svg"), pointer;
   font-size: 15px;
 }
 
@@ -175,7 +175,7 @@ li.add-box {
 
 .content label{
   user-select: none;
-  cursor: pointer;
+  cursor: url("../inicio/pointer.svg"), pointer;
   display: flex;
   font-size: 16px;
   align-items: flex-end;
@@ -212,7 +212,7 @@ input{
   font-size: 16px;
   margin-bottom: 2px;
   padding: 17px 15px;
-  cursor: pointer;
+  cursor: url("../inicio/pointer.svg"), pointer;
   box-shadow: none;
   border-radius: 0;
   justify-content: flex-start;
@@ -288,7 +288,7 @@ input{
 }
 .content header i{
   color: #8b8989;
-  cursor: pointer;
+  cursor: url("../inicio/pointer.svg"), pointer;
   font-size: 23px;
 }
 .content form{
@@ -358,7 +358,7 @@ form .row textarea{
   color: #fff;
   outline: none;
   border: none;
-  cursor: pointer;
+  cursor: url("../inicio/pointer.svg"), pointer;
   font-size: 17px;
   border-radius: 4px;
   background: #B898E3;

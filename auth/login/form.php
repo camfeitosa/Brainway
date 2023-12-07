@@ -56,7 +56,7 @@ if (isset($payload['email'])) {
             // Redirecione para a página de acesso
             $id_usuario = mysqli_insert_id($conexao);
             $_SESSION['id_user'] = $id_usuario;
-            header('location: ../../inicio.php');
+            header('location: ../../pages/inicio/inicio.php');
             exit;
         } else {
             // Trate erros na inserção

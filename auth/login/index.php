@@ -1,6 +1,6 @@
 <?php
 // Defina o tempo máximo de vida da sessão em segundos (por exemplo, 30 minutos)
-$sessionLifetime = 2400; // 40 minutos
+$sessionLifetime = 1800; // 30 minutos
 
 // Configurar o tempo de vida da sessão antes de iniciar a sessão
 ini_set('session.gc_maxlifetime', $sessionLifetime);
@@ -13,25 +13,12 @@ session_start();
 
 // Verificar se o usuário está autenticado
 if (isset($_SESSION['id_user'])) {
-    // Verificar o tempo de inatividade do usuário
-    $lastActivity = isset($_SESSION['last_activity']) ? $_SESSION['last_activity'] : 0;
-    $currentTime = time();
-
-    // Se o usuário ficou inativo por mais de 1 minuto, encerrar a sessão
-    if ($currentTime - $lastActivity > 2400) {
-        session_unset();    // Remove todas as variáveis de sessão
-        session_destroy();  // Destroi a sessão
-        header('Location: ../../logout.php'); // Redirecionar para a página de logout ou onde desejar
-        exit();
-    }
-
-    // Atualizar o timestamp da última atividade
-    $_SESSION['last_activity'] = $currentTime;
-
     // Se o usuário estiver autenticado, redirecione para a página inicial
     header('Location: ../../pages/inicio/inicio.php');
     exit();
 }
+
+// Restante do código de login ou cadastro
 ?>
 
 <!DOCTYPE html>
@@ -42,6 +29,8 @@ if (isset($_SESSION['id_user'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="imagem/png" href="../../assets/images/alt_logo.png"/>
+
   <script>
     function link() {
       window.location = "../../index.html";

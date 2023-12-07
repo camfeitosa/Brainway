@@ -4,6 +4,8 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel="stylesheet" href="config.css">
+   <link rel="icon" type="imagem/png" href="../../assets/images/alt_logo.png"/>
+
    <title>Configurações</title>
 </head>
 

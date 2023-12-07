@@ -31,7 +31,7 @@
 .wrapper-exibir{
     background-color: #fff;
     width: 70%;
-}
+    display: flex;}
 
 .container-pontos{
     margin-top: 0px;

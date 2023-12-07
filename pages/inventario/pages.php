@@ -17,11 +17,11 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
     integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   <style>
-    .container {
+    .container-avatar {
       display: inline;
     }
 
-    .container h3 {
+    .container-avatar h3 {
       text-align: center;
       font-size: 20px;
       margin-bottom: 20px;
@@ -30,15 +30,13 @@
 
     .product2 {
       background-color: #efefef;
-      width: 120px;
-      height: 210px;
-      padding: 10px;
-      display: inline-block;
-      /* Adicione esta linha */
-      margin: 1px;
-      /* Espaçamento entre os produtos */
-      position: relative;
-      left: 10px;
+    width: 135px;
+    height: 210px;
+    padding: 10px;
+    display: inline-block;
+    margin: 5px;
+    position: relative;
+    margin-left: 12px;
     }
 
     .img-inventario {
@@ -49,17 +47,17 @@
     /* img{
       background-color: #111;
     } */
-    .container p {
+    .container-avatar p {
       text-align: center;
     }
 
-    .container h1 {
+    .container-avatar h1 {
       text-align: center;
       font-family: Arial, Helvetica, sans-serif;
     }
 
     .btn-inventario {
-      cursor: pointer;
+      cursor: url('../inicio/pointer.svg'), pointer;
       border: none;
       border-radius: 5px;
       background: #2D99DA;
@@ -74,6 +72,14 @@
     .btn-inventario:hover {
       background-color: #45AAF2;
     }
+
+    .btn-secondary:hover {
+    color: #fff;
+    background-color: #5a6268;
+    border-color: #545b62;
+    cursor: url('../inicio/pointer.svg'), pointer;
+
+}
 
     @media (max-width: 984px) {
       .product {
@@ -131,7 +137,7 @@
                 if ($resultado1->num_rows > 0) {
                   while ($row = $resultado1->fetch_assoc()) {
                     $cr = "../loja/" . $row['caminho'];
-                    echo '<div class="container">';
+                    echo '<div class="container-avatar">';
                     echo '<div class="product2">';
                     echo '<img src="' . $cr . '" alt="' . $row['nome'] . '" width="100" class="img-inventario">';
                     echo '<h2>' . $row['nome'] . '</h2>';
@@ -152,7 +158,7 @@
               if ($resultado2->num_rows > 0) {
                 while ($row2 = $resultado2->fetch_assoc()) {
                   $cr2 = "../loja/" . $row2['caminho'];
-                  echo '<div class="container">';
+                  echo '<div class="container-avatar">';
                   echo '<div class="product2">';
                   echo '<img src="' . $cr2 . '" alt="' . $row2['nome'] . '" width="100" class="img-inventario">';
                   echo '<h2>' . $row2['nome'] . '</h2>';

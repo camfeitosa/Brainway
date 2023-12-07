@@ -14,9 +14,7 @@
  <h4>Bem-vindos a loja Brainway! ganhe moedas e compre personagens</h4>
   
 </div>
-</body>
 
-</html>
 
 <?php
 // session_start();

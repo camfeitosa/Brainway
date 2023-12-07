@@ -56,7 +56,7 @@ body .fc { /* extra precedence to overcome jqui */
 	/* text & cursor */
 	font-size: 1em; /* normalize */
 	white-space: nowrap;
-	cursor: pointer;
+	cursor: url("../../inicio/pointer.svg"), pointer;
 }
 
 /* Firefox has an annoying inner border */
@@ -177,7 +177,7 @@ previous button's border...
 }
 
 .fc-popover .fc-header .fc-close {
-	cursor: pointer;
+	cursor: url("../../inicio/pointer.svg"), pointer;
 }
 
 .fc-ltr .fc-popover .fc-header .fc-title,
@@ -263,7 +263,7 @@ hr.fc-divider {
 --------------------------------------------------------------------------------------------------*/
 
 a[data-goto] {
-	cursor: pointer;
+	cursor: url("../../inicio/pointer.svg"), pointer;
 }
 
 a[data-goto]:hover {
@@ -409,7 +409,7 @@ temporary rendered events).
 
 .fc-event[href],
 .fc-event.fc-draggable {
-	cursor: pointer; /* give events with links and draggable events a hand mouse pointer */
+	cursor: url("../../inicio/pointer.svg"), pointer;
 }
 
 .fc-not-allowed, /* causes a "warning" cursor. applied on body */
@@ -624,7 +624,7 @@ tr:first-child > td > .fc-day-grid-event {
 a.fc-more {
 	margin: 1px 3px;
 	font-size: .85em;
-	cursor: pointer;
+	cursor: url("../../inicio/pointer.svg"), pointer;
 	text-decoration: none;
 }
 
@@ -1443,7 +1443,7 @@ be a descendant of the grid when it is being dragged.
 /* event list items */
 
 .fc-list-item.fc-has-url {
-	cursor: pointer; /* whole row will be clickable */
+	cursor: url("../../inicio/pointer.svg"), pointer;
 }
 
 .fc-list-item-marker,
