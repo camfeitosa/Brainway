@@ -1,0 +1,8 @@
+.container-conquistas{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    background-color: red;
+    flex-direction: column;
+}

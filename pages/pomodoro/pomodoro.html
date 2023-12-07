@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fokus</title>
+    <title>Pomodoro</title>
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
         integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
@@ -30,19 +30,26 @@
             </figure>
         </section>
         
+        <div class="lamp" id="lampContainer">
+            <div class="img-lamp" onclick="toggleLamp()">
+                <img src="lamp.svg" alt="o que é Pomodoro" id="lampImage">
+            </div>
+        </div>
+        
+
         <section class="app__section-card-container">
             <div class="app__card" data-contexto="foco">
 
                 <!-- Mudar a cor de acordo com os botões -->
                 <ul class="app__card-list">
                     <li class="app__card-list-item">
-                        <button data-contexto="foco" class="app__card-button app__card-button--foco active">Foco</button>
+                        <button data-contexto="foco" class="app__card-button app__card-button--foco active">Pomodoro</button>
                     </li>
                     <li class="app__card-list-item">
-                        <button data-contexto="short" class="app__card-button app__card-button--curto">Descanso curto</button>
+                        <button data-contexto="short" class="app__card-button app__card-button--curto">Pausa curta</button>
                     </li>
                     <li class="app__card-list-item">
-                        <button data-contexto="long" class="app__card-button app__card-button--longo">Descanso longo</button>
+                        <button data-contexto="long" class="app__card-button app__card-button--longo">Pausa longa</button>
                     </li>
                 </ul>
 
@@ -70,7 +77,35 @@
         </section>
 
     </main>
+<script>
 
+ function toggleLamp() {
+    var lampImage = document.getElementById('lampImage');
+    var lampContainer = document.getElementById('lampContainer');
+
+    // Verifica se a classe 'acessa' já está presente
+    var isAcessa = lampImage.classList.toggle('acessa');
+
+    // Alterna entre a imagem acessa e apagada
+    lampImage.src = isAcessa ? 'lamp_acessa.svg' : 'lamp.svg';
+
+    // Remove a div de informações se ela existir
+    var infoDiv = document.querySelector('.info-div');
+    if (infoDiv) {
+        infoDiv.remove();
+    }
+
+    // Adiciona uma nova div ao clicar na imagem (opcional)
+    if (isAcessa) {
+        infoDiv = document.createElement('div');
+        infoDiv.className = 'info-div';
+        infoDiv.innerHTML = 'O Pomodoro é uma técnica de gerenciamento de tempo que envolve trabalho focado por 25 minutos seguidos de uma pausa de 5 minutos.';
+        lampContainer.appendChild(infoDiv);
+    }
+}
+
+
+</script>
 </body>
 
 </html>
