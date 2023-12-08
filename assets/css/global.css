@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500&family=Poppins&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    border: none;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    font-family: "Barlow";
+}
+
+:root {
+    --azul-primario: #2D99DA;
+    --azul-secundario: #45AAF2;
+    --azul-terciario: #8FCCF7;
+    --azul-quaternario: #8FCCF7;
+    --azul-claro: #DFF1FC;
+
+    --verde-primario: #16A086;
+    --verde-secundario: #1BBC9B;
+    --verde-terciario: #74DEC8;
+    --verde-quaternario: #ADE7DB;
+    --verde-claro: #D6F3ED;
+
+    --verde-primario: #27AE61;
+    --verde-secundario: #52BE81;
+    --verde-terciario: #7DCEA0;
+    --verde-quaternario: #BFE7D0;
+    --verde-claro: #DFF3E8;
+
+    --roxo-primario: #7C1CDB;
+    --roxo-secundario: #8854D1;
+    --roxo-terciario: #B898E3;
+    --roxo-quaternario: #DCCCF2;
+    --roxo-claro: #EDE6F9;
+
+    --rosa-primario: #F50179;
+    --rosa-secundario: #FF3598;
+    --rosa-terciario: #FF86C1;
+    --rosa-quaternario: #FFC3E1;
+    --rosa-claro: #FFE2F0;
+
+    --vermelho-primario: #F13C4E;
+    --vermelho-secundario: #EB5262;
+    --vermelho-terciario: #E68B8B;
+    --vermelho-quaternario: #F0B9B9;
+    --vermelho-claro: #F7DDDD;
+
+    --laranja-primario: #F85D0C;
+    --laranja-secundario: #FC8A03;
+    --laranja-terciario: #F4B86A;
+    --laranja-quaternario: #F8D4A6;
+    --laranja-claro: #FBEAD3;
+    
+    --amarelo-primario: #F5C400;
+    --amarelo-secundario: #FED230;
+    --amarelo-terciario: #F6E870;
+    --amarelo-quaternario: #F5EC99;
+    --amarelo-claro: #FAF6CC;
+}

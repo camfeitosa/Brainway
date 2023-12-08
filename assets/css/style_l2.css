@@ -1,0 +1,91 @@
+/*inicio*/
+@media screen and (min-width:1200px) {
+    .inicio-content:nth-child(even) {
+        flex-direction: row-reverse;
+    }
+
+    .inicio-txt h1 {
+        line-height: 3.2rem;
+    }
+}
+
+@media screen and (max-width:1200px) {
+    .container1 {
+        height: 800px;
+    }
+
+    .inicio-content {
+        flex-direction: column-reverse;
+        width: 80%;
+    }
+
+    .contato {
+        width: 80%;
+    }
+
+    .inicio-es{
+        display: none;
+    }
+
+    .inicio-txt {
+        width: 100%;
+    }
+
+    .inicio-txt h1 {
+        width: 600px;
+    }
+
+
+    .inicio img{
+        display: none;
+    }
+
+    .fundoUm,
+    .fundoDois,
+    .fundoTres,
+    .fundoQuatro,
+    .fundoCinco,
+    .fundoSeis,
+    .fundoSete {
+        display: none;
+    }
+}
+
+@media screen and (max-width:750px) {
+    .container1 {
+        height: 750px;
+    }
+
+    .inicio-txt h1 {
+        font-size: 2rem;
+        line-height: 30px;
+        width: 500px;
+    }
+
+    .inicio {
+        width: 85%;
+    }
+
+    .email {
+        width: 90%;
+    }
+
+}
+
+@media screen and (max-width:470px) {
+
+    .inicio-txt h1 {
+        font-size: 1.6rem;
+    }
+
+    .inicio-txt {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:400px) {
+    .inicio-txt h1 {
+        font-size: 1.5rem;
+    }
+}
+/*fim inicio*/

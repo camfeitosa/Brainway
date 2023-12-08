@@ -15,7 +15,7 @@ if (isset($_SESSION['id_user'])) {
     $recomp_atual = $usuario['pontos'];
 
     // Adiciona pontos ao criar uma nota
-    $nova_recomp = $recomp_atual + 5;
+    $nova_recomp = $recomp_atual + 10;
 
     // Insere as pontos no banco
     $sql = "UPDATE usuario SET pontos = '$nova_recomp' WHERE id_user = '$id_usuario'";

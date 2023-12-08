@@ -10,6 +10,9 @@
 
 .func-menu {
     margin-left: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
 }
 
 .exibir{
@@ -18,6 +21,15 @@
     overflow: auto;
 }
 
+.container-func{
+    color: #000;
+    text-align: center;
+    font-family: Barlow;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
 
 
 /* Estilos para navegadores baseados em WebKit (Chrome, Safari, etc.) */

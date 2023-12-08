@@ -1,0 +1,538 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow&family=Press+Start+2P&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Barlow', sans-serif;
+    text-decoration: none;
+    list-style: none;
+    border: none;
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    background-color: #ffffff;
+}
+
+a {
+    color: inherit;
+    cursor: pointer;
+}
+
+botton {
+    cursor: pointer;
+}
+
+input:focus {
+    outline: none;
+}
+
+.container {
+    height: 100%;
+    width: 100%;
+}
+
+.fundoUm {
+    position: absolute;
+    right: 0;
+    margin-top: 5%;
+    z-index: 0;
+}
+
+.fundoDois {
+    position: absolute;
+    left: 0;
+    margin-top: 40%;
+    z-index: 0;
+}
+
+.fundoTres {
+    position: absolute;
+    right: 0;
+    margin-top: 100%;
+    z-index: 0;
+}
+
+.fundoQuatro {
+    position: absolute;
+    left: 0;
+    margin-top: 150%;
+    z-index: 0;
+}
+
+.fundoCinco {
+    position: absolute;
+    right: 0;
+    margin-top: 200%;
+    z-index: 0;
+}
+
+.fundoSeis {
+    position: absolute;
+    left: 0;
+    margin-top: 250%;
+    z-index: 0;
+}
+
+/*inicio*/
+.container1 {
+    width: 100%;
+    height: 850px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.inicio {
+    z-index: 99;
+    width: 75%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.inicio img {
+    z-index: 0;
+    margin-left: -24%;
+    width: 720px;
+    object-fit: contain;
+}
+
+.inicio-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.inicio-content:last-child {
+    margin-bottom: 0;
+}
+
+.inicio-es {
+    width: 30%;
+    height: 100%;
+}
+
+.inicio-txt {
+    width: 70%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.inicio-txt h1 {
+    width: 700px;
+    margin-bottom: 60px;
+    font-size: 2.5rem;
+    font-family: 'Press Start 2P';
+}
+
+.inicio-txt p {
+    max-width: 560px;
+    font-size: 1.2rem;
+    font-family: 'Barlow';
+}
+
+.email {
+    margin-top: 60px;
+    height: 50px;
+    width: 500px;
+    font-size: 1.2rem;
+    padding-left: 12px;
+    align-items: center;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.50);
+    background: #F3F3F3;
+}
+
+.botao1 {
+    display: flex;
+    width: 200px;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background: #F50179;
+    font-size: 20px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-top: 60px;
+    cursor: pointer;
+}
+
+/*fim inicio*/
+
+/*funcionalidades*/
+.container2 {
+    margin-top: 10vh;
+    position: relative;
+    width: 100%;
+    height: 480px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.card {
+    width: 80%;
+    background: #F3F3F3;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, auto));
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.card img {
+    width: 150px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.center h1 {
+    font-weight: 700;
+    width: 600px;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+#destaque {
+    color: #F50179;
+}
+
+.box {
+    padding: 16px;
+}
+
+.h31 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.h32 {
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 15px;
+    width: 200px;
+}
+
+/*fim funcionalidades*/
+
+/*conquistas*/
+.container3 {
+    top: 20vh;
+    color: #ffffff;
+    background-color: #313DA5;
+    width: 100%;
+    height: 700px;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.conq-content {
+    width: 80%;
+    height: 60%;
+    display: flex;
+    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10rem;
+}
+
+.conq-content:last-child {
+    margin-bottom: 0;
+}
+
+.conq-img {
+    width: 30%;
+}
+
+.conq-img img {
+    width: 350px;
+    object-fit: contain;
+}
+
+.conq-txt {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    max-width: 550px;
+}
+
+.conq-txt h1 {
+    margin-bottom: 60px;
+    font-size: 2.2rem;
+    font-family: 'Press Start 2P';
+}
+
+.conq-txt p {
+    font-size: 1.2rem;
+    font-family: 'Barlow';
+
+}
+
+.conquistas {
+    position: relative;
+    display: inline-flex;
+    width: 100%;
+    height: 700px;
+    justify-content: center;
+    align-items: center;
+}
+
+/*fim conquistas*/
+
+/*potencial*/
+.container4 {
+    top: 20vh;
+    width: 100%;
+    height: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.potencial {
+    z-index: 99;
+    width: 70%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.pot-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10rem;
+}
+
+.pot-content:last-child {
+    margin-bottom: 0;
+}
+
+.pot-img {
+    width: 50%;
+    height: 100%;
+}
+
+.pot-img img {
+    width: 480px;
+    object-fit: contain;
+}
+
+.pot-txt {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.pot-txt h1 {
+    margin-bottom: 60px;
+    font-size: 2.2rem;
+    font-family: 'Press Start 2P';
+    max-width: 800px;
+}
+
+.pot-txt p {
+    font-size: 1.2rem;
+    font-family: 'Barlow';
+}
+
+.botao2 {
+    display: flex;
+    width: 200px;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background: #2D99DA;
+    font-size: 20px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-top: 60px;
+    cursor: pointer;
+}
+
+/*fim potencial*/
+
+/*avatar*/
+.container5 {
+    top: 20vh;
+    width: 100%;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.avatar {
+    z-index: 99;
+    border-radius: 10px;
+    background: #F3F3F3;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.ava-content {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10rem;
+}
+
+.ava-content:last-child {
+    margin-bottom: 0;
+}
+
+.ava-img {
+    width: 50%;
+}
+
+.ava-img img {
+    width: 400px;
+    object-fit: contain;
+}
+
+.ava-txt {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.ava-txt h1 {
+    margin-bottom: 60px;
+    font-size: 2.2rem;
+    font-family: 'Press Start 2P';
+    max-width: 800px;
+}
+
+.ava-txt p {
+    font-size: 1.2rem;
+    font-family: 'Barlow';
+}
+
+/*fim avatar*/
+
+/*movimento*/
+.container6 {
+    top: 20vh;
+    margin-bottom: 20vh;
+    width: 100%;
+    height: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.movimento {
+    z-index: 99;
+    width: 70%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.mov-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10rem;
+}
+
+.mov-content:last-child {
+    margin-bottom: 0;
+}
+
+.mov-img {
+    width: 50%;
+    height: 100%;
+}
+
+.mov-img img {
+    width: 480px;
+    object-fit: contain;
+}
+
+.mov-txt {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.mov-txt h1 {
+    margin-bottom: 60px;
+    font-size: 2.2rem;
+    font-family: 'Press Start 2P';
+    max-width: 800px;
+}
+
+.mov-txt p {
+    font-size: 1.2rem;
+    font-family: 'Barlow';
+}
+
+.botao3 {
+    display: flex;
+    width: 200px;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background: #FC8A03;
+    font-size: 20px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-top: 60px;
+    cursor: pointer;
+}
+
+/*fim movimento*/

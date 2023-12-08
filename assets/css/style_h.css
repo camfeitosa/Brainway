@@ -22,6 +22,7 @@ header {
 .logo {
     width: 150px;
     flex-shrink: 0;
+    cursor: pointer;
 }
 
 .main button {
@@ -65,14 +66,11 @@ header {
     cursor: pointer;
 }
 
-#menu-icon {    font-size: 32px;
+#menu-icon {
+    font-size: 32px;
     z-index: 1001;
     cursor: pointer;
     display: none;
-}
-
-.img-menu{
-    width: 35px;
 }
 
 /*inicio responsividade*/
@@ -103,7 +101,7 @@ header {
         top: 100%;
         right: -100%;
         width: 230px;
-        height: 180px;
+        height: 140px;
         background-color: #ffffff;
         box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
         display: flex;
@@ -166,3 +164,23 @@ header {
         height: 35px;
     }
 }
+
+/*scroll top*/
+.scroll-top{
+    z-index: 100;
+    position: fixed;
+    width: 30px;
+    height: 30px;
+    bottom: 20px;
+    right: 25px;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    line-height: 50px;
+    color: #efefef;
+    font-size: 22px;
+}
+.scroll-top img{
+    width: 32px;
+}
+/*fim scroll top*/

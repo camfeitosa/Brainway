@@ -1,0 +1,57 @@
+
+#progress-bar,
+#progress-bar1 {
+   background-color: #efefef;
+   width: 100%;
+   height: 14px;
+   display: flex;
+   flex-direction: column;
+   border-radius: 5px;
+}
+
+#barra-progresso,
+#barra-progresso1 {
+   height: 20px;
+   border-radius: 5px;
+   transition: width 0.5s;
+   /* Adiciona uma transição suave à largura da barra */
+}
+
+#mensagem,
+#mensagem1 {
+   display: none;
+   color: #27AE61;
+   font-weight: bold;
+   margin-top: 5px;
+}
+
+#barra-progresso {
+   background-color: #27AE61;
+}
+
+#barra-progresso1 {
+   background-color: #F13C4E;
+}
+
+.overlay2 {
+display: none;
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: rgba(0, 0, 0, 0.40);
+backdrop-filter: blur(2px);
+z-index: 999; /* Certifique-se de que a sobreposição está acima de outros elementos */
+}
+
+#imagem-comemorativa {
+display: none;
+width: 500px; /* Ajuste o tamanho conforme necessário */
+height: auto; /* Ajuste o tamanho conforme necessário */
+position: absolute;
+top: 50%; /* Posiciona a imagem no centro verticalmente */
+left: 50%; /* Posiciona a imagem no centro horizontalmente */
+transform: translate(-50%, -50%);
+z-index: 1000; /* Certifica-se de que a imagem está acima de outros elementos */
+}

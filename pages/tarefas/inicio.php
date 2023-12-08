@@ -8,7 +8,7 @@ if (isset($_SESSION['id_user'])) {
 
     // Query SQL para selecionar tarefas apenas do usuário logado
     $sql = "SELECT * FROM task WHERE id_user = ? ORDER BY id ASC";
-    
+
     // Preparação da declaração
     $stmt = mysqli_prepare($conexao, $sql);
 
@@ -28,7 +28,7 @@ if (isset($_SESSION['id_user'])) {
                 $tasks[] = $row;
             }
         }
-        
+
         // Libera o resultado
         mysqli_free_result($result);
     }
@@ -69,14 +69,14 @@ $tasks = isset($tasks) ? $tasks : [];
                 </button>
             </div>
         </form>
-    
+
         <div id="tasks">
             <!-- <h2>Incomplete Tasks</h2> -->
             <?php foreach ($tasks as $task): ?>
                 <?php if (!$task['completed']): ?>
                     <div class="task">
-                        <input type="checkbox" name="progress" class="progress <?= $task['completed'] ? 'done' : '' ?>"
-                            data-task-id="<?= $task['id'] ?>" <?= $task['completed'] ? 'checked' : '' ?>>
+                        <input type="checkbox" name="progress" 
+                        style=" width: 18px; cursor: url('../inicio/pointer.svg'), pointer;" class="progress <?= $task['completed'] ? 'done' : '' ?>" data-task-id="<?= $task['id'] ?>" <?= $task['completed'] ? 'checked' : '' ?>>
 
                         <p class="task-description">
                             <?= $task['description'] ?>
@@ -142,7 +142,7 @@ $tasks = isset($tasks) ? $tasks : [];
             });
         });
 
-         // Função para focar no input
+        // Função para focar no input
         function focarNoInput() {
             // Obtenha o elemento de input pelo ID
             var inputElement = document.getElementById("input");

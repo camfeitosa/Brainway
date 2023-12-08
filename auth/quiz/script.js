@@ -95,6 +95,7 @@ submitBtn.addEventListener('click', () => {
         selectedAnswers[currentQuiz] = answer;
         currentQuiz++;
         updateProgressBar();
+        clearSelected(); // Adicione esta linha para desmarcar as opções antes de carregar a próxima pergunta
 
         if (currentQuiz < quizData.length) {
             loadQuiz();
@@ -103,3 +104,10 @@ submitBtn.addEventListener('click', () => {
         }
     }
 });
+
+
+function clearSelected() {
+    answersEls.forEach((answerEl) => {
+        answerEl.checked = false;
+    });
+}

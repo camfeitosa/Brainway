@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow&family=Press+Start+2P&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Barlow', sans-serif;
+    text-decoration: none;
+    list-style: none;
+    border: none;
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    background-color: #ffffff;
+}
+
+a {
+    color: inherit;
+}
+
+input:focus {
+    outline: none;
+}
+
+.container {
+    width: 100%;
+    height: 850px;
+    margin-bottom: 40vh;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.contato {
+    margin-top: 25vh;
+    z-index: 99;
+    width: 1100px;
+    background-color: #F3F3F3;
+    border-radius: 5px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.cot-content {
+    width: 90%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cot-content:last-child {
+    margin-bottom: 0;
+}
+
+label {
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.cot-img {
+    width: 50%;
+}
+
+.cot-img img {
+    width: 100%;
+    object-fit: contain;
+}
+
+.icons {
+    text-align: center;
+}
+
+.icons i {
+    display: inline-block;
+    font-size: 35px;
+    margin: 0 15px;
+    color: #2D99DA;
+    transition: all .38s ease;
+}
+
+.icons i:hover {
+    transform: scale(1.2);
+    color: #F50179;
+}
+
+.cot-txt {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.cot-txt h1 {
+    width: 700px;
+    margin-bottom: 20px;
+    font-size: 2.2rem;
+    font-weight: 900;
+}
+
+.cot-txt p {
+    max-width: 560px;
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+}
+
+.campo {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    height: 50px;
+    width: 500px;
+    font-size: 1.2rem;
+    padding-left: 12px;
+    align-items: center;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.50);
+    background: #F3F3F3;
+}
+
+.campo2 {
+    margin-top: 20px;
+    height: 90px;
+    width: 500px;
+    font-size: 1.2rem;
+    padding-left: 12px;
+    align-items: center;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.50);
+    background: #F3F3F3;
+}
+
+.botao {
+    display: flex;
+    width: 230px;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background-color: #2D99DA;
+    font-size: 20px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-top: 60px;
+    cursor: pointer;
+}
+
+@media screen and (max-width:1200px) {
+    .container {
+        height: 1000px;
+    }
+
+    .cot-content {
+        flex-direction: column-reverse;
+        width: 80%;
+    }
+
+    .contato {
+        width: 80%;
+    }
+
+    .cot-txt {
+        width: 90%;
+    }
+
+    .cot-img {
+        width: 50%;
+    }
+
+}
+
+@media screen and (max-width:750px) {
+    .container {
+        height: 1200px;
+    }
+
+    .cot-img {
+        width: 80%;
+    }
+
+    .cot-txt {
+        width: 100%;
+
+    }
+
+    .cot-txt h1 {
+        font-size: 2rem;
+        line-height: 30px;
+    }
+
+    .contato {
+        width: 85%;
+    }
+
+    .campo,
+    .campo2 {
+        width: 100%;
+    }
+
+    .icons i {
+        font-size: 25px;
+        margin: 0 10px;
+    }
+
+    .botao {
+        display: flex;
+        width: 200px;
+        height: 40px;
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width:470px) {
+
+    .cot-txt h1 {
+        font-size: 1.6rem;
+    }
+
+    .cot-txt {
+        width: 100%;
+    }
+
+    .campo,
+    .campo2 {
+        width: 100%;
+    }
+
+    .icons i {
+        font-size: 20px;
+    }
+    
+    .botao {
+        display: flex;
+        width: 150px;
+        height: 40px;
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width:400px) {
+    .cot-txt h1 {
+        font-size: 1.5rem;
+    }
+}

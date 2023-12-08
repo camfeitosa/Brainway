@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow&family=Press+Start+2P&display=swap');
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-family: 'Barlow', sans-serif;
+	text-decoration: none;
+	list-style: none;
+	border: none;
+	scroll-behavior: smooth;
+}
+
+body {
+	min-height: 100vh;
+	background-color: #ffffff;
+}
+
+a {
+	color: inherit;
+}
+
+/*quem*/
+.container1 {
+	top: 20vh;
+	width: 100%;
+	height: 700px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+}
+
+.quem {
+	background-image: url('../images/quem.png');
+	background-size: cover;
+	background-repeat: no-repeat;
+	z-index: 0;
+	border-radius: 10px;
+	box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+	width: 985px;
+	height: 600px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.qm-content {
+	width: 50%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	margin-bottom: 10rem;
+}
+
+.qm-content:last-child {
+	margin-bottom: 0;
+}
+
+.qm-txt {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	text-align: center;
+	justify-content: center;
+	flex-direction: column;
+	line-height: 30px;
+	color: #ffffff;
+}
+
+.qm-txt h1 {
+	margin-bottom: 60px;
+	font-size: 2.2rem;
+	font-family: 'Press Start 2P';
+	max-width: 600px;
+}
+
+.qm-txt p {
+	font-size: 18px;
+	font-family: 'Barlow';
+	width: 700px;
+}
+
+/*fim quem*/
+
+/*equipe desenvolvimento*/
+.team {
+	margin-top: 30vh;
+	margin-bottom: 20vh;
+	position: relative;
+	width: 100%;
+	height: 480px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.team-content {
+	width: 100%;
+	max-width: 750px;
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(150px, auto));
+	align-items: center;
+	gap: 2rem;
+	text-align: center;
+	margin-top: 3rem;
+}
+
+.team-content img {
+	width: 100%;
+	height: auto;
+	border-radius: 8px;
+	margin-bottom: 15px;
+}
+
+.center h1 {
+	font-weight: 600;
+	font-family: 'Press Start 2P';
+	font-size: 2rem;
+	width: 500px;
+	text-align: center;
+	padding-bottom: 20px;
+}
+
+.box {
+	padding: 16px;
+	background: #F3F3F3;
+	box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+	border-radius: 8px;
+	transition: all .38s ease;
+}
+
+.box h3 {
+	font-size: 18px;
+	font-weight: 600;
+	margin-bottom: 15px;
+}
+
+.icons i {
+	display: inline-block;
+	font-size: 20px;
+	margin: 0 8px;
+	transition: all .38s ease;
+}
+
+.icons i:hover {
+	transform: scale(1.2);
+	color: #F50179;
+}
+
+.box:hover {
+	transform: translateY(-10px);
+	cursor: pointer;
+}
+
+/*fim equipe desenvolvimento*/
+
+@media(max-width: 1100px) {
+	.quem {
+		width: 600px;
+	}
+
+	.qm-txt p {
+		font-size: 16px;
+		width: 420px;
+	}
+
+	.qm-txt h1 {
+		font-size: 1.8rem;
+	}
+
+	.team {
+		height: 1400px;
+	}
+
+	.team-content {
+		max-width: 300px;
+		display: inline-block;
+	}
+
+	.box {
+		background: #ffffff;
+		box-shadow: none;
+		border-radius: 8px;
+		transition: all .38s ease;
+		margin-bottom: 60px;
+	}
+
+	.icons i {
+		display: inline-block;
+		font-size: 25px;
+		margin: 0 8px;
+		transition: all .38s ease;
+	}
+
+	.center h1 {
+		font-size: 1.8rem;
+		padding-bottom: 20px;
+	}
+}
+
+@media(max-width: 500px) {
+	.quem {
+		width: 400px;
+	}
+
+	.qm-txt p {
+		font-size: 16px;
+		width: 300px;
+	}
+
+	.qm-txt h1 {
+		font-size: 1.5rem;
+	}
+
+	.team {
+		height: 1400px;
+	}
+
+	.team-content {
+		max-width: 2700px;
+		display: inline-block;
+	}
+
+	.box {
+		background: #ffffff;
+		box-shadow: none;
+		border-radius: 8px;
+		transition: all .38s ease;
+		margin-bottom: 60px;
+	}
+
+	.icons i {
+		display: inline-block;
+		font-size: 25px;
+		margin: 0 8px;
+		transition: all .38s ease;
+	}
+
+	.center h1 {
+		width: 400px;
+		font-size: 1.5rem;
+		padding-bottom: 20px;
+	}
+
+	.team-content img {
+		width: 300px;
+		height: 300px;
+		border-radius: 8px;
+		margin-bottom: 15px;
+	}
+}

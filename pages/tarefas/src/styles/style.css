@@ -205,6 +205,11 @@ margin-left: 10px;
     flex-direction: column;
    
 }
+/* 
+input.progress{
+    width: 18px;
+    cursor: url('../../../inicio/pointer.svg'), pointer;
+} */
 
 @media screen and (max-width: 600px) {
     #to_do {

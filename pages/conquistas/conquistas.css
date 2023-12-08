@@ -1,8 +1,108 @@
-.container-conquistas{
+@import url(../../assets/style/global.css);
+@import url(../inicio/style.css);
+
+
+.funcionalidades {
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.func-menu {
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.container-func {
+    color: #000;
+    text-align: center;
+    font-family: Barlow;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+
+.container-conquistas {
+    display: flex;
+    /* align-items: center;
+    justify-content: center; */
+    width: 80%;
+    /* background-color: red; */
+    flex-direction: column;
+}
+
+.wrapper-medal{
+    display: flex;
+    /* align-items: center;
+    justify-content: center; */
+    width: 100%;
+
+}
+
+.exibir {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+}
+
+.medalhas {
+    border-radius: 5px;
+    background: #FFF;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    width: 200px;
+    height: 250px;
+    flex-shrink: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 90%;
-    background-color: red;
+}
+
+.container-medal, 
+.container-medal2, 
+.container-medal3 {
+    display: flex;
+    gap: 30px;
+    /* flex-direction: column; */
+}
+
+.pontos-medal {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.pontos-medal p {
+    color: #000;
+    text-align: center;
+    font-family: Barlow;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
+    margin-bottom: 0px;
+}
+
+.img-medal {
+    display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.img-medal h1 {
+    color: #000;
+    text-align: center;
+    font-family: Barlow;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
 }

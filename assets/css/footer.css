@@ -1,0 +1,144 @@
+.cidade {
+    position: relative;
+    right: 0;
+    z-index: 1;
+    width: 100%;
+    margin-bottom: -4px;
+}
+
+.bloco {
+    width: 250px;
+}
+
+hr {
+    border-top: 1.5px solid #ffffff;
+}
+
+.imgbloco {
+    width: 120px;
+}
+
+.icons2 i {
+    display: inline-block;
+    font-size: 30px;
+    margin-left: 15px;
+    margin-top: 10px;
+    transition: all .38s ease;
+}
+
+.icons2 i:hover {
+    transform: scale(1.2);
+    color: #F50179;
+}
+
+main {
+    height: 80vh;
+}
+
+footer {
+    width: 100%;
+    color: #ffffff;
+}
+
+.footer-content {
+    display: grid;
+    width: 95%;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 3rem 3.5rem;
+}
+
+.footer-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    list-style: none;
+}
+
+.footer-list .footer-link {
+    transition: all 0.4s;
+}
+
+.footer-list .footer-link:hover {
+    color: #F50179;
+}
+
+.footer-content2 {
+    width: 95%;
+    display: grid;
+    padding-bottom: 3rem;
+    padding-left: 3rem;
+}
+
+.footer-list2 {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    list-style: none;
+    width: 800px;
+}
+
+
+.footer-copyright {
+    display: flex;
+    justify-content: center;
+    background-color: #2D99DA;
+    font-size: 0.9rem;
+    padding: 1.5rem;
+    font-weight: 100;
+    align-items: center;
+
+}
+
+.footer-prct {
+    width: 100%;
+    z-index: 1;
+    background-color: #2D99DA;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.footer-prct2 {
+    width: 100%;
+    background-color: #2D99DA;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+
+.footer-cpyd {
+    width: 90%;
+    justify-content: space-between;
+    display: flex;
+}
+
+@media screen and (max-width: 900px) {
+    .footer-content {
+        display: inline-block;
+        width: 100%;
+    }
+
+    .footer-content2 {
+        display: none;
+    }
+
+    .cidade {
+        display: none;
+    }
+
+    .bloco {
+        width: 250px;
+    }
+
+    .footer-list {
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    .footer-subscribe {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

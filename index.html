@@ -1,290 +1,445 @@
 <!DOCTYPE html>
 <html lang="br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"
-    />
-    <link rel="stylesheet" href="assets/style/style.css" />
 
-    <style>
-      @import url('assets/style/global.css');
-      .cookieConsentContainer {
-        z-index: 999;
-        width: 100%;
-        min-height: 20px;
-        box-sizing: border-box;
-        padding: 20px 20px 0px 100px;
-        background: #efefefeb;
-        overflow: hidden;
-        position: fixed;
-        bottom: 0px;
-        display: none;
-      }
-
-      .cookieConsentContainer .cookieTitle a {
-        font-family: 'Barlow', sans-serif;
-        color: #000;
-        font-size: 22px;
-        line-height: 20px;
-        display: block;
-        height: 30px;
-        font-weight: 500;
-      }
-
-      .cookieConsentContainer .cookieDesc p {
-        margin: 0;
-        padding: 0;
-        /* font-family: OpenSans, arial, sans-serif; */
-        color: #000;
-        font-size: 14px;
-        line-height: 20px;
-        display: block;
-        margin-top: 10px;
-        width: 80%;
-       height: 5px; 
-      }
-
-      .cookieConsentContainer .cookieDesc a {
-        /* font-family: OpenSans, arial, sans-serif; */
-        color: #000;
-        text-decoration: underline;
-      }
-
-      .cookieConsentContainer .cookieButton a {
-        display: inline-block;
-        /* font-family: OpenSans, arial, sans-serif; */
-        color: #000;
-        font-size: 14px;
-        font-weight: 700;
-        margin-top: 14px;
-        background: #2D99DA;
-        box-sizing: border-box;
-        padding: 20px 24px;
-        text-align: center;
-        transition: background 0.3s;
-        border-radius: 5px;
-      }
-
-      .cookieConsentContainer .cookieButton a:hover {
-        cursor: pointer;
-        background: #2D99DA;
-      }
-
-      .cookieButton {
-        width: 10%;
-        /* background-color: red; */
-        display: flex;
-        flex-direction: row;
-        align-items: end;
-        justify-content: flex-end;
-        position: relative;
-        left: 80%;
-        top: -40px;
-      }
-
-      @media (max-width: 980px) {
-        .cookieConsentContainer {
-          bottom: 0 !important;
-          left: 0 !important;
-          width: 100% !important;
-        }
-      }
-    </style>
-
-    <script type="text/javascript">
-      function link() {
-        window.location = "index.html";
-      }
-      function scrollToTop() {
-        window.scrollTo(0, 0);
-      }
-    </script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página Inicial</title>
-  </head>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" href="assets/css/style_l.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style_l2.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style_h.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/footer.css">
+    <link rel="icon" type="imagem/png" href="assets/images/alt_logo.png" />
+    <style>
+        @import url('assets/style/global.css');
+        .cookieConsentContainer {
+          z-index: 999;
+          width: 100%;
+          min-height: 20px;
+          box-sizing: border-box;
+          padding: 20px 20px 0px 100px;
+          background: #efefefeb;
+          overflow: hidden;
+          position: fixed;
+          bottom: 0px;
+          display: none;
+        }
+  
+        .cookieConsentContainer .cookieTitle a {
+          font-family: 'Barlow', sans-serif;
+          color: #000;
+          font-size: 22px;
+          line-height: 20px;
+          display: block;
+          height: 30px;
+          font-weight: 500;
+        }
+  
+        .cookieConsentContainer .cookieDesc p {
+          margin: 0;
+          padding: 0;
+          /* font-family: OpenSans, arial, sans-serif; */
+          color: #000;
+          font-size: 14px;
+          line-height: 20px;
+          display: block;
+          margin-top: 10px;
+          width: 80%;
+         height: 5px; 
+        }
+  
+        .cookieConsentContainer .cookieDesc a {
+          /* font-family: OpenSans, arial, sans-serif; */
+          color: #000;
+          text-decoration: underline;
+        }
+  
+        .cookieConsentContainer .cookieButton a {
+          display: inline-block;
+          /* font-family: OpenSans, arial, sans-serif; */
+          color: #eefefe;
+          font-size: 14px;
+          font-weight: 700;
+          margin-top: 14px;
+          background: #2D99DA;
+          box-sizing: border-box;
+          padding: 20px 24px;
+          text-align: center;
+          transition: background 0.3s;
+          border-radius: 5px;
+        }
+  
+        .cookieConsentContainer .cookieButton a:hover {
+          cursor: pointer;
+          background: #2D99DA;
+        }
+  
+        .cookieButton {
+          width: 10%;
+          /* background-color: red; */
+          display: flex;
+          flex-direction: row;
+          align-items: end;
+          justify-content: flex-end;
+          position: relative;
+          left: 80%;
+          top: -40px;
+        }
+  
+        @media (max-width: 980px) {
+          .cookieConsentContainer {
+            bottom: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+          }
+        }
+      </style>
+    <script type="text/javascript">
+        function link() {
+            window.location = "index.html";
+        }
+        function scrollToTop() {
+            window.scrollTo(0, 0);
+        }
+        function scrollToTop() {
+            window.scrollTo(0, 0);
+        }
+    </script>
+</head>
 
-  <body>
-    <!-- Menu com php -->
+<body>
+
     <header>
-      <img
-        src="assets/images/logo.svg"
-        class="logo"
-        alt="logo"
-        onclick="link()"
-      />
-      <nav>
-        <ul class="nav-links">
-          <li>
-            <a href="public/funcionalidades/index.html">Funcionalidades</a>
-          </li>
-          <li><a href="#"></a>Fale Conosco</li>
-          <li><a href="#"></a>Sobre Nós</li>
-        </ul>
-      </nav>
-      <div class="main">
-        <a href="auth/login/index.php"
-          ><button class="b-main" id="b1">Entrar</button></a
-        >
-        <a href="auth/cadastro/index.html"
-          ><button class="b-main" id="b2">Cadastre-se</button></a
-        >
-      </div>
-      <div class="bx bx-menu" id="menu-icon"></div>
-      <!--js link-->
-      <script type="text/javascript" src="assets/js/script.js"></script>
+        <img src="assets/images/logo.png" class="logo" alt="logo" onclick="link()">
+        <nav>
+            <ul class="nav-links">
+                <li><a href="public/funcionalidades.html">Funcionalidades</a></li>
+                <li><a href="public/contato.html">Fale Conosco</a></li>
+                <li><a href="public/sobrenos.html">Sobre Nós</a></li>
+            </ul>
+        </nav>
+        <div class="main">
+            <a href="auth/login/index.php"><button class="b-main" id="b1">Entrar</button></a>
+            <a href="auth/cadastro/index.html"><button class="b-main" id="b2">Cadastre-se</button></a>
+        </div>
+        <div class="bx bx-menu" id="menu-icon"></div>
+        <!--js link-->
+        <script type="text/javascript" src="assets/js/script.js"></script>
     </header>
 
-    <!-- Fim do menu -->
+    <div class="container">
+        <img class="fundoUm" src="assets/images/f1.svg" alt="">
+        <img class="fundoDois" src="assets/images/f2.svg" alt="">
+        <img class="fundoTres" src="assets/images/f3.svg" alt="">
+        <img class="fundoQuatro" src="assets/images/f4.svg" alt="">
+        <img class="fundoCinco" src="assets/images/f5.svg" alt="">
+        <img class="fundoSeis" src="assets/images/f6.svg" alt="">
+        <div class="container1">
+            <div class="inicio">
+                <div class="inicio-content">
+                    <div class="inicio-txt">
+                        <h1>O caminho para seu sucesso</h1>
+                        <p>Quebre barreiras, alcance metas e divirta-se no processo.
+                            Seja o herói da sua própria história de sucesso com o poder da gamificação!</p>
+                        <input type="email" id="email" name="email" placeholder="Entre com o seu e-mail" required
+                            class="email">
+                        <a href="auth/cadastro/index.html"><button class="botao1">Começar agora</button></a>
+                    </div>
+                    <div class="inicio-es">
+                    </div>
+                    <img src="assets/images/foguete.png" alt="">
+                </div>
+            </div>
+        </div>
 
-    <div class="conquistas">
-      <div class="c-main">
-        <div class="c1">
-          <div class="c1-titulo">
-            <h1>Celebre suas Conquistas</h1>
-          </div>
-          <p>
-            Desbloqueie níveis, conquiste objetivos e ganhe medalhas que
-            simbolizam suas vitórias.
-            <br />
-            <br />
-            Cada marco atingido no BrainWay traz medalhões que comprovam seu
-            progresso.
-            <br />
-            <br />
-            Sinta o orgulho de ver sua jornada transformada em conquistas
-            tangíveis.
-          </p>
-        </div>
-        <div class="c2">
-          <img src="assets/images/medalha.png" />
-        </div>
-      </div>
-    </div>
+        <section class="container2">
+            <div class="center">
+                <h1>Eleve se desempenho e desbloqueie seu potencial completo com as <span
+                        id="destaque">ferramentas</span> do Brainway</h1>
+            </div>
 
-    <div class="potencial">
-      <div class="p-main">
-        <div class="p1">
-          <img src="assets/images/potencial.png" />
-        </div>
-        <div class="p2">
-          <div class="p2-titulo">
-            <h1>Desperte seu potencial</h1>
-          </div>
-          <p>
-            Transforme seus dias, alcance seus sonhos e torne-se o mestre da sua
-            própria produtividade com o BrainWay. Aproveite a jornada, conquiste
-            desafios e celebre cada vitória no caminho para o sucesso.
-            <br />
-            <br />
-            Junte-se à revolução da produtividade gamificada!
-          </p>
-          <div class="p-button">
-            <a href="#"><button>Começar agora</button></a>
-          </div>
-        </div>
-      </div>
-    </div>
+            <div class="card">
+                <a href="public/funcionalidades.html#pomodoro">
+                    <div class="box">
+                        <img src="assets/images/1.png">
+                        <h3 class="h31">Pomodoro</h3>
+                        <h3 class="h32">Alavanque sua concentração com sessões focadas.</h3>
+                    </div>
+                </a>
 
-    <div class="mobilidade">
-      <div class="m-main">
-        <div class="m1">
-          <img src="assets/images/mobilidade.png" />
+                <a href="public/funcionalidades.html#lista">
+                    <div class="box">
+                        <img src="assets/images/2.png">
+                        <h3 class="h31">Lista de Tarefas</h3>
+                        <h3 class="h32">Transforme afazeres em realizações emocionantes.</h3>
+                    </div>
+                </a>
+
+                <a href="public/funcionalidades.html#cronograma">
+                    <div class="box">
+                        <img src="assets/images/3.png">
+                        <h3 class="h31">Cronograma</h3>
+                        <h3 class="h32">Mantenha-se no caminho com um cronograma personalizado.</h3>
+                    </div>
+                </a>
+
+                <a href="public/funcionalidades.html#notas">
+                    <div class="box">
+                        <img src="assets/images/4.png">
+                        <h3 class="h31" 3>Notas</h3>
+                        <h3 class="h32">Capture insights com facilidade.</h3>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <div class="container3">
+            <div class="conquistas">
+                <div class="conq-content">
+                    <div class="conq-txt">
+                        <h1>Celebre suas Conquistas</h1>
+                        <p>Desbloqueie níveis, conquiste objetivos e ganhe medalhas que simbolizam suas vitórias.
+                            <br><br>
+                            Cada marco atingido no BrainWay traz medalhões que comprovam seu progresso.
+                            <br><br>
+                            Sinta o orgulho de ver sua jornada transformada em conquistas tangíveis.
+                        </p>
+                    </div>
+                    <div class="conq-img">
+                        <img src="assets/images/medalha.png" alt="">
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="m2">
-          <div class="m2-titulo">
-            <h1>Produtividade em Movimento</h1>
-          </div>
-          <p>
-            Agora, você pode levar o poder do BrainWay para onde quer que vá,
-            diretamente no seu dispositivo móvel!
-            <br />
-            <br />
-            Nossa plataforma está pronta para acompanhá-lo em sua jornada
-            produtiva, permitindo que você mantenha o foco, organize suas
-            tarefas e alcance seus objetivos onde quer que esteja.
-          </p>
-          <div class="m-button">
-            <a href="#"><button>Junte-se Agora</button></a>
-          </div>
+
+        <div class="container4">
+            <div class="potencial">
+                <div class="pot-content">
+                    <div class="pot-img">
+                        <img src="assets/images/potencial.png" alt="">
+                    </div>
+                    <div class="pot-txt">
+                        <h1>Desperte seu potencial</h1>
+                        <p>Transforme seus dias, alcance seus sonhos e torne-se o mestre da sua própria produtividade
+                            com o
+                            BrainWay. Aproveite a jornada, conquiste desafios e celebre cada vitória no caminho para o
+                            sucesso.
+                            <br><br>
+                            Junte-se à revolução da produtividade gamificada!
+                        </p>
+                        <a href="auth/cadastro/index.html"><button class="botao2">Começar agora</button></a>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-    <script>
-      var purecookieTitle = "Aviso de cookies.",
-        purecookieDesc =
-          "Este site utiliza cookies para melhorar a sua experiência de navegação. Ao continuar a usar este site, você concorda com o uso de cookies. Para mais informações sobre como usamos cookies e como você pode controlá-los, consulte nossa Política de Cookies.",
-        purecookieLink =
-          '<a href="https://www.kaspersky.com.br/resource-center/definitions/cookies" target="_blank">Para que serve?</a>',
-        purecookieButton = "Entendido";
-      function pureFadeIn(e, o) {
-        var i = document.getElementById(e);
-        (i.style.opacity = 0),
-          (i.style.display = o || "block"),
-          (function e() {
-            var o = parseFloat(i.style.opacity);
-            (o += 0.02) > 1 ||
-              ((i.style.opacity = o), requestAnimationFrame(e));
-          })();
-      }
-      function pureFadeOut(e) {
-        var o = document.getElementById(e);
-        (o.style.opacity = 1),
-          (function e() {
-            (o.style.opacity -= 0.02) < 0
-              ? (o.style.display = "none")
-              : requestAnimationFrame(e);
-          })();
-      }
-      function setCookie(e, o, i) {
-        var t = "";
-        if (i) {
-          var n = new Date();
-          n.setTime(n.getTime() + 24 * i * 60 * 60 * 1e3),
-            (t = "; expires=" + n.toUTCString());
-        }
-        document.cookie = e + "=" + (o || "") + t + "; path=/";
-      }
-      function getCookie(e) {
-        for (
-          var o = e + "=", i = document.cookie.split(";"), t = 0;
-          t < i.length;
-          t++
-        ) {
-          for (var n = i[t]; " " == n.charAt(0); ) n = n.substring(1, n.length);
-          if (0 == n.indexOf(o)) return n.substring(o.length, n.length);
-        }
-        return null;
-      }
-      function eraseCookie(e) {
-        document.cookie = e + "=; Max-Age=-99999999;";
-      }
-      function cookieConsent() {
-        getCookie("purecookieDismiss") ||
-          ((document.body.innerHTML +=
-            '<div class="cookieConsentContainer" id="cookieConsentContainer"><div class="cookieTitle"><a>' +
-            purecookieTitle +
-            '</a></div><div class="cookieDesc"><p>' +
-            purecookieDesc +
-            " " +
-            purecookieLink +
-            '</p></div><div class="cookieButton"><a onClick="purecookieDismiss();">' +
-            purecookieButton +
-            "</a></div></div>"),
-          pureFadeIn("cookieConsentContainer"));
-      }
-      function purecookieDismiss() {
-        setCookie("purecookieDismiss", "1", 7),
-          pureFadeOut("cookieConsentContainer");
-      }
-      window.onload = function () {
-        cookieConsent();
-      };
-    </script>
-  </body>
+
+        <div class="container5">
+            <div class="avatar">
+                <div class="ava-content">
+
+                    <div class="ava-txt">
+                        <h1>Dê vida ao Seu Avatar</h1>
+                        <p>Explore um mundo de opções de personalização com nossos personagens.
+                            <br><br>
+                            Ganhe recompensas virtuais e desbloqueie novos heróis para representar você em sua jornada
+                            de produtividade.
+                            <br><br>
+                            Transforme suas conquistas em uma experiência única!
+                        </p>
+                    </div>
+                    <div class="ava-img">
+                        <img src="assets/images/alice.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container6">
+            <div class="movimento">
+                <div class="mov-content">
+                    <div class="mov-img">
+                        <img src="assets/images/celular.png" alt="">
+                    </div>
+                    <div class="mov-txt">
+                        <h1>Produtividade em Movimento</h1>
+                        <p>Agora, você pode levar o poder do BrainWay para onde quer que vá, diretamente no seu
+                            dispositivo móvel!
+                            <br><br>
+                            Nossa plataforma está pronta para acompanhá-lo em sua jornada produtiva, permitindo que você
+                            mantenha o foco, organize suas tarefas e alcance seus objetivos onde quer que esteja.
+                        </p>
+                        <a href="#"><button class="botao3">Junte-se Agora</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div onclick="scrollToTop()" class="scroll-top">
+            <img src="assets/images/alt_logo.png">
+        </div>
+
+        <footer>
+            <img src="assets/images/cidade.png" class="cidade">
+            <div class="footer-prct">
+                <div class="footer-content">
+                    <ul class="footer-list">
+                        <li>
+                            <h3>Produto</h3>
+                        </li>
+                        <li>
+                            <a href="./index.html" class="footer-link">Home</a>
+                        </li>
+                        <li>
+                            <a href="./funcionalidades.html" class="footer-link">Funcionalidades</a>
+                        </li>
+                        <li>
+                            <a href="./contato.html" class="footer-link">Fale Conosco</a>
+                        </li>
+                        <li>
+                            <a href="./sobrenos.html" class="footer-link">Sobre Nós</a>
+                        </li>
+                    </ul>
+                    <ul class="footer-list">
+                        <li>
+                            <h3>Funcionalidades</h3>
+                        </li>
+                        <li>
+                            <a href="./funcionalidades.html#pomodoro" class="footer-link">Pomodoro</a>
+                        </li>
+                        <li>
+                            <a href="./funcionalidades.html#lista" class="footer-link">A Fazer</a>
+                        </li>
+                        <li>
+                            <a href="./funcionalidades.html#cronograma" class="footer-link">Cronograma</a>
+                        </li>
+                        <li>
+                            <a href="./funcionalidades.html#notas" class="footer-link">Notas</a>
+                        </li>
+                    </ul>
+                    <ul class="footer-list">
+                        <li>
+                            <h3>Desenvolvedores</h3>
+                        </li>
+                        <li>
+                            <a href="./sobrenos.html#desenvolvedores" class="footer-link">Camila Feitosa</a>
+                        </li>
+                        <li>
+                            <a href="./sobrenos.html#desenvolvedores" class="footer-link">Gabryelle Sousa</a>
+                        </li>
+                        <li>
+                            <a href="./sobrenos.html#desenvolvedores" class="footer-link">Raissa Silva</a>
+                        </li>
+                    </ul>
+                    <div class="footer-subscribe">
+                        <img src="assets/images/bloco.png" class="bloco">
+                    </div>
+                </div>
+            </div>
+            <div class="footer-prct2">
+                <div class="footer-content2">
+                    <ul class="footer-list2">
+                        <li>
+                            <p>Transformando a produtividade com gamificação. Desenvolvido por estudantes do terceiro
+                                ano do
+                                ensino médio integrado ao ensino técnico como parte de seu projeto de conclusão de
+                                curso.
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+
+            <div class="footer-copyright">
+                <div class="footer-cpyd">
+                    <img src="assets/images/logo_branca.png" class="imgbloco">
+
+                    <div class="icons2">
+                        <i class="fa-brands fa-square-facebook"></i>
+                        <i class="fa-brands fa-square-twitter"></i>
+                        <i class="fa-brands fa-square-instagram"></i>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script>
+            var purecookieTitle = "Aviso de cookies.",
+              purecookieDesc =
+                "Este site utiliza cookies para melhorar a sua experiência de navegação. Ao continuar a usar este site, você concorda com o uso de cookies. Para mais informações sobre como usamos cookies e como você pode controlá-los, consulte nossa Política de Cookies.",
+              purecookieLink =
+                '<a href="https://www.kaspersky.com.br/resource-center/definitions/cookies" target="_blank">Para que serve?</a>',
+              purecookieButton = "Entendido";
+            function pureFadeIn(e, o) {
+              var i = document.getElementById(e);
+              (i.style.opacity = 0),
+                (i.style.display = o || "block"),
+                (function e() {
+                  var o = parseFloat(i.style.opacity);
+                  (o += 0.02) > 1 ||
+                    ((i.style.opacity = o), requestAnimationFrame(e));
+                })();
+            }
+            function pureFadeOut(e) {
+              var o = document.getElementById(e);
+              (o.style.opacity = 1),
+                (function e() {
+                  (o.style.opacity -= 0.02) < 0
+                    ? (o.style.display = "none")
+                    : requestAnimationFrame(e);
+                })();
+            }
+            function setCookie(e, o, i) {
+              var t = "";
+              if (i) {
+                var n = new Date();
+                n.setTime(n.getTime() + 24 * i * 60 * 60 * 1e3),
+                  (t = "; expires=" + n.toUTCString());
+              }
+              document.cookie = e + "=" + (o || "") + t + "; path=/";
+            }
+            function getCookie(e) {
+              for (
+                var o = e + "=", i = document.cookie.split(";"), t = 0;
+                t < i.length;
+                t++
+              ) {
+                for (var n = i[t]; " " == n.charAt(0); ) n = n.substring(1, n.length);
+                if (0 == n.indexOf(o)) return n.substring(o.length, n.length);
+              }
+              return null;
+            }
+            function eraseCookie(e) {
+              document.cookie = e + "=; Max-Age=-99999999;";
+            }
+            function cookieConsent() {
+              getCookie("purecookieDismiss") ||
+                ((document.body.innerHTML +=
+                  '<div class="cookieConsentContainer" id="cookieConsentContainer"><div class="cookieTitle"><a>' +
+                  purecookieTitle +
+                  '</a></div><div class="cookieDesc"><p>' +
+                  purecookieDesc +
+                  " " +
+                  purecookieLink +
+                  '</p></div><div class="cookieButton"><a onClick="purecookieDismiss();">' +
+                  purecookieButton +
+                  "</a></div></div>"),
+                pureFadeIn("cookieConsentContainer"));
+            }
+            function purecookieDismiss() {
+              setCookie("purecookieDismiss", "1", 7),
+                pureFadeOut("cookieConsentContainer");
+            }
+            window.onload = function () {
+              cookieConsent();
+            };
+          </script>
+
+</body>
+
 </html>

@@ -2,9 +2,10 @@ a {
     color: inherit;
 }
 
-header {
+.dentro{
     position: fixed;
     width: 100%;
+    display: inline;
     height: 90px;
     top: 0;
     left: 0;
@@ -65,16 +66,30 @@ header {
     cursor: pointer;
 }
 
-#menu-icon {    font-size: 32px;
+#menu-icon {
+    font-size: 32px;
     z-index: 1001;
     cursor: pointer;
     display: none;
+}
+
+.img-menu2{
+    width: 30px;
 }
 
 .img-menu{
     width: 35px;
 }
 
+.img-menu, .img-menu2 a{
+    cursor: url('../../pages/inicio/pointer.svg'), pointer;
+
+}
+
+a:hover{
+    cursor: url('../../pages/inicio/pointer.svg'), pointer;
+
+}
 /*inicio responsividade*/
 @media (max-width: 1280px) {
     header {
