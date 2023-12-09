@@ -248,6 +248,32 @@
       setInterval(atualizarBarraDeProgresso, 2000);
       atualizarBarraDeProgresso();
    </script>
+
+<script>
+         function atualizarPontos() {
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function () {
+               if (xhr.readyState === 4) {
+                  if (xhr.status === 200) {
+                     var pontos = parseInt(xhr.responseText);
+                     document.getElementById("pontos").innerText = pontos + '/100';
+                  } else {
+                     console.error("Error fetching points. Status code: " + xhr.status);
+                  }
+               }
+            };
+            xhr.open("GET", "../../includes/barra/obter_pontuacao.php", true);
+            xhr.send();
+         }
+
+         // Update points every 2000 milliseconds (2 seconds)
+         setInterval(atualizarPontos, 2000);
+
+         // Initial call to update points on page load
+         atualizarPontos();
+
+
+      </script>
 </body>
 
 </html>

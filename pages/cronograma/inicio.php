@@ -14,7 +14,7 @@
    <link rel="stylesheet" type="text/css" href="../../assets/css/style_l2.css">
    <link rel="stylesheet" type="text/css" href="../../assets/css/menu.css">
    <link rel="stylesheet" type="text/css" href="../../assets/css/footer.css">
-   <title>Home</title>
+   <title>Cronograma</title>
 </head>
 
 <body class="normal">

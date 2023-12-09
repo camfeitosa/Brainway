@@ -45,7 +45,7 @@ if (isset($_SESSION['id_user'])) {
 <body>
 
     <div class="container-config">
-        <div class="info">
+        <div class="infos">
             <h1> Informações da conta </h1>
         </div>
         <div class="config-form">

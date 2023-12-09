@@ -58,12 +58,12 @@
                   </ul>
                </nav>
             </div>
+            <a href="../tarefas/index.php">
             <div class="btn-lateral">
                <img src="../inicio/add.svg" alt="">
-               <a href="../tarefas/index.php">
                   <p>Adicionar Tarefa</p>
-               </a>
-            </div>
+               </div>
+            </a>
          </div>
          <div class="teste">
             <div class="exibir">
@@ -73,9 +73,9 @@
       </div>
 
 
-      <footer>
+      <!-- <footer>
          <div class="footer"></div>
-      </footer>
+      </footer> -->
 
 </body>
 

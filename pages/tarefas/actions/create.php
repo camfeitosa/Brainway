@@ -15,7 +15,7 @@ if (isset($_SESSION['id_user'])) {
     $usuario = mysqli_fetch_assoc($resultado);
     $recomp_atual = $usuario['pontos'];
     
-    $nova_recomp = $recomp_atual + 5;
+    $nova_recomp = $recomp_atual + 10;
     
     //insere as pontos no banco
     $sql = "UPDATE usuario SET pontos = '$nova_recomp' WHERE id_user = '$id_usuario'";

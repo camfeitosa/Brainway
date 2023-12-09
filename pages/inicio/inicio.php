@@ -49,7 +49,7 @@
 
       <div class="funcionalidades">
 
-         <div class="func-menu">
+         <div class="func-menu2">
             <div class="container-func">
                <nav>
                   <ul class="nav-links">

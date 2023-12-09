@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu</title>
+    <title>Ajuda</title>
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
         integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
@@ -46,7 +46,7 @@
                     <h1>Estamos aqui para você</h1>
                     <p>Tem alguma pergunta ou sugestão? Deixe-nos saber como podemos ajudar. Sua opinião é importante
                         para nós!</p>
-                    <form method="POST" action="salvar.php">
+                    <form method="POST" action="../public/salvar.php">
                         <label for="nome">Nome:</label>
                         <input type="text" placeholder="Digite seu nome" id="nome" name="nome" required class="campo">
                         <br>

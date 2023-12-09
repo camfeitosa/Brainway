@@ -1,5 +1,5 @@
 <?php
-include('..\conexao.php');
+include('../config/conexao.php');
 
 if($_SERVER["REQUEST_METHOD"] == "POST") {
   $nome = mysqli_real_escape_string($conexao, $_POST['nome']);

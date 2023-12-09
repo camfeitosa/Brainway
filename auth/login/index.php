@@ -74,7 +74,7 @@ if (isset($_SESSION['id_user'])) {
                 onclick="togglePasswordVisibility()">
             </div>
             <div class="logar">
-              <a href="esqueceu.php">Esqueceu sua senha?</a>
+              <a href="../senha/atualizar_senha.php">Esqueceu sua senha?</a>
               <button class="btn-login" type="submit">Entrar</button>
             </div>
         </form>
