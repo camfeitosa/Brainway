@@ -13,7 +13,7 @@ Agradecemos às seguintes pessoas que contribuíram para este projeto:
 <table>
   <tr>
     <td align="center">
-      <a href="#" title="defina o titulo do link">
+      <a href="https://github.com/camfeitosa" title="defina o titulo do link">
         <img src="assets/images/camis.png" width="100px;" alt="Foto do Iuri Silva no GitHub"/><br>
         <sub>
           <b>Camila Feitosa</b>
@@ -21,7 +21,7 @@ Agradecemos às seguintes pessoas que contribuíram para este projeto:
       </a>
     </td>
     <td align="center">
-      <a href="#" title="defina o titulo do link">
+      <a href="https://github.com/gawzby" title="defina o titulo do link">
         <img src="assets/images/gaby.png" width="100px;" alt="Foto do Mark Zuckerberg"/><br>
         <sub>
           <b>Gabryelle Sousa</b>
@@ -29,7 +29,7 @@ Agradecemos às seguintes pessoas que contribuíram para este projeto:
       </a>
     </td>
     <td align="center">
-      <a href="#" title="defina o titulo do link">
+      <a href="https://github.com/raissalenda" title="defina o titulo do link">
         <img src="assets/images/rai.png" width="100px;" alt="Foto do Steve Jobs"/><br>
         <sub>
           <b>Raissa Silva</b>
